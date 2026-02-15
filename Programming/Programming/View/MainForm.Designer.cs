@@ -68,7 +68,7 @@
             this.EnumsListBox.FormattingEnabled = true;
             this.EnumsListBox.Items.AddRange(new object[] {
             "Color",
-            "Education Form",
+            "EducationForm",
             "Genre",
             "Manufactures",
             "Season",
@@ -77,6 +77,7 @@
             this.EnumsListBox.Name = "EnumsListBox";
             this.EnumsListBox.Size = new System.Drawing.Size(120, 186);
             this.EnumsListBox.TabIndex = 0;
+            this.EnumsListBox.SelectedValueChanged += new System.EventHandler(this.EnumsListBox_SelectedValueChanged);
             // 
             // EnumarationLabel
             // 

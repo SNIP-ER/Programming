@@ -15,12 +15,41 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
-            FullListBoxWithEnum();
+
+            EnumsListBox.SelectedIndex = 0;  // Изначально выбран 1-ый элемент в EnumsListBox.
         }
 
-        private void FullListBoxWithEnum()
+        /// <summary>
+        /// Показывает элементы в ValuesListBox, в зависимости от выбраного элемента в EnumsListBox.
+        /// </summary>
+        private void EnumsListBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            ValuesListBox.DataSource = Enum.GetValues(typeof(Color));
+            switch (EnumsListBox.SelectedItem.ToString())
+            {
+                case "Color":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(Color));
+                break;
+
+                case "EducationForm":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(EducationForm));
+                break;
+
+                case "Genre":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(Genre));
+                break;
+
+                case "Manufactures":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(Manufactures));
+                break;
+
+                case "Season":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(Season));
+                break;
+
+                case "Weekday":
+                ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
+                break;
+            }
         }
     }
 }
