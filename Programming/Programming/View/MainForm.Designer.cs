@@ -148,8 +148,10 @@
             // 
             // ValueTextBox
             // 
+            this.ValueTextBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.ValueTextBox.Location = new System.Drawing.Point(297, 43);
             this.ValueTextBox.Name = "ValueTextBox";
+            this.ValueTextBox.ReadOnly = true;
             this.ValueTextBox.Size = new System.Drawing.Size(100, 20);
             this.ValueTextBox.TabIndex = 5;
             // 

@@ -127,7 +127,7 @@ namespace Programming
                 EnumsTabControl.BackColor = ColorTranslator.FromHtml("#fff");
                 EnumsListBox.BackColor = ColorTranslator.FromHtml("#fff");
                 ValuesListBox.BackColor = ColorTranslator.FromHtml("#fff");
-                ValueTextBox.BackColor = ColorTranslator.FromHtml("#fff");
+                ValueTextBox.BackColor = ColorTranslator.FromHtml("#e1e1e1");
                 ParseTextBox.BackColor = ColorTranslator.FromHtml("#fff");
                 SeasonComboBox.BackColor = ColorTranslator.FromHtml("#fff");
                 ParseButton.BackColor = ColorTranslator.FromHtml("#e1e1e1");
