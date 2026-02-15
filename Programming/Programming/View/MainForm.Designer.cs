@@ -72,6 +72,7 @@
             // 
             // EnumsListBox
             // 
+            this.EnumsListBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EnumsListBox.FormattingEnabled = true;
             this.EnumsListBox.Items.AddRange(new object[] {
             "Color",
@@ -122,6 +123,7 @@
             // 
             // ValuesListBox
             // 
+            this.ValuesListBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ValuesListBox.FormattingEnabled = true;
             this.ValuesListBox.Location = new System.Drawing.Point(151, 43);
             this.ValuesListBox.Name = "ValuesListBox";
@@ -177,6 +179,7 @@
             // 
             // ParseButton
             // 
+            this.ParseButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ParseButton.Location = new System.Drawing.Point(204, 46);
             this.ParseButton.Name = "ParseButton";
             this.ParseButton.Size = new System.Drawing.Size(75, 23);
@@ -200,6 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 436);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainForm";
             this.Text = "Programming Demo";
             this.tabControl1.ResumeLayout(false);
