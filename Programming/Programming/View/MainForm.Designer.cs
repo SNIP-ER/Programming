@@ -42,10 +42,15 @@
             this.ParseTextBox = new System.Windows.Forms.TextBox();
             this.ParseButton = new System.Windows.Forms.Button();
             this.DayLabel = new System.Windows.Forms.Label();
+            this.SeasonHandleGroupBox = new System.Windows.Forms.GroupBox();
+            this.SeasonButton = new System.Windows.Forms.Button();
+            this.ChooseSeasonLabel = new System.Windows.Forms.Label();
+            this.SeasonComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.EnumarationsGroupBox.SuspendLayout();
             this.WeekdayParsingGroupBox.SuspendLayout();
+            this.SeasonHandleGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -60,6 +65,7 @@
             // 
             // EnumsTabControl
             // 
+            this.EnumsTabControl.Controls.Add(this.SeasonHandleGroupBox);
             this.EnumsTabControl.Controls.Add(this.WeekdayParsingGroupBox);
             this.EnumsTabControl.Controls.Add(this.EnumarationsGroupBox);
             this.EnumsTabControl.Location = new System.Drawing.Point(4, 22);
@@ -197,6 +203,55 @@
             this.DayLabel.Size = new System.Drawing.Size(0, 13);
             this.DayLabel.TabIndex = 3;
             // 
+            // SeasonHandleGroupBox
+            // 
+            this.SeasonHandleGroupBox.Controls.Add(this.SeasonComboBox);
+            this.SeasonHandleGroupBox.Controls.Add(this.SeasonButton);
+            this.SeasonHandleGroupBox.Controls.Add(this.ChooseSeasonLabel);
+            this.SeasonHandleGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SeasonHandleGroupBox.Location = new System.Drawing.Point(395, 243);
+            this.SeasonHandleGroupBox.Name = "SeasonHandleGroupBox";
+            this.SeasonHandleGroupBox.Size = new System.Drawing.Size(392, 164);
+            this.SeasonHandleGroupBox.TabIndex = 4;
+            this.SeasonHandleGroupBox.TabStop = false;
+            this.SeasonHandleGroupBox.Text = "Season Handle";
+            // 
+            // SeasonButton
+            // 
+            this.SeasonButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SeasonButton.Location = new System.Drawing.Point(136, 46);
+            this.SeasonButton.Name = "SeasonButton";
+            this.SeasonButton.Size = new System.Drawing.Size(75, 23);
+            this.SeasonButton.TabIndex = 2;
+            this.SeasonButton.Text = "GO!";
+            this.SeasonButton.UseVisualStyleBackColor = true;
+            this.SeasonButton.Click += new System.EventHandler(this.SeasonButton_Click);
+            // 
+            // ChooseSeasonLabel
+            // 
+            this.ChooseSeasonLabel.AutoSize = true;
+            this.ChooseSeasonLabel.Location = new System.Drawing.Point(6, 30);
+            this.ChooseSeasonLabel.Name = "ChooseSeasonLabel";
+            this.ChooseSeasonLabel.Size = new System.Drawing.Size(83, 13);
+            this.ChooseSeasonLabel.TabIndex = 0;
+            this.ChooseSeasonLabel.Text = "Choose season:";
+            // 
+            // SeasonComboBox
+            // 
+            this.SeasonComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SeasonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SeasonComboBox.FormattingEnabled = true;
+            this.SeasonComboBox.Items.AddRange(new object[] {
+            "Default",
+            "Winter",
+            "Spring",
+            "Summer",
+            "Autumn"});
+            this.SeasonComboBox.Location = new System.Drawing.Point(9, 47);
+            this.SeasonComboBox.Name = "SeasonComboBox";
+            this.SeasonComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SeasonComboBox.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +267,8 @@
             this.EnumarationsGroupBox.PerformLayout();
             this.WeekdayParsingGroupBox.ResumeLayout(false);
             this.WeekdayParsingGroupBox.PerformLayout();
+            this.SeasonHandleGroupBox.ResumeLayout(false);
+            this.SeasonHandleGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,6 +289,10 @@
         private System.Windows.Forms.TextBox ParseTextBox;
         private System.Windows.Forms.Label TypeValueLabel;
         private System.Windows.Forms.Label DayLabel;
+        private System.Windows.Forms.GroupBox SeasonHandleGroupBox;
+        private System.Windows.Forms.Button SeasonButton;
+        private System.Windows.Forms.Label ChooseSeasonLabel;
+        private System.Windows.Forms.ComboBox SeasonComboBox;
     }
 }
 

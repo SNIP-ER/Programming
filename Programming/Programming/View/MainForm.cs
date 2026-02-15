@@ -17,6 +17,7 @@ namespace Programming
             InitializeComponent();
 
             EnumsListBox.SelectedIndex = 0;  // Изначально выбран 1-ый элемент в EnumsListBox.
+            SeasonComboBox.SelectedIndex = 0;  // Изначально выбран 1-ый элемент в SeasonComboBox.
         }
 
         /// <summary>
@@ -110,6 +111,16 @@ namespace Programming
             {
                 DayLabel.Text = "Нет такого дня недели";
             }
+        }
+
+        /// <summary>
+        /// Кастомизация окна программы в зависимости от выбраного времени года.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SeasonButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
