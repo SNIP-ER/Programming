@@ -15,6 +15,12 @@ namespace Programming
         public MainForm()
         {
             InitializeComponent();
+            FullListBoxWithEnum();
+        }
+
+        private void FullListBoxWithEnum()
+        {
+            ValuesListBox.DataSource = Enum.GetValues(typeof(Color));
         }
     }
 }

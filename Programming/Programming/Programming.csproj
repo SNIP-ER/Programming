@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Color.cs" />
-    <Compile Include="Model\FormStudentTuition.cs" />
+    <Compile Include="Model\EducationForm.cs" />
     <Compile Include="Model\Genre.cs" />
-    <Compile Include="Model\SmartphoneManufacturers.cs" />
-    <Compile Include="Model\TimeOfYear.cs" />
+    <Compile Include="Model\Manufacturers.cs" />
+    <Compile Include="Model\Season.cs" />
     <Compile Include="Model\Weekday.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>

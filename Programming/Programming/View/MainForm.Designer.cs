@@ -66,6 +66,13 @@
             // EnumsListBox
             // 
             this.EnumsListBox.FormattingEnabled = true;
+            this.EnumsListBox.Items.AddRange(new object[] {
+            "Color",
+            "Education Form",
+            "Genre",
+            "Manufactures",
+            "Season",
+            "Weekday"});
             this.EnumsListBox.Location = new System.Drawing.Point(9, 43);
             this.EnumsListBox.Name = "EnumsListBox";
             this.EnumsListBox.Size = new System.Drawing.Size(120, 186);
@@ -153,9 +160,9 @@
         private System.Windows.Forms.GroupBox EnumarationsGroupBox;
         private System.Windows.Forms.Label EnumarationLabel;
         private System.Windows.Forms.Label ValueLabel;
-        private System.Windows.Forms.ListBox ValuesListBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label IntValueTextBox;
+        public System.Windows.Forms.ListBox ValuesListBox;
     }
 }
 

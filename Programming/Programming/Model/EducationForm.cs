@@ -1,4 +1,4 @@
-﻿public enum FormStudentTuition
+﻿public enum EducationForm
 {
     FullTime,
     PartTime,

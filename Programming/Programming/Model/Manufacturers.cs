@@ -1,4 +1,4 @@
-﻿public enum SmartphoneManufacturers
+﻿public enum Manufactures
 {
     Samsung,
     Apple,
