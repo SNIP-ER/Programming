@@ -22,6 +22,8 @@ namespace Programming
         /// <summary>
         /// Показывает элементы в ValuesListBox, в зависимости от выбраного элемента в EnumsListBox.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EnumsListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             switch (EnumsListBox.SelectedItem.ToString())
@@ -50,6 +52,16 @@ namespace Programming
                 ValuesListBox.DataSource = Enum.GetValues(typeof(Weekday));
                 break;
             }
+        }
+
+        /// <summary>
+        /// Пишет в ValueTextBox индекс выбранного элемента в ValueListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ValueTextBox.Text = ValuesListBox.SelectedIndex.ToString();
         }
     }
 }

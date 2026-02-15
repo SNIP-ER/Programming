@@ -36,7 +36,7 @@
             this.ValueLabel = new System.Windows.Forms.Label();
             this.ValuesListBox = new System.Windows.Forms.ListBox();
             this.IntValueTextBox = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ValueTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.EnumarationsGroupBox.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             // EnumarationsGroupBox
             // 
-            this.EnumarationsGroupBox.Controls.Add(this.textBox1);
+            this.EnumarationsGroupBox.Controls.Add(this.ValueTextBox);
             this.EnumarationsGroupBox.Controls.Add(this.IntValueTextBox);
             this.EnumarationsGroupBox.Controls.Add(this.ValueLabel);
             this.EnumarationsGroupBox.Controls.Add(this.ValuesListBox);
@@ -120,6 +120,7 @@
             this.ValuesListBox.Name = "ValuesListBox";
             this.ValuesListBox.Size = new System.Drawing.Size(120, 186);
             this.ValuesListBox.TabIndex = 2;
+            this.ValuesListBox.SelectedIndexChanged += new System.EventHandler(this.ValuesListBox_SelectedIndexChanged);
             // 
             // IntValueTextBox
             // 
@@ -130,12 +131,12 @@
             this.IntValueTextBox.TabIndex = 4;
             this.IntValueTextBox.Text = "Int value:";
             // 
-            // textBox1
+            // ValueTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.ValueTextBox.Location = new System.Drawing.Point(297, 43);
+            this.ValueTextBox.Name = "ValueTextBox";
+            this.ValueTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ValueTextBox.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -161,7 +162,7 @@
         private System.Windows.Forms.GroupBox EnumarationsGroupBox;
         private System.Windows.Forms.Label EnumarationLabel;
         private System.Windows.Forms.Label ValueLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ValueTextBox;
         private System.Windows.Forms.Label IntValueTextBox;
         public System.Windows.Forms.ListBox ValuesListBox;
     }
