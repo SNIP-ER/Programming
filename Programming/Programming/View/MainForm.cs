@@ -120,7 +120,52 @@ namespace Programming
         /// <param name="e"></param>
         private void SeasonButton_Click(object sender, EventArgs e)
         {
+            switch (SeasonComboBox.Text)
+            {
+                case "Default":
+                this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+                EnumsTabControl.BackColor = ColorTranslator.FromHtml("#fff");
+                EnumsListBox.BackColor = ColorTranslator.FromHtml("#fff");
+                ValuesListBox.BackColor = ColorTranslator.FromHtml("#fff");
+                ValueTextBox.BackColor = ColorTranslator.FromHtml("#fff");
+                ParseTextBox.BackColor = ColorTranslator.FromHtml("#fff");
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#fff");
+                ParseButton.BackColor = ColorTranslator.FromHtml("#e1e1e1");
+                SeasonButton.BackColor = ColorTranslator.FromHtml("#e1e1e1");
+                break;
 
+                case "Spring":
+                this.BackColor = ColorTranslator.FromHtml("#559c45");
+                EnumsTabControl.BackColor = ColorTranslator.FromHtml("#83c973");
+                EnumsListBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
+                ValuesListBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
+                ValueTextBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
+                ParseTextBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
+                ParseButton.BackColor = ColorTranslator.FromHtml("#dce87d");
+                SeasonButton.BackColor = ColorTranslator.FromHtml("#dce87d");
+                break;
+
+                case "Autumn":
+                this.BackColor = ColorTranslator.FromHtml("#e29c45");
+                EnumsTabControl.BackColor = ColorTranslator.FromHtml("#e3b781");
+                EnumsListBox.BackColor = ColorTranslator.FromHtml("#e3b781");
+                ValuesListBox.BackColor = ColorTranslator.FromHtml("#e3b781");
+                ValueTextBox.BackColor = ColorTranslator.FromHtml("#e3b781");
+                ParseTextBox.BackColor = ColorTranslator.FromHtml("#e3b781");
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#e3b781");
+                ParseButton.BackColor = ColorTranslator.FromHtml("#d68594");
+                SeasonButton.BackColor = ColorTranslator.FromHtml("#d68594");
+                break;
+
+                case "Summer":
+                MessageBox.Show("Ура! Лето!", "Summer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                break;
+
+                case "Winter":
+                MessageBox.Show("Зима! Скоро Новый Год!", "Winter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                break;
+            }
         }
     }
 }

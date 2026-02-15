@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.AllTabControl = new System.Windows.Forms.TabControl();
             this.EnumsTabControl = new System.Windows.Forms.TabPage();
             this.EnumsListBox = new System.Windows.Forms.ListBox();
             this.EnumarationLabel = new System.Windows.Forms.Label();
@@ -46,22 +46,22 @@
             this.SeasonButton = new System.Windows.Forms.Button();
             this.ChooseSeasonLabel = new System.Windows.Forms.Label();
             this.SeasonComboBox = new System.Windows.Forms.ComboBox();
-            this.tabControl1.SuspendLayout();
+            this.AllTabControl.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.EnumarationsGroupBox.SuspendLayout();
             this.WeekdayParsingGroupBox.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // AllTabControl
             // 
-            this.tabControl1.Controls.Add(this.EnumsTabControl);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 436);
-            this.tabControl1.TabIndex = 0;
+            this.AllTabControl.Controls.Add(this.EnumsTabControl);
+            this.AllTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AllTabControl.Location = new System.Drawing.Point(0, 0);
+            this.AllTabControl.Name = "AllTabControl";
+            this.AllTabControl.SelectedIndex = 0;
+            this.AllTabControl.Size = new System.Drawing.Size(800, 436);
+            this.AllTabControl.TabIndex = 0;
             // 
             // EnumsTabControl
             // 
@@ -257,11 +257,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 436);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.AllTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainForm";
             this.Text = "Programming Demo";
-            this.tabControl1.ResumeLayout(false);
+            this.AllTabControl.ResumeLayout(false);
             this.EnumsTabControl.ResumeLayout(false);
             this.EnumarationsGroupBox.ResumeLayout(false);
             this.EnumarationsGroupBox.PerformLayout();
@@ -275,7 +275,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl AllTabControl;
         private System.Windows.Forms.TabPage EnumsTabControl;
         private System.Windows.Forms.ListBox EnumsListBox;
         private System.Windows.Forms.GroupBox EnumarationsGroupBox;
