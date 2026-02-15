@@ -1,7 +1,7 @@
 ﻿public enum FormStudentTuition
 {
-    Full-time,
-    Part-time,
+    FullTime,
+    PartTime,
     Evening,
     Online
 }
