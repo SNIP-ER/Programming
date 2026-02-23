@@ -1,6 +1,6 @@
 ﻿// песня в плеере
 class Song
 {
-    string name, author;
-    int length;     // длительность песни в сек
+    private string name, author;
+    private int length;     // длительность песни в сек
 }

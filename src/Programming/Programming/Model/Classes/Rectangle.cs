@@ -1,5 +1,5 @@
 ﻿class Rectangle
 {
-    double length, width;
-    string color;
+    private double length, width;
+    private string color;
 }

@@ -1,5 +1,5 @@
 ﻿class Flight
 {
-    string departurePoint, destination;
-    int flightTime;     // В минутах
+    private string departurePoint, destination;
+    private int flightTime;     // В минутах
 }

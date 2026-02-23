@@ -1,5 +1,5 @@
 ﻿class Subject
 {
-    string name, credit;    // credit - зачет/незачет
-    int rating;
+    private string name, credit;    // credit - зачет/незачет
+    private int rating;
 }
