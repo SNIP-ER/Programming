@@ -1,4 +1,5 @@
 ﻿// Контакт в телефонной книжке
+using System;
 using System.Runtime.InteropServices;
 
 class Contact
@@ -20,13 +21,13 @@ class Contact
         get { return number; }
         set
         {
-            if ((number.Length == 11) && (value.Substring(0, 1) == "+7"))
+            if (value.Substring(0) == "+")
             {
                 number = value;
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Телефон должен начинаться с + !"));
             }
         }
     }

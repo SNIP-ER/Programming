@@ -1,4 +1,6 @@
-﻿class Time
+﻿using System;
+
+class Time
 {
     //  hours - от 0 до 23
     //  minutes - от 0 до 60
@@ -16,7 +18,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Часов может быть не меньше 0 и не больше 23!"));
             }
         }
     }
@@ -31,7 +33,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Минут может быть не меньше 0 и не больше 60!"));
             }
         }
     }
@@ -46,7 +48,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Секунд может быть не меньше 0 и не больше 60!"));
             }
         }
     }

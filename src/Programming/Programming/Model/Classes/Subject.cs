@@ -1,4 +1,6 @@
-﻿class Subject
+﻿using System;
+
+class Subject
 {
     private string name, credit;    // credit - зачет/незачет
     private int rating;
@@ -19,7 +21,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Можно писать только зачет/незачет (е/ё)!"));
             }
         }
     }

@@ -1,4 +1,6 @@
-﻿class Film
+﻿using System;
+
+class Film
 {
     private string name, genre;
     private int length, year;   // length - в мин, year - от 1900 до текущего года
@@ -30,7 +32,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Год должен быть не меньше 1900!"));
             }
         }
     }
@@ -45,7 +47,7 @@
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Рейтинг не должен быть меньше 0 и больше 10!"));
             }
         }
     }

@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms.VisualStyles;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms.VisualStyles;
 
 class Rectangle
 {
@@ -16,7 +18,7 @@ class Rectangle
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Длина не может быть отрицательной!"));
             }
         }
     }
@@ -31,7 +33,7 @@ class Rectangle
             }
             else
             {
-
+                throw new ArgumentException(String.Format("Длина не может быть отрицательной!"));
             }
         }
     }
