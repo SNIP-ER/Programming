@@ -3,8 +3,8 @@
 class Time
 {
     //  hours - от 0 до 23
-    //  minutes - от 0 до 60
-    //  seconds - от 0 до 60
+    //  minutes - от 0 до 59
+    //  seconds - от 0 до 59
     private int hours, minutes, seconds;
 
     public int Hours
@@ -27,13 +27,13 @@ class Time
         get { return minutes; }
         set
         {
-            if (value >= 0 && value <= 60)
+            if (value >= 0 && value <= 59)
             {
                 minutes = value;
             }
             else
             {
-                throw new ArgumentException(String.Format("Минут может быть не меньше 0 и не больше 60!"));
+                throw new ArgumentException(String.Format("Минут может быть не меньше 0 и не больше 59!"));
             }
         }
     }
@@ -42,13 +42,13 @@ class Time
         get { return seconds; }
         set
         {
-            if (value >= 0 && value <= 60)
+            if (value >= 0 && value <= 59)
             {
                 seconds = value;
             }
             else
             {
-                throw new ArgumentException(String.Format("Секунд может быть не меньше 0 и не больше 60!"));
+                throw new ArgumentException(String.Format("Секунд может быть не меньше 0 и не больше 59!"));
             }
         }
     }
