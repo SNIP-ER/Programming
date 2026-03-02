@@ -4,17 +4,17 @@ using System.Windows.Forms.VisualStyles;
 
 class Rectangle
 {
-    private double length, width;
+    private double height, width;
     private string color;
 
-    public double Length
+    public double Height
     {
-        get { return length; }
+        get { return height; }
         set
         {
             if (value >= 0)
             {
-                length = value;
+                height = value;
             }
             else
             {
