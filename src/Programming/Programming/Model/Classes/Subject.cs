@@ -2,14 +2,8 @@
 
 class Subject
 {
-    private string name, credit;    // credit - зачет/незачет
-    private int rating;
+    private string credit;    // credit - зачет/незачет
 
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
     public string Credit
     {
         get { return credit; }
@@ -25,9 +19,7 @@ class Subject
             }
         }
     }
-    public int Rating
-    {
-        get { return rating; }
-        set { rating = value; }
-    }
+
+    public string Name { get; set; }
+    public int Rating { get; set; }
 }

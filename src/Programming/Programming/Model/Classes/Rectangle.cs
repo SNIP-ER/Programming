@@ -5,7 +5,6 @@ using System.Windows.Forms.VisualStyles;
 class Rectangle
 {
     private double length, width;
-    private string color;
 
     public double Length
     {
@@ -37,9 +36,6 @@ class Rectangle
             }
         }
     }
-    public string Color
-    {
-        get { return color; }
-        set { color = value; }
-    }
+
+    public string Color { get; set; }
 }

@@ -1,26 +1,11 @@
 ﻿using System;
+using System.Xml.Linq;
 
 class Film
 {
-    private string name, genre;
-    private int length, year;   // length - в мин, year - от 1900 до текущего года
+    private int year;   // year - от 1900 до текущего года
     private double rating;      // от 0 до 10
 
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
-    public string Genre
-    {
-        get { return genre; }
-        set { genre = value; }
-    }
-    public int Length
-    {
-        get { return length; }
-        set { length = value; }
-    }
     public int Year
     {
         get { return year; }
@@ -51,4 +36,8 @@ class Film
             }
         }
     }
+
+    public string Name { get; set; }
+    public string Genre { get; set; }
+    public int Length { get; set; }     // length - в мин
 }

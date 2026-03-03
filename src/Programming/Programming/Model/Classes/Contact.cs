@@ -4,18 +4,8 @@ using System.Runtime.InteropServices;
 
 class Contact
 {
-    private string firstName, lastName, number;
+    private string number;
 
-    public string FirstName
-    {
-        get { return firstName; }
-        set { firstName = value; }
-    }
-    public string LastName
-    {
-        get { return lastName; }
-        set { lastName = value; }
-    }
     public string Number
     {
         get { return number; }
@@ -31,4 +21,6 @@ class Contact
             }
         }
     }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 }
