@@ -52,4 +52,18 @@ class Time
             }
         }
     }
+
+
+    // Конструктор
+    public Time(int hours, int minutes, int seconds)
+    {
+        Hours = hours;
+        Minutes = minutes;
+        Seconds = seconds;
+    }
+
+    public Time()
+    {
+
+    }
 }

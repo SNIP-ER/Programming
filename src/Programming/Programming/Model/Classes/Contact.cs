@@ -23,4 +23,18 @@ class Contact
     }
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+
+    // Конструктор
+    public Contact(string number, string firstName, string lastName)
+    {
+        Number = number;
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    public Contact()
+    {
+
+    }
 }

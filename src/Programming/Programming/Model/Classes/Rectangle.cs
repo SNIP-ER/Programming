@@ -38,4 +38,18 @@ class Rectangle
     }
 
     public string Color { get; set; }
+
+
+    // Конструктор
+    public Rectangle(double length, double width, string color)
+    {
+        Length = length;
+        Width = width;
+        Color = color;
+    }
+
+    public Rectangle()
+    {
+
+    }
 }

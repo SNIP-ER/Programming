@@ -22,4 +22,18 @@ class Subject
 
     public string Name { get; set; }
     public int Rating { get; set; }
+
+
+    // Конструктор
+    public Subject(string credit, string name, int rating)
+    {
+        Credit = credit;
+        Name = name;
+        Rating = rating;
+    }
+
+    public Subject()
+    {
+
+    }
 }
