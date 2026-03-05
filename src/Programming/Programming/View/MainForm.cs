@@ -12,12 +12,25 @@ namespace Programming
 {
     public partial class MainForm : Form
     {
+        private Rectangle[] _rectangles;
+        private Rectangle _currentRectangle;
+
         public MainForm()
         {
             InitializeComponent();
 
             EnumsListBox.SelectedIndex = 0;  // Изначально выбран 1-ый элемент в EnumsListBox.
             SeasonComboBox.SelectedIndex = 0;  // Изначально выбран 1-ый элемент в SeasonComboBox.
+
+            Random random = new Random();
+
+            _rectangles = new Rectangle[5];
+
+            _rectangles[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue");
+            _rectangles[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green");
+            _rectangles[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red");
+            _rectangles[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow");
+            _rectangles[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy");
         }
 
         /// <summary>
@@ -166,6 +179,128 @@ namespace Programming
                 MessageBox.Show("Зима! Скоро Новый Год!", "Winter", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
             }
+        }
+
+
+
+        /// <summary>
+        /// Смена объекта в поле _currentRectangle на один из объектов из массива _rectangles.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
+
+            RectanglesLengthTextBox.Text = _currentRectangle.Length.ToString();
+            RectanglesWidthTextBox.Text = _currentRectangle.Width.ToString();
+            RectanglesColorTextBox.Text = _currentRectangle.Color.ToString();
+        }
+
+        /// <summary>
+        /// Изменение длины вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesLengthTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int newLength = Convert.ToInt32(RectanglesLengthTextBox.Text);
+
+                if (newLength >= 0)
+                {
+                    RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
+                    _currentRectangle.Length = newLength;
+                }
+                else
+                {
+                    RectanglesLengthTextBox.Text = "";
+                    MessageBox.Show("Длина не может быть отрицательной!", "Ошибка!", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                RectanglesLengthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно и нужно вводить только цифры!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Изменение ширины вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesWidthTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int newWidth = Convert.ToInt32(RectanglesWidthTextBox.Text);
+
+                if (newWidth >= 0)
+                {
+                    RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
+                    _currentRectangle.Width = newWidth;
+                }
+                else
+                {
+                    RectanglesWidthTextBox.Text = "";
+                    MessageBox.Show("Длина не может быть отрицательной!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                RectanglesWidthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно и нужно вводить только цифры!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Изменение цвета вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesColorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentRectangle.Color = RectanglesColorTextBox.Text;
+        }
+
+
+
+        /// <summary>
+        /// Находит прямоугольник с наиболшей шириной.
+        /// </summary>
+        /// <param name="_rectangles">Массив прямоугольников.</param>
+        /// <returns>Индекс прямоугольника с наибольшей шириной.</returns>
+        private int FindRectangleWithMaxWidth(Rectangle[] _rectangles)
+        {
+            int maxWidth = 0;
+            int maxIndex = 0;
+
+            for (int i = 0; i < _rectangles.Length - 1; i++)
+            {
+                if (_rectangles[i].Width > maxWidth)
+                {
+                    maxWidth = _rectangles[i].Width;
+                    maxIndex = i;
+                }
+            }
+
+            return maxIndex;
+        }
+
+        /// <summary>
+        /// Обработка нажатия на кнопку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButton_Click(object sender, EventArgs e)
+        {
+            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
         }
     }
 }
