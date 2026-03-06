@@ -72,6 +72,8 @@
             this.FilmYearTextBox = new System.Windows.Forms.TextBox();
             this.FilmDurationTextBox = new System.Windows.Forms.TextBox();
             this.FilmFindButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.AllTabControl.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
@@ -81,6 +83,7 @@
             this.ClassesGroupBox.SuspendLayout();
             this.RectanglesInstructionGroupBox.SuspendLayout();
             this.FilmsGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllTabControl
@@ -287,6 +290,7 @@
             // 
             // Classes
             // 
+            this.Classes.Controls.Add(this.groupBox1);
             this.Classes.Controls.Add(this.FilmsGroupBox);
             this.Classes.Controls.Add(this.RectanglesInstructionGroupBox);
             this.Classes.Controls.Add(this.ClassesGroupBox);
@@ -558,6 +562,25 @@
             this.FilmFindButton.UseVisualStyleBackColor = true;
             this.FilmFindButton.Click += new System.EventHandler(this.FilmFindButton_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(317, 239);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(475, 171);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Инструкция";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(417, 117);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +605,8 @@
             this.RectanglesInstructionGroupBox.PerformLayout();
             this.FilmsGroupBox.ResumeLayout(false);
             this.FilmsGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -631,6 +656,8 @@
         private System.Windows.Forms.TextBox FilmRatingTextBox;
         private System.Windows.Forms.TextBox FilmGenreTextBox;
         private System.Windows.Forms.Button FilmFindButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
