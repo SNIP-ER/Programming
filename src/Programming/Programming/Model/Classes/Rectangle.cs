@@ -4,9 +4,9 @@ using System.Windows.Forms.VisualStyles;
 
 class Rectangle
 {
-    private int length, width;
+    private float length, width;
 
-    public int Length
+    public float Length
     {
         get { return length; }
         set
@@ -21,7 +21,7 @@ class Rectangle
             }
         }
     }
-    public int Width
+    public float Width
     {
         get { return width; }
         set
@@ -41,7 +41,7 @@ class Rectangle
 
 
     // Конструктор
-    public Rectangle(int length, int width, string color)
+    public Rectangle(float length, float width, string color)
     {
         Length = length;
         Width = width;

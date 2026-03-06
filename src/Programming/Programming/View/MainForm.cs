@@ -206,7 +206,7 @@ namespace Programming
         {
             try
             {
-                int newLength = Convert.ToInt32(RectanglesLengthTextBox.Text);
+                float newLength = float.Parse(RectanglesLengthTextBox.Text);
 
                 if (newLength >= 0)
                 {
@@ -223,7 +223,7 @@ namespace Programming
             catch
             {
                 RectanglesLengthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
-                MessageBox.Show("Можно и нужно вводить только цифры!", "Ошибка!",
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -237,7 +237,7 @@ namespace Programming
         {
             try
             {
-                int newWidth = Convert.ToInt32(RectanglesWidthTextBox.Text);
+                float newWidth = float.Parse(RectanglesWidthTextBox.Text);
 
                 if (newWidth >= 0)
                 {
@@ -254,7 +254,7 @@ namespace Programming
             catch
             {
                 RectanglesWidthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
-                MessageBox.Show("Можно и нужно вводить только цифры!", "Ошибка!",
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -278,7 +278,7 @@ namespace Programming
         /// <returns>Индекс прямоугольника с наибольшей шириной.</returns>
         private int FindRectangleWithMaxWidth(Rectangle[] _rectangles)
         {
-            int maxWidth = 0;
+            float maxWidth = 0;
             int maxIndex = 0;
 
             for (int i = 0; i < _rectangles.Length - 1; i++)
