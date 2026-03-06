@@ -39,17 +39,17 @@ class Film
 
     public string Name { get; set; }
     public string Genre { get; set; }
-    public int Length { get; set; }     // length - в мин
+    public int Duration { get; set; }     // duration - в мин
 
 
     // Конструктор
-    public Film(int year, double rating, string name, string genre, int length)
+    public Film(int year, double rating, string name, string genre, int duration)
     {
         Year = year;
         Rating = rating;
         Name = name;
         Genre = genre;
-        Length = length;
+        Duration = duration;
     }
 
     public Film()

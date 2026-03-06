@@ -59,6 +59,19 @@
             this.RectanglesListBox = new System.Windows.Forms.ListBox();
             this.RectanglesInstructionGroupBox = new System.Windows.Forms.GroupBox();
             this.RectanglesInstructionLabel = new System.Windows.Forms.Label();
+            this.FilmsGroupBox = new System.Windows.Forms.GroupBox();
+            this.FilmsListBox = new System.Windows.Forms.ListBox();
+            this.FilmNameLabel = new System.Windows.Forms.Label();
+            this.FilmNameTextBox = new System.Windows.Forms.TextBox();
+            this.FilmGenreLabel = new System.Windows.Forms.Label();
+            this.FilmRatingLabel = new System.Windows.Forms.Label();
+            this.FilmYearLabel = new System.Windows.Forms.Label();
+            this.FilmDurationLabel = new System.Windows.Forms.Label();
+            this.FilmGenreTextBox = new System.Windows.Forms.TextBox();
+            this.FilmRatingTextBox = new System.Windows.Forms.TextBox();
+            this.FilmYearTextBox = new System.Windows.Forms.TextBox();
+            this.FilmDurationTextBox = new System.Windows.Forms.TextBox();
+            this.FilmFindButton = new System.Windows.Forms.Button();
             this.AllTabControl.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
@@ -67,6 +80,7 @@
             this.Classes.SuspendLayout();
             this.ClassesGroupBox.SuspendLayout();
             this.RectanglesInstructionGroupBox.SuspendLayout();
+            this.FilmsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AllTabControl
@@ -273,6 +287,7 @@
             // 
             // Classes
             // 
+            this.Classes.Controls.Add(this.FilmsGroupBox);
             this.Classes.Controls.Add(this.RectanglesInstructionGroupBox);
             this.Classes.Controls.Add(this.ClassesGroupBox);
             this.Classes.Location = new System.Drawing.Point(4, 22);
@@ -338,25 +353,28 @@
             // 
             // RectanglesColorTextBox
             // 
+            this.RectanglesColorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RectanglesColorTextBox.Location = new System.Drawing.Point(156, 144);
             this.RectanglesColorTextBox.Name = "RectanglesColorTextBox";
-            this.RectanglesColorTextBox.Size = new System.Drawing.Size(118, 20);
+            this.RectanglesColorTextBox.Size = new System.Drawing.Size(118, 22);
             this.RectanglesColorTextBox.TabIndex = 3;
             this.RectanglesColorTextBox.TextChanged += new System.EventHandler(this.RectanglesColorTextBox_TextChanged);
             // 
             // RectanglesWidthTextBox
             // 
+            this.RectanglesWidthTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RectanglesWidthTextBox.Location = new System.Drawing.Point(156, 91);
             this.RectanglesWidthTextBox.Name = "RectanglesWidthTextBox";
-            this.RectanglesWidthTextBox.Size = new System.Drawing.Size(118, 20);
+            this.RectanglesWidthTextBox.Size = new System.Drawing.Size(118, 22);
             this.RectanglesWidthTextBox.TabIndex = 2;
             this.RectanglesWidthTextBox.TextChanged += new System.EventHandler(this.RectanglesWidthTextBox_TextChanged);
             // 
             // RectanglesLengthTextBox
             // 
+            this.RectanglesLengthTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RectanglesLengthTextBox.Location = new System.Drawing.Point(156, 35);
             this.RectanglesLengthTextBox.Name = "RectanglesLengthTextBox";
-            this.RectanglesLengthTextBox.Size = new System.Drawing.Size(118, 20);
+            this.RectanglesLengthTextBox.Size = new System.Drawing.Size(118, 22);
             this.RectanglesLengthTextBox.TabIndex = 1;
             this.RectanglesLengthTextBox.TextChanged += new System.EventHandler(this.RectanglesLengthTextBox_TextChanged);
             // 
@@ -396,6 +414,150 @@
             this.RectanglesInstructionLabel.TabIndex = 0;
             this.RectanglesInstructionLabel.Text = resources.GetString("RectanglesInstructionLabel.Text");
             // 
+            // FilmsGroupBox
+            // 
+            this.FilmsGroupBox.Controls.Add(this.FilmFindButton);
+            this.FilmsGroupBox.Controls.Add(this.FilmDurationTextBox);
+            this.FilmsGroupBox.Controls.Add(this.FilmYearTextBox);
+            this.FilmsGroupBox.Controls.Add(this.FilmRatingTextBox);
+            this.FilmsGroupBox.Controls.Add(this.FilmGenreTextBox);
+            this.FilmsGroupBox.Controls.Add(this.FilmDurationLabel);
+            this.FilmsGroupBox.Controls.Add(this.FilmYearLabel);
+            this.FilmsGroupBox.Controls.Add(this.FilmRatingLabel);
+            this.FilmsGroupBox.Controls.Add(this.FilmGenreLabel);
+            this.FilmsGroupBox.Controls.Add(this.FilmNameTextBox);
+            this.FilmsGroupBox.Controls.Add(this.FilmNameLabel);
+            this.FilmsGroupBox.Controls.Add(this.FilmsListBox);
+            this.FilmsGroupBox.Location = new System.Drawing.Point(317, 0);
+            this.FilmsGroupBox.Name = "FilmsGroupBox";
+            this.FilmsGroupBox.Size = new System.Drawing.Size(475, 233);
+            this.FilmsGroupBox.TabIndex = 3;
+            this.FilmsGroupBox.TabStop = false;
+            this.FilmsGroupBox.Text = "Films";
+            // 
+            // FilmsListBox
+            // 
+            this.FilmsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmsListBox.FormattingEnabled = true;
+            this.FilmsListBox.ItemHeight = 16;
+            this.FilmsListBox.Items.AddRange(new object[] {
+            "Film 1",
+            "Film 2",
+            "Film 3",
+            "Film 4",
+            "Film 5"});
+            this.FilmsListBox.Location = new System.Drawing.Point(7, 20);
+            this.FilmsListBox.Name = "FilmsListBox";
+            this.FilmsListBox.Size = new System.Drawing.Size(105, 196);
+            this.FilmsListBox.TabIndex = 0;
+            this.FilmsListBox.SelectedIndexChanged += new System.EventHandler(this.FilmsListBox_SelectedIndexChanged);
+            // 
+            // FilmNameLabel
+            // 
+            this.FilmNameLabel.AutoSize = true;
+            this.FilmNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmNameLabel.Location = new System.Drawing.Point(272, 20);
+            this.FilmNameLabel.Name = "FilmNameLabel";
+            this.FilmNameLabel.Size = new System.Drawing.Size(44, 16);
+            this.FilmNameLabel.TabIndex = 1;
+            this.FilmNameLabel.Text = "Name";
+            // 
+            // FilmNameTextBox
+            // 
+            this.FilmNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmNameTextBox.Location = new System.Drawing.Point(122, 39);
+            this.FilmNameTextBox.Name = "FilmNameTextBox";
+            this.FilmNameTextBox.Size = new System.Drawing.Size(345, 22);
+            this.FilmNameTextBox.TabIndex = 2;
+            this.FilmNameTextBox.TextChanged += new System.EventHandler(this.FilmNameTextBox_TextChanged);
+            // 
+            // FilmGenreLabel
+            // 
+            this.FilmGenreLabel.AutoSize = true;
+            this.FilmGenreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmGenreLabel.Location = new System.Drawing.Point(173, 72);
+            this.FilmGenreLabel.Name = "FilmGenreLabel";
+            this.FilmGenreLabel.Size = new System.Drawing.Size(44, 16);
+            this.FilmGenreLabel.TabIndex = 3;
+            this.FilmGenreLabel.Text = "Genre";
+            // 
+            // FilmRatingLabel
+            // 
+            this.FilmRatingLabel.AutoSize = true;
+            this.FilmRatingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmRatingLabel.Location = new System.Drawing.Point(373, 72);
+            this.FilmRatingLabel.Name = "FilmRatingLabel";
+            this.FilmRatingLabel.Size = new System.Drawing.Size(46, 16);
+            this.FilmRatingLabel.TabIndex = 4;
+            this.FilmRatingLabel.Text = "Rating";
+            // 
+            // FilmYearLabel
+            // 
+            this.FilmYearLabel.AutoSize = true;
+            this.FilmYearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmYearLabel.Location = new System.Drawing.Point(173, 125);
+            this.FilmYearLabel.Name = "FilmYearLabel";
+            this.FilmYearLabel.Size = new System.Drawing.Size(36, 16);
+            this.FilmYearLabel.TabIndex = 5;
+            this.FilmYearLabel.Text = "Year";
+            // 
+            // FilmDurationLabel
+            // 
+            this.FilmDurationLabel.AutoSize = true;
+            this.FilmDurationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmDurationLabel.Location = new System.Drawing.Point(362, 125);
+            this.FilmDurationLabel.Name = "FilmDurationLabel";
+            this.FilmDurationLabel.Size = new System.Drawing.Size(57, 16);
+            this.FilmDurationLabel.TabIndex = 6;
+            this.FilmDurationLabel.Text = "Duration";
+            // 
+            // FilmGenreTextBox
+            // 
+            this.FilmGenreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmGenreTextBox.Location = new System.Drawing.Point(122, 91);
+            this.FilmGenreTextBox.Name = "FilmGenreTextBox";
+            this.FilmGenreTextBox.Size = new System.Drawing.Size(149, 22);
+            this.FilmGenreTextBox.TabIndex = 7;
+            this.FilmGenreTextBox.TextChanged += new System.EventHandler(this.FilmGenreTextBox_TextChanged);
+            // 
+            // FilmRatingTextBox
+            // 
+            this.FilmRatingTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmRatingTextBox.Location = new System.Drawing.Point(318, 91);
+            this.FilmRatingTextBox.Name = "FilmRatingTextBox";
+            this.FilmRatingTextBox.Size = new System.Drawing.Size(149, 22);
+            this.FilmRatingTextBox.TabIndex = 8;
+            this.FilmRatingTextBox.TextChanged += new System.EventHandler(this.FilmRatingTextBox_TextChanged);
+            // 
+            // FilmYearTextBox
+            // 
+            this.FilmYearTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmYearTextBox.Location = new System.Drawing.Point(122, 144);
+            this.FilmYearTextBox.Name = "FilmYearTextBox";
+            this.FilmYearTextBox.Size = new System.Drawing.Size(149, 22);
+            this.FilmYearTextBox.TabIndex = 9;
+            this.FilmYearTextBox.TextChanged += new System.EventHandler(this.FilmYearTextBox_TextChanged);
+            // 
+            // FilmDurationTextBox
+            // 
+            this.FilmDurationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmDurationTextBox.Location = new System.Drawing.Point(318, 144);
+            this.FilmDurationTextBox.Name = "FilmDurationTextBox";
+            this.FilmDurationTextBox.Size = new System.Drawing.Size(149, 22);
+            this.FilmDurationTextBox.TabIndex = 10;
+            this.FilmDurationTextBox.TextChanged += new System.EventHandler(this.FilmDurationTextBox_TextChanged);
+            // 
+            // FilmFindButton
+            // 
+            this.FilmFindButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FilmFindButton.Location = new System.Drawing.Point(241, 193);
+            this.FilmFindButton.Name = "FilmFindButton";
+            this.FilmFindButton.Size = new System.Drawing.Size(107, 23);
+            this.FilmFindButton.TabIndex = 11;
+            this.FilmFindButton.Text = "Find";
+            this.FilmFindButton.UseVisualStyleBackColor = true;
+            this.FilmFindButton.Click += new System.EventHandler(this.FilmFindButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +580,8 @@
             this.ClassesGroupBox.PerformLayout();
             this.RectanglesInstructionGroupBox.ResumeLayout(false);
             this.RectanglesInstructionGroupBox.PerformLayout();
+            this.FilmsGroupBox.ResumeLayout(false);
+            this.FilmsGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -454,6 +618,19 @@
         private System.Windows.Forms.Button RectanglesButton;
         private System.Windows.Forms.GroupBox RectanglesInstructionGroupBox;
         private System.Windows.Forms.Label RectanglesInstructionLabel;
+        private System.Windows.Forms.GroupBox FilmsGroupBox;
+        private System.Windows.Forms.ListBox FilmsListBox;
+        private System.Windows.Forms.TextBox FilmNameTextBox;
+        private System.Windows.Forms.Label FilmNameLabel;
+        private System.Windows.Forms.Label FilmRatingLabel;
+        private System.Windows.Forms.Label FilmGenreLabel;
+        private System.Windows.Forms.Label FilmDurationLabel;
+        private System.Windows.Forms.Label FilmYearLabel;
+        private System.Windows.Forms.TextBox FilmDurationTextBox;
+        private System.Windows.Forms.TextBox FilmYearTextBox;
+        private System.Windows.Forms.TextBox FilmRatingTextBox;
+        private System.Windows.Forms.TextBox FilmGenreTextBox;
+        private System.Windows.Forms.Button FilmFindButton;
     }
 }
 

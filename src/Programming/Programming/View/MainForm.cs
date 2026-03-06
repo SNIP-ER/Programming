@@ -15,6 +15,9 @@ namespace Programming
         private Rectangle[] _rectangles;
         private Rectangle _currentRectangle;
 
+        private Film[] _films;
+        private Film _currentFilm;
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,6 +27,7 @@ namespace Programming
 
             Random random = new Random();
 
+
             _rectangles = new Rectangle[5];
 
             _rectangles[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue");
@@ -31,6 +35,15 @@ namespace Programming
             _rectangles[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red");
             _rectangles[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow");
             _rectangles[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy");
+
+
+            _films = new Film[5];
+
+            _films[0] = new Film(2018, 8.1, "Мстители: Война бесконечности", "Боевик/Научная фантастика", 149);
+            _films[1] = new Film(1979, 8.7, "Москва слезам не верит", "Комедия/Романтика", 150);
+            _films[2] = new Film(2011, 9, "1+1", "Комедия/Драма", 112);
+            _films[3] = new Film(2013, 7.2, "Сталинград", "Военный/Боевик", 131);
+            _films[4] = new Film(2003, 8.1, "Бумер", "Криминал/Боевик", 110);
         }
 
         /// <summary>
@@ -269,8 +282,6 @@ namespace Programming
             _currentRectangle.Color = RectanglesColorTextBox.Text;
         }
 
-
-
         /// <summary>
         /// Находит прямоугольник с наиболшей шириной.
         /// </summary>
@@ -281,7 +292,7 @@ namespace Programming
             float maxWidth = 0;
             int maxIndex = 0;
 
-            for (int i = 0; i < _rectangles.Length - 1; i++)
+            for (int i = 0; i < _rectangles.Length; i++)
             {
                 if (_rectangles[i].Width > maxWidth)
                 {
@@ -301,6 +312,169 @@ namespace Programming
         private void RectanglesButton_Click(object sender, EventArgs e)
         {
             RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+        }
+
+
+
+        /// <summary>
+        /// Смена объекта в поле _currentFilm на один из объектов из массива _films.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentFilm = _films[FilmsListBox.SelectedIndex];
+
+            FilmNameTextBox.Text = _currentFilm.Name.ToString();
+            FilmGenreTextBox.Text = _currentFilm.Genre.ToString();
+            FilmRatingTextBox.Text = _currentFilm.Rating.ToString();
+            FilmYearTextBox.Text = _currentFilm.Year.ToString();
+            FilmDurationTextBox.Text = _currentFilm.Duration.ToString();
+        }
+
+        /// <summary>
+        /// Изменение названия вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentFilm.Name = FilmNameTextBox.Text;
+        }
+
+        /// <summary>
+        /// Изменение жанра вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmGenreTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentFilm.Genre = FilmGenreTextBox.Text;
+        }
+
+        /// <summary>
+        /// Изменение рейтинга вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmRatingTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double newRating = Convert.ToDouble(FilmRatingTextBox.Text);
+
+                if ((newRating >= 0) && (newRating <= 10))
+                {
+                    FilmRatingTextBox.BackColor = System.Drawing.Color.White;
+                    _currentFilm.Rating = newRating;
+                }
+                else
+                {
+                    FilmRatingTextBox.Text = "";
+                    MessageBox.Show("Рейтинг может быть от 0 до 10!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                FilmRatingTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Изменение года вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmYearTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int newYear = Convert.ToInt32(FilmYearTextBox.Text);
+
+                if ((newYear >= 1900) && (newYear <= 2026))
+                {
+                    FilmYearTextBox.BackColor = System.Drawing.Color.White;
+                    _currentFilm.Year = newYear;
+                }
+                else
+                {
+                    FilmYearTextBox.Text = "";
+                    MessageBox.Show("Год должен быть от 1900 до 2026!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                FilmYearTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Изменение продолжительности вручную пользователем.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmDurationTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int newDuration = Convert.ToInt32(FilmDurationTextBox.Text);
+
+                if (newDuration > 0)
+                {
+                    FilmDurationTextBox.BackColor = System.Drawing.Color.White;
+                    _currentFilm.Duration = newDuration;
+                }
+                else
+                {
+                    FilmDurationTextBox.Text = "";
+                    MessageBox.Show("Продолжительность не может быть <= 0!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                FilmDurationTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Находит фильм с наиболшим рейтингом.
+        /// </summary>
+        /// <param name="_films">Массив фильмов.</param>
+        /// <returns>Индекс фильма с наибольшим рейтингом.</returns>
+        private int FindFilmWithMaxRating(Film[] _films)
+        {
+            double maxRating = 0;
+            int maxIndex = 0;
+
+            for (int i = 0; i < _films.Length; i++)
+            {
+                if (_films[i].Rating > maxRating)
+                {
+                    maxRating = _films[i].Rating;
+                    maxIndex = i;
+                }
+            }
+
+            return maxIndex;
+        }
+
+        /// <summary>
+        /// Обработка нажатия на кнопку.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FilmFindButton_Click(object sender, EventArgs e)
+        {
+            FilmsListBox.SelectedIndex = FindFilmWithMaxRating(_films);
         }
     }
 }
