@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RectanglesInstructionLabel.Text" xml:space="preserve">
+    <value>При выборе прямоугольника справа пишется его 
+длина, ширина и цвет .
+
+Можно вписывать свои значения:
+1) Length и Width можно вписывать только цифры и , .
+2) Не должно быть пустых полей !
+
+При нажатии на кнопку Find - выделится прямоугольник
+с наибольшей шириной .</value>
+  </data>
 </root>
