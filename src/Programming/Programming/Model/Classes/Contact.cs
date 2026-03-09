@@ -29,10 +29,7 @@ class Contact
         get { return name; }
         set
         {
-            if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
-            {
-                name = value;
-            }
+            name = AssertStringContainsOnlyLetters(value);
         }
     }
     public string SurName
@@ -40,13 +37,27 @@ class Contact
         get { return surName; }
         set
         {
-            if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
-            {
-                surName = value;
-            }
+            surName = AssertStringContainsOnlyLetters(value);
         }
     }
 
+    /// <summary>
+    /// Проверка, что пользователь ввел в имя/фамилия только символы англ алфавита.
+    /// </summary>
+    /// <param name="value">Строка, которую ввел пользователь.</param>
+    /// <returns>Строка, если она подходит.</returns>
+    /// <exception cref="ArgumentException"></exception>
+    private string AssertStringContainsOnlyLetters(string value)
+    {
+        if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
+        {
+            return value;
+        }
+        else
+        {
+            throw new ArgumentException(String.Format("Имя и фамилия могут состоять только из букв англ алфавита!"));
+        }
+    }
 
     // Конструктор
     public Contact(string number, string name, string surName)
