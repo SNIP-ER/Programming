@@ -39,4 +39,46 @@ static class Validator
             throw new ArgumentException(String.Format($"Свойство {property} не может быть отрицательным!"));
         }
     }
+
+    /// <summary>
+    /// Проверка на попадания в диапазон целых значений.
+    /// </summary>
+    /// <param name="value">Значение пользователя.</param>
+    /// <param name="min">Наименьшее значение в диапазоне.</param>
+    /// <param name="max">Наибольшее значение в диапазоне.</param>
+    /// <param name="property">Название свойства.</param>
+    /// <returns>Пользователькое значение.</returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static int AssertValueInRange(int value, int min, int max, string property)
+    {
+        if ((value >= min) && (value <= max))
+        {
+            return value;
+        }
+        else
+        {
+            throw new ArgumentException(String.Format($"Значение в свойстве {property} не попадает в диапазон!"));
+        }
+    }
+
+    /// <summary>
+    /// Проверка на попадания в диапазон вещественных значений.
+    /// </summary>
+    /// <param name="value">Значение пользователя.</param>
+    /// <param name="min">Наименьшее значение в диапазоне.</param>
+    /// <param name="max">Наибольшее значение в диапазоне.</param>
+    /// <param name="property">Название свойства.</param>
+    /// <returns>Пользователькое значение.</returns>
+    /// <exception cref="ArgumentException"></exception>
+    public static double AssertValueInRange(double value, int min, int max, string property)
+    {
+        if ((value >= min) && (value <= max))
+        {
+            return value;
+        }
+        else
+        {
+            throw new ArgumentException(String.Format($"Значение в свойстве {property} не попадает в диапазон!"));
+        }
+    }
 }

@@ -12,14 +12,7 @@ class Time
         get { return hours; }
         set
         {
-            if (value >= 0 && value <= 23)
-            {
-                hours = value;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("Часов может быть не меньше 0 и не больше 23!"));
-            }
+            hours = Validator.AssertValueInRange(value, 0, 23, "Hours");
         }
     }
     public int Minutes
@@ -27,14 +20,7 @@ class Time
         get { return minutes; }
         set
         {
-            if (value >= 0 && value <= 59)
-            {
-                minutes = value;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("Минут может быть не меньше 0 и не больше 59!"));
-            }
+            minutes = Validator.AssertValueInRange(value, 0, 59, "Minutes");
         }
     }
     public int Seconds
@@ -42,14 +28,7 @@ class Time
         get { return seconds; }
         set
         {
-            if (value >= 0 && value <= 59)
-            {
-                seconds = value;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("Секунд может быть не меньше 0 и не больше 59!"));
-            }
+            seconds = Validator.AssertValueInRange(value, 0, 59, "Seconds");
         }
     }
 

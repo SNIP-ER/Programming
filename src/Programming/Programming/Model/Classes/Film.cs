@@ -11,14 +11,7 @@ class Film
         get { return year; }
         set
         {
-            if (value >= 1900)
-            {
-                year = value;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("Год должен быть не меньше 1900!"));
-            }
+            year = Validator.AssertValueInRange(value, 1900, 2026, "Year");
         }
     }
     public double Rating
@@ -26,14 +19,7 @@ class Film
         get { return rating; }
         set
         {
-            if ((value >= 0) && (value <= 10))
-            {
-                rating = value;
-            }
-            else
-            {
-                throw new ArgumentException(String.Format("Рейтинг не должен быть меньше 0 и больше 10!"));
-            }
+            rating = Validator.AssertValueInRange(value, 0, 10, "Rating");
         }
     }
     public int Duration
