@@ -21,16 +21,16 @@ class Contact
             }
         }
     }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public string Name { get; set; }
+    public string SurName { get; set; }
 
 
     // Конструктор
-    public Contact(string number, string firstName, string lastName)
+    public Contact(string number, string name, string surName)
     {
         Number = number;
-        FirstName = firstName;
-        LastName = lastName;
+        Name = name;
+        SurName = surName;
     }
 
     public Contact()
