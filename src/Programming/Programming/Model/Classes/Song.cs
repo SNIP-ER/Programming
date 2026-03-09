@@ -3,7 +3,17 @@ class Song
 {
     public string Name { get; set; }
     public string Author { get; set; }
-    public int Length { get; set; }     // длительность песни в сек
+
+    private int length;     // длительность песни в сек
+
+    public int Length
+    {
+        get { return length; }
+        set
+        {
+            length = (int)Validator.AssertOnPositiveValue((float)value, "Length");
+        }
+    }     
 
 
     // Конструктор
