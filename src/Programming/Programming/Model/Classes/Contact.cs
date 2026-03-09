@@ -1,10 +1,13 @@
 ﻿// Контакт в телефонной книжке
 using System;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 class Contact
 {
     private string number;
+    private string name;
+    private string surName;
 
     public string Number
     {
@@ -21,8 +24,28 @@ class Contact
             }
         }
     }
-    public string Name { get; set; }
-    public string SurName { get; set; }
+    public string Name
+    {
+        get { return name; }
+        set
+        {
+            if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
+            {
+                name = value;
+            }
+        }
+    }
+    public string SurName
+    {
+        get { return surName; }
+        set
+        {
+            if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
+            {
+                surName = value;
+            }
+        }
+    }
 
 
     // Конструктор
