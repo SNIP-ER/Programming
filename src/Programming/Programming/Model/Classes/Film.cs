@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 class Film
 {
-    private int year;   // year - от 1900 до текущего года
+    private int year, duration;   // year - от 1900 до текущего года;  duration - в мин
     private double rating;      // от 0 до 10
 
     public int Year
@@ -36,10 +36,17 @@ class Film
             }
         }
     }
+    public int Duration
+    {
+        get { return duration; }
+        set
+        {
+            duration = (int)Validator.AssertOnPositiveValue((float)value, "Duration");
+        }
+    }
 
     public string Name { get; set; }
     public string Genre { get; set; }
-    public int Duration { get; set; }     // duration - в мин
 
 
     // Конструктор
