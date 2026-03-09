@@ -11,7 +11,7 @@ class Song
         get { return length; }
         set
         {
-            length = (int)Validator.AssertOnPositiveValue((float)value, "Length");
+            length = Validator.AssertOnPositiveValue(value, "Length");
         }
     }     
 

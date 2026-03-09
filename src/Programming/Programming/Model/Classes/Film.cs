@@ -41,7 +41,7 @@ class Film
         get { return duration; }
         set
         {
-            duration = (int)Validator.AssertOnPositiveValue((float)value, "Duration");
+            duration = Validator.AssertOnPositiveValue(value, "Duration");
         }
     }
 

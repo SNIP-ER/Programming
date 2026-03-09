@@ -10,7 +10,7 @@
         get { return flightTime; }
         set
         {
-            flightTime = (int)Validator.AssertOnPositiveValue((float)value, "FlightTime");
+            flightTime = Validator.AssertOnPositiveValue(value, "FlightTime");
         }
     }
 
