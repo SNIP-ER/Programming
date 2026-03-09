@@ -29,7 +29,7 @@ class Contact
         get { return name; }
         set
         {
-            name = AssertStringContainsOnlyLetters(value);
+            name = AssertStringContainsOnlyLetters(value, "Имя");
         }
     }
     public string SurName
@@ -37,7 +37,7 @@ class Contact
         get { return surName; }
         set
         {
-            surName = AssertStringContainsOnlyLetters(value);
+            surName = AssertStringContainsOnlyLetters(value, "Фамилия");
         }
     }
 
@@ -47,7 +47,7 @@ class Contact
     /// <param name="value">Строка, которую ввел пользователь.</param>
     /// <returns>Строка, если она подходит.</returns>
     /// <exception cref="ArgumentException"></exception>
-    private string AssertStringContainsOnlyLetters(string value)
+    private string AssertStringContainsOnlyLetters(string value, string type)
     {
         if (Regex.IsMatch(value, @"^[a-z]+$", RegexOptions.IgnoreCase))
         {
@@ -55,7 +55,7 @@ class Contact
         }
         else
         {
-            throw new ArgumentException(String.Format("Имя и фамилия могут состоять только из букв англ алфавита!"));
+            throw new ArgumentException(String.Format($"{type} может состоять только из букв англ алфавита!"));
         }
     }
 
