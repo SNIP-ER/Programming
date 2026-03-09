@@ -226,19 +226,8 @@ namespace Programming
         {
             try
             {
-                float newLength = float.Parse(RectanglesLengthTextBox.Text);
-
-                if (newLength >= 0)
-                {
-                    RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
-                    _currentRectangle.Length = newLength;
-                }
-                else
-                {
-                    RectanglesLengthTextBox.Text = "";
-                    MessageBox.Show("Длина не может быть отрицательной!", "Ошибка!", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _currentRectangle.Length = float.Parse(RectanglesLengthTextBox.Text);
+                RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -257,19 +246,8 @@ namespace Programming
         {
             try
             {
-                float newWidth = float.Parse(RectanglesWidthTextBox.Text);
-
-                if (newWidth >= 0)
-                {
-                    RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
-                    _currentRectangle.Width = newWidth;
-                }
-                else
-                {
-                    RectanglesWidthTextBox.Text = "";
-                    MessageBox.Show("Длина не может быть отрицательной!", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _currentRectangle.Width = float.Parse(RectanglesWidthTextBox.Text);
+                RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -368,19 +346,8 @@ namespace Programming
         {
             try
             {
-                double newRating = Convert.ToDouble(FilmRatingTextBox.Text);
-
-                if ((newRating >= 0) && (newRating <= 10))
-                {
-                    FilmRatingTextBox.BackColor = System.Drawing.Color.White;
-                    _currentFilm.Rating = newRating;
-                }
-                else
-                {
-                    FilmRatingTextBox.Text = "";
-                    MessageBox.Show("Рейтинг может быть от 0 до 10!", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _currentFilm.Rating = Convert.ToDouble(FilmRatingTextBox.Text);
+                FilmRatingTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -399,19 +366,8 @@ namespace Programming
         {
             try
             {
-                int newYear = Convert.ToInt32(FilmYearTextBox.Text);
-
-                if ((newYear >= 1900) && (newYear <= 2026))
-                {
-                    FilmYearTextBox.BackColor = System.Drawing.Color.White;
-                    _currentFilm.Year = newYear;
-                }
-                else
-                {
-                    FilmYearTextBox.Text = "";
-                    MessageBox.Show("Год должен быть от 1900 до 2026!", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _currentFilm.Year = Convert.ToInt32(FilmYearTextBox.Text);
+                FilmYearTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -430,19 +386,8 @@ namespace Programming
         {
             try
             {
-                int newDuration = Convert.ToInt32(FilmDurationTextBox.Text);
-
-                if (newDuration > 0)
-                {
-                    FilmDurationTextBox.BackColor = System.Drawing.Color.White;
-                    _currentFilm.Duration = newDuration;
-                }
-                else
-                {
-                    FilmDurationTextBox.Text = "";
-                    MessageBox.Show("Продолжительность не может быть <= 0!", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                _currentFilm.Duration = Convert.ToInt32(FilmDurationTextBox.Text);
+                FilmDurationTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
