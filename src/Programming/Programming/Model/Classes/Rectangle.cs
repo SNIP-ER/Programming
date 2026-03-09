@@ -24,14 +24,16 @@ class Rectangle
     }
 
     public string Color { get; set; }
+    public Point2D Center { get; set; }
 
 
     // Конструктор
-    public Rectangle(float length, float width, string color)
+    public Rectangle(float length, float width, string color, Point2D center)
     {
         Length = length;
         Width = width;
         Color = color;
+        Center = center;
     }
 
     public Rectangle()

@@ -30,11 +30,16 @@ namespace Programming
 
             _rectangles = new Rectangle[5];
 
-            _rectangles[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue");
-            _rectangles[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green");
-            _rectangles[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red");
-            _rectangles[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow");
-            _rectangles[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy");
+            _rectangles[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue", 
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
+            _rectangles[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green",
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
+            _rectangles[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red",
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
+            _rectangles[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow",
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
+            _rectangles[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy",
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
 
 
             _films = new Film[5];
@@ -208,6 +213,8 @@ namespace Programming
             RectanglesLengthTextBox.Text = _currentRectangle.Length.ToString();
             RectanglesWidthTextBox.Text = _currentRectangle.Width.ToString();
             RectanglesColorTextBox.Text = _currentRectangle.Color.ToString();
+            RectangleXTextBox.Text = _currentRectangle.Center.StoreX.ToString();
+            RectangleYTextBox.Text = _currentRectangle.Center.StoreY.ToString();
         }
 
         /// <summary>
