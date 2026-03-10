@@ -6,6 +6,7 @@ class Rectangle
 {
     private float length, width;
     private static int _allRectanglesCount;     // подсчет всех существующих объектов прямоуг.
+    private int _id;
 
     public float Length
     {
@@ -27,6 +28,10 @@ class Rectangle
     {
         get { return _allRectanglesCount; }
     }
+    public int Id
+    {
+        get { return _id; }
+    }
 
     public string Color { get; set; }
     public Point2D Center { get; set; }
@@ -41,10 +46,12 @@ class Rectangle
         Center = center;
 
         _allRectanglesCount++;
+        _id = _allRectanglesCount;
     }
 
     public Rectangle()
     {
-
+        _id = _allRectanglesCount;
+        _allRectanglesCount++;
     }
 }

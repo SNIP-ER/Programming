@@ -215,6 +215,7 @@ namespace Programming
             RectanglesColorTextBox.Text = _currentRectangle.Color.ToString();
             RectangleXTextBox.Text = _currentRectangle.Center.StoreX.ToString();
             RectangleYTextBox.Text = _currentRectangle.Center.StoreY.ToString();
+            RectangleIdTextBox.Text = _currentRectangle.Id.ToString();
         }
 
         /// <summary>
