@@ -5,6 +5,7 @@ using System.Windows.Forms.VisualStyles;
 class Rectangle
 {
     private float length, width;
+    private static int _allRectanglesCount;     // подсчет всех существующих объектов прямоуг.
 
     public float Length
     {
@@ -22,6 +23,10 @@ class Rectangle
             width = Validator.AssertOnPositiveValue(value, "Width");
         }
     }
+    public static int AllRectanglesCount
+    {
+        get { return _allRectanglesCount; }
+    }
 
     public string Color { get; set; }
     public Point2D Center { get; set; }
@@ -34,6 +39,8 @@ class Rectangle
         Width = width;
         Color = color;
         Center = center;
+
+        _allRectanglesCount++;
     }
 
     public Rectangle()
