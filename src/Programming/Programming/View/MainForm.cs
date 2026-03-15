@@ -18,6 +18,9 @@ namespace Programming
         private Film[] _films;
         private Film _currentFilm;
 
+        private List<Rectangle> _rectangles = new List<Rectangle>();
+        private Rectangle _currentRectangle;
+
         public MainForm()
         {
             InitializeComponent();
@@ -428,6 +431,26 @@ namespace Programming
         private void FilmFindButton_Click(object sender, EventArgs e)
         {
             FilmsListBox.SelectedIndex = FindFilmWithMaxRating(_films);
+        }
+
+
+
+        /// <summary>
+        /// Добавление прямоугольника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonAdd_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+
+            Rectangle rectangle = new Rectangle(random.Next(0, 100), random.Next(0, 100), "",
+                new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
+
+            _rectangles.Add(rectangle);
+
+            RectanglesListBox.Items.Add($"{_rectangles.Count}: (X = {rectangle.Center.StoreX}; " +
+                $"Y = {rectangle.Center.StoreY}; W = {rectangle.Width}; H = {rectangle.Length})");
         }
     }
 }
