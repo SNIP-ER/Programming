@@ -700,7 +700,7 @@
             // RectanglesLabelRectangles
             // 
             this.RectanglesLabelRectangles.AutoSize = true;
-            this.RectanglesLabelRectangles.Location = new System.Drawing.Point(8, 26);
+            this.RectanglesLabelRectangles.Location = new System.Drawing.Point(22, 11);
             this.RectanglesLabelRectangles.Name = "RectanglesLabelRectangles";
             this.RectanglesLabelRectangles.Size = new System.Drawing.Size(64, 13);
             this.RectanglesLabelRectangles.TabIndex = 0;
@@ -709,7 +709,7 @@
             // RectanglesListBox
             // 
             this.RectanglesListBox.FormattingEnabled = true;
-            this.RectanglesListBox.Location = new System.Drawing.Point(11, 42);
+            this.RectanglesListBox.Location = new System.Drawing.Point(25, 27);
             this.RectanglesListBox.Name = "RectanglesListBox";
             this.RectanglesListBox.Size = new System.Drawing.Size(192, 121);
             this.RectanglesListBox.TabIndex = 1;
@@ -717,7 +717,7 @@
             // RectanglesButtonAdd
             // 
             this.RectanglesButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RectanglesButtonAdd.Location = new System.Drawing.Point(28, 169);
+            this.RectanglesButtonAdd.Location = new System.Drawing.Point(42, 154);
             this.RectanglesButtonAdd.Name = "RectanglesButtonAdd";
             this.RectanglesButtonAdd.Size = new System.Drawing.Size(44, 23);
             this.RectanglesButtonAdd.TabIndex = 2;
@@ -727,7 +727,7 @@
             // RectanglesButtonRemove
             // 
             this.RectanglesButtonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RectanglesButtonRemove.Location = new System.Drawing.Point(115, 169);
+            this.RectanglesButtonRemove.Location = new System.Drawing.Point(161, 154);
             this.RectanglesButtonRemove.Name = "RectanglesButtonRemove";
             this.RectanglesButtonRemove.Size = new System.Drawing.Size(40, 23);
             this.RectanglesButtonRemove.TabIndex = 3;
@@ -826,9 +826,9 @@
             // RectanglesPanel
             // 
             this.RectanglesPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.RectanglesPanel.Location = new System.Drawing.Point(263, 11);
+            this.RectanglesPanel.Location = new System.Drawing.Point(253, 11);
             this.RectanglesPanel.Name = "RectanglesPanel";
-            this.RectanglesPanel.Size = new System.Drawing.Size(521, 391);
+            this.RectanglesPanel.Size = new System.Drawing.Size(531, 391);
             this.RectanglesPanel.TabIndex = 15;
             // 
             // MainForm

@@ -12,8 +12,8 @@ namespace Programming
 {
     public partial class MainForm : Form
     {
-        private Rectangle[] _rectangles;
-        private Rectangle _currentRectangle;
+        private Rectangle[] _rectanglesClasses;
+        private Rectangle _currentRectangleClasses;
 
         private Film[] _films;
         private Film _currentFilm;
@@ -28,17 +28,17 @@ namespace Programming
             Random random = new Random();
 
 
-            _rectangles = new Rectangle[5];
+            _rectanglesClasses = new Rectangle[5];
 
-            _rectangles[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue", 
+            _rectanglesClasses[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue", 
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectangles[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green",
+            _rectanglesClasses[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectangles[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red",
+            _rectanglesClasses[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectangles[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow",
+            _rectanglesClasses[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectangles[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy",
+            _rectanglesClasses[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
 
 
@@ -208,14 +208,14 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentRectangle = _rectangles[ClassesRectanglesListBox.SelectedIndex];
+            _currentRectangleClasses = _rectanglesClasses[ClassesRectanglesListBox.SelectedIndex];
 
-            RectanglesLengthTextBox.Text = _currentRectangle.Length.ToString();
-            RectanglesWidthTextBox.Text = _currentRectangle.Width.ToString();
-            RectanglesColorTextBox.Text = _currentRectangle.Color.ToString();
-            RectangleXTextBox.Text = _currentRectangle.Center.StoreX.ToString();
-            RectangleYTextBox.Text = _currentRectangle.Center.StoreY.ToString();
-            RectangleIdTextBox.Text = _currentRectangle.Id.ToString();
+            RectanglesLengthTextBox.Text = _currentRectangleClasses.Length.ToString();
+            RectanglesWidthTextBox.Text = _currentRectangleClasses.Width.ToString();
+            RectanglesColorTextBox.Text = _currentRectangleClasses.Color.ToString();
+            RectangleXTextBox.Text = _currentRectangleClasses.Center.StoreX.ToString();
+            RectangleYTextBox.Text = _currentRectangleClasses.Center.StoreY.ToString();
+            RectangleIdTextBox.Text = _currentRectangleClasses.Id.ToString();
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Programming
         {
             try
             {
-                _currentRectangle.Length = float.Parse(RectanglesLengthTextBox.Text);
+                _currentRectangleClasses.Length = float.Parse(RectanglesLengthTextBox.Text);
                 RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
@@ -247,7 +247,7 @@ namespace Programming
         {
             try
             {
-                _currentRectangle.Width = float.Parse(RectanglesWidthTextBox.Text);
+                _currentRectangleClasses.Width = float.Parse(RectanglesWidthTextBox.Text);
                 RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
@@ -265,7 +265,7 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesColorTextBox_TextChanged(object sender, EventArgs e)
         {
-            _currentRectangle.Color = RectanglesColorTextBox.Text;
+            _currentRectangleClasses.Color = RectanglesColorTextBox.Text;
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesButton_Click(object sender, EventArgs e)
         {
-            ClassesRectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+            ClassesRectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectanglesClasses);
         }
 
 
