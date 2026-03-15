@@ -208,7 +208,7 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
+            _currentRectangle = _rectangles[ClassesRectanglesListBox.SelectedIndex];
 
             RectanglesLengthTextBox.Text = _currentRectangle.Length.ToString();
             RectanglesWidthTextBox.Text = _currentRectangle.Width.ToString();
@@ -297,7 +297,7 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesButton_Click(object sender, EventArgs e)
         {
-            RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
+            ClassesRectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
         }
 
 
