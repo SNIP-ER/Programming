@@ -12,8 +12,8 @@ namespace Programming
 {
     public partial class MainForm : Form
     {
-        private Rectangle[] _rectanglesClasses;
-        private Rectangle _currentRectangleClasses;
+        private RectangleClasses[] _rectanglesClasses;
+        private RectangleClasses _currentRectangleClasses;
 
         private Film[] _films;
         private Film _currentFilm;
@@ -31,17 +31,17 @@ namespace Programming
             Random random = new Random();
 
 
-            _rectanglesClasses = new Rectangle[5];
+            _rectanglesClasses = new RectangleClasses[5];
 
-            _rectanglesClasses[0] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Blue", 
+            _rectanglesClasses[0] = new RectangleClasses(random.Next(0, 100), random.Next(0, 100), "Blue", 
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectanglesClasses[1] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Green",
+            _rectanglesClasses[1] = new RectangleClasses(random.Next(0, 100), random.Next(0, 100), "Green",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectanglesClasses[2] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Red",
+            _rectanglesClasses[2] = new RectangleClasses(random.Next(0, 100), random.Next(0, 100), "Red",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectanglesClasses[3] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Yellow",
+            _rectanglesClasses[3] = new RectangleClasses(random.Next(0, 100), random.Next(0, 100), "Yellow",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
-            _rectanglesClasses[4] = new Rectangle(random.Next(0, 100), random.Next(0, 100), "Navy",
+            _rectanglesClasses[4] = new RectangleClasses(random.Next(0, 100), random.Next(0, 100), "Navy",
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
 
 
@@ -209,7 +209,7 @@ namespace Programming
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ClassesRectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentRectangleClasses = _rectanglesClasses[ClassesRectanglesListBox.SelectedIndex];
 
@@ -276,7 +276,7 @@ namespace Programming
         /// </summary>
         /// <param name="_rectangles">Массив прямоугольников.</param>
         /// <returns>Индекс прямоугольника с наибольшей шириной.</returns>
-        private int FindRectangleWithMaxWidth(Rectangle[] _rectangles)
+        private int FindRectangleWithMaxWidth(RectangleClasses[] _rectangles)
         {
             float maxWidth = 0;
             int maxIndex = 0;
@@ -444,13 +444,91 @@ namespace Programming
         {
             Random random = new Random();
 
-            Rectangle rectangle = new Rectangle(random.Next(0, 100), random.Next(0, 100), "",
+            Rectangle rectangle = new Rectangle(random.Next(0, 100), random.Next(0, 100),
                 new Point2D(random.Next(-100, 100), random.Next(-100, 100)));
 
             _rectangles.Add(rectangle);
 
             RectanglesListBox.Items.Add($"{_rectangles.Count}: (X = {rectangle.Center.StoreX}; " +
-                $"Y = {rectangle.Center.StoreY}; W = {rectangle.Width}; H = {rectangle.Length})");
+                $"Y = {rectangle.Center.StoreY}; W = {rectangle.Width}; H = {rectangle.Height})");
+        }
+
+        /// <summary>
+        /// Удаление выбранного прямоугольника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonRemove_Click(object sender, EventArgs e)
+        {
+            int index = RectanglesListBox.SelectedIndex;
+
+            if (index != -1)
+            {
+                _rectangles.RemoveAt(index);
+
+                RectanglesListBox.Items.RemoveAt(index);
+            }
+            else
+            {
+                // если не выбран - ничего не происходит
+            }
+        }
+
+        /// <summary>
+        /// Заполнение полей ниже списка при выборе прямоугольника.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RectanglesListBox.SelectedIndex != -1)
+            {
+                _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
+
+                RectanglesTextBoxId.Text = _currentRectangle.Id.ToString();
+                RectanglesTextBoxX.Text = _currentRectangle.Center.StoreX.ToString();
+                RectanglesTextBoxY.Text = _currentRectangle.Center.StoreY.ToString();
+                RectanglesTextBoxWidth.Text = _currentRectangle.Width.ToString();
+                RectanglesTextBoxHeight.Text = _currentRectangle.Height.ToString();
+            }
+            else
+            {
+                RectanglesTextBoxId.Text = "";
+                RectanglesTextBoxX.Text = "";
+                RectanglesTextBoxY.Text = "";
+                RectanglesTextBoxWidth.Text = "";
+                RectanglesTextBoxHeight.Text = "";
+            }
+        }
+
+        private void RectanglesTextBoxX_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //_currentRectangle.Center.StoreX = float.Parse(RectanglesTextBoxX.Text);
+                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+            }
+            catch
+            {
+                RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void RectanglesTextBoxY_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RectanglesTextBoxWidth_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RectanglesTextBoxHeight_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

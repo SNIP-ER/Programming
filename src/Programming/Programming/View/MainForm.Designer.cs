@@ -669,7 +669,7 @@
             this.ClassesRectanglesListBox.Name = "ClassesRectanglesListBox";
             this.ClassesRectanglesListBox.Size = new System.Drawing.Size(107, 180);
             this.ClassesRectanglesListBox.TabIndex = 0;
-            this.ClassesRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
+            this.ClassesRectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.ClassesRectanglesListBox_SelectedIndexChanged);
             // 
             // Rectangles
             // 
@@ -711,6 +711,7 @@
             this.RectanglesTextBoxHeight.Name = "RectanglesTextBoxHeight";
             this.RectanglesTextBoxHeight.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxHeight.TabIndex = 14;
+            this.RectanglesTextBoxHeight.TextChanged += new System.EventHandler(this.RectanglesTextBoxHeight_TextChanged);
             // 
             // RectanglesTextBoxWidth
             // 
@@ -718,6 +719,7 @@
             this.RectanglesTextBoxWidth.Name = "RectanglesTextBoxWidth";
             this.RectanglesTextBoxWidth.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxWidth.TabIndex = 13;
+            this.RectanglesTextBoxWidth.TextChanged += new System.EventHandler(this.RectanglesTextBoxWidth_TextChanged);
             // 
             // RectanglesTextBoxY
             // 
@@ -725,6 +727,7 @@
             this.RectanglesTextBoxY.Name = "RectanglesTextBoxY";
             this.RectanglesTextBoxY.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxY.TabIndex = 12;
+            this.RectanglesTextBoxY.TextChanged += new System.EventHandler(this.RectanglesTextBoxY_TextChanged);
             // 
             // RectanglesTextBoxX
             // 
@@ -732,11 +735,13 @@
             this.RectanglesTextBoxX.Name = "RectanglesTextBoxX";
             this.RectanglesTextBoxX.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxX.TabIndex = 11;
+            this.RectanglesTextBoxX.TextChanged += new System.EventHandler(this.RectanglesTextBoxX_TextChanged);
             // 
             // RectanglesTextBoxId
             // 
             this.RectanglesTextBoxId.Location = new System.Drawing.Point(80, 244);
             this.RectanglesTextBoxId.Name = "RectanglesTextBoxId";
+            this.RectanglesTextBoxId.ReadOnly = true;
             this.RectanglesTextBoxId.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxId.TabIndex = 10;
             // 
@@ -803,6 +808,7 @@
             this.RectanglesButtonRemove.TabIndex = 3;
             this.RectanglesButtonRemove.Text = "Remove";
             this.RectanglesButtonRemove.UseVisualStyleBackColor = true;
+            this.RectanglesButtonRemove.Click += new System.EventHandler(this.RectanglesButtonRemove_Click);
             // 
             // RectanglesButtonAdd
             // 
@@ -822,6 +828,7 @@
             this.RectanglesListBox.Name = "RectanglesListBox";
             this.RectanglesListBox.Size = new System.Drawing.Size(192, 121);
             this.RectanglesListBox.TabIndex = 1;
+            this.RectanglesListBox.SelectedIndexChanged += new System.EventHandler(this.RectanglesListBox_SelectedIndexChanged);
             // 
             // RectanglesLabelRectangles
             // 

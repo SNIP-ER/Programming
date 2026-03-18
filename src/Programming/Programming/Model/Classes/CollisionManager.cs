@@ -14,7 +14,7 @@ static class CollisionManager
         if ((Math.Abs(rectangle1.Center.StoreX - rectangle2.Center.StoreX) < 
             Math.Abs(rectangle1.Width - rectangle2.Width) / 2) && 
             (Math.Abs(rectangle1.Center.StoreY - rectangle2.Center.StoreY) < 
-            Math.Abs(rectangle1.Length - rectangle2.Length) / 2))
+            Math.Abs(rectangle1.Height - rectangle2.Height) / 2))
         {
             return true;
         }
