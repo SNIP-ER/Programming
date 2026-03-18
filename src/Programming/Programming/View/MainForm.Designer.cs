@@ -711,7 +711,7 @@
             this.RectanglesTextBoxHeight.Name = "RectanglesTextBoxHeight";
             this.RectanglesTextBoxHeight.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxHeight.TabIndex = 14;
-            this.RectanglesTextBoxHeight.TextChanged += new System.EventHandler(this.RectanglesTextBoxHeight_TextChanged);
+            this.RectanglesTextBoxHeight.Leave += new System.EventHandler(this.RectanglesTextBoxHeight_Leave);
             // 
             // RectanglesTextBoxWidth
             // 
@@ -719,7 +719,7 @@
             this.RectanglesTextBoxWidth.Name = "RectanglesTextBoxWidth";
             this.RectanglesTextBoxWidth.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxWidth.TabIndex = 13;
-            this.RectanglesTextBoxWidth.TextChanged += new System.EventHandler(this.RectanglesTextBoxWidth_TextChanged);
+            this.RectanglesTextBoxWidth.Leave += new System.EventHandler(this.RectanglesTextBoxWidth_Leave);
             // 
             // RectanglesTextBoxY
             // 
@@ -727,7 +727,7 @@
             this.RectanglesTextBoxY.Name = "RectanglesTextBoxY";
             this.RectanglesTextBoxY.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxY.TabIndex = 12;
-            this.RectanglesTextBoxY.TextChanged += new System.EventHandler(this.RectanglesTextBoxY_TextChanged);
+            this.RectanglesTextBoxY.Leave += new System.EventHandler(this.RectanglesTextBoxY_Leave);
             // 
             // RectanglesTextBoxX
             // 
@@ -735,7 +735,7 @@
             this.RectanglesTextBoxX.Name = "RectanglesTextBoxX";
             this.RectanglesTextBoxX.Size = new System.Drawing.Size(61, 20);
             this.RectanglesTextBoxX.TabIndex = 11;
-            this.RectanglesTextBoxX.TextChanged += new System.EventHandler(this.RectanglesTextBoxX_TextChanged);
+            this.RectanglesTextBoxX.Leave += new System.EventHandler(this.RectanglesTextBoxX_Leave);
             // 
             // RectanglesTextBoxId
             // 

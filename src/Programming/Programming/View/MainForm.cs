@@ -490,6 +490,12 @@ namespace Programming
                 RectanglesTextBoxY.Text = _currentRectangle.Center.StoreY.ToString();
                 RectanglesTextBoxWidth.Text = _currentRectangle.Width.ToString();
                 RectanglesTextBoxHeight.Text = _currentRectangle.Height.ToString();
+
+                // сброс цвета окошка для ввода при переключении между прямоугольниками
+                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
             }
             else
             {
@@ -501,34 +507,97 @@ namespace Programming
             }
         }
 
-        private void RectanglesTextBoxX_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Обновление строки в ListBox.
+        /// </summary>
+        private void ReplaceLineInListBox()
         {
-            try
-            {
-                //_currentRectangle.Center.StoreX = float.Parse(RectanglesTextBoxX.Text);
-                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
-            }
-            catch
+            RectanglesListBox.Items[RectanglesListBox.SelectedIndex] = $"{_currentRectangle.Id}: (X = {_currentRectangle.Center.StoreX}; " +
+                $"Y = {_currentRectangle.Center.StoreY}; W = {_currentRectangle.Width}; H = {_currentRectangle.Height})";
+        }
+
+        /// <summary>
+        /// Регистрация ухода с поля X, с дальнейшей проверкой на корректность.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesTextBoxX_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(RectanglesTextBoxX.Text, out float newX))
             {
                 RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры, - и , !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _currentRectangle.Center.StoreX = newX;
+                ReplaceLineInListBox();
+                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        /// <summary>
+        /// Регистрация ухода с поля Y, с дальнейшей проверкой на корректность.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesTextBoxY_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(RectanglesTextBoxY.Text, out float newY))
+            {
+                RectanglesTextBoxY.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры, - и , !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _currentRectangle.Center.StoreY = newY;
+                ReplaceLineInListBox();
+                RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        /// <summary>
+        /// Регистрация ухода с поля Width, с дальнейшей проверкой на корректность.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesTextBoxWidth_Leave(object sender, EventArgs e)
+        {
+            if (!float.TryParse(RectanglesTextBoxWidth.Text, out float newWidth))
+            {
+                RectanglesTextBoxWidth.BackColor = ColorTranslator.FromHtml("#FFB6C1");
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                _currentRectangle.Width = newWidth;
+                ReplaceLineInListBox();
+                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+            }
         }
 
-        private void RectanglesTextBoxY_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Регистрация ухода с поля Height, с дальнейшей проверкой на корректность.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesTextBoxHeight_Leave(object sender, EventArgs e)
         {
-
-        }
-
-        private void RectanglesTextBoxWidth_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RectanglesTextBoxHeight_TextChanged(object sender, EventArgs e)
-        {
-
+            if (!float.TryParse(RectanglesTextBoxHeight.Text, out float newHeight))
+            {
+                RectanglesTextBoxHeight.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _currentRectangle.Height = newHeight;
+                ReplaceLineInListBox();
+                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+            }
         }
     }
 }

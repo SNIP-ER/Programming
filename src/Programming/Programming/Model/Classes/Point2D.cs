@@ -1,13 +1,13 @@
 ﻿class Point2D
 {
-    public float StoreX { get; private set; }
-    public float StoreY { get; private set; }
+    public float StoreX { get; set; }
+    public float StoreY { get; set; }
 
     // Конструктор
     public Point2D(float storeX, float storeY)
     {
         StoreX = storeX;
-        StoreY = storeY;    
+        StoreY = storeY;
     }
 
     public Point2D()
