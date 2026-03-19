@@ -20,7 +20,7 @@ namespace Programming
 
         private List<Rectangle> _rectangles = new List<Rectangle>();
         private Rectangle _currentRectangle;
-        private List<Panel> _rectanglePanles;
+        private List<Panel> _rectanglePanles = new List<Panel>();
 
         public MainForm()
         {
@@ -459,6 +459,7 @@ namespace Programming
             newRectangle.Size = new Size(rectangle.Width, rectangle.Height);
             newRectangle.BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
 
+            _rectanglePanles.Add(newRectangle);     // сохранение нового прямоугольника
             RectanglesPanel.Controls.Add(newRectangle);     // отображение новой панели
         }
 
@@ -474,8 +475,11 @@ namespace Programming
             if (index != -1)
             {
                 _rectangles.RemoveAt(index);
-
                 RectanglesListBox.Items.RemoveAt(index);
+
+                // удаление прямоугольника
+                _rectanglePanles.RemoveAt(index);
+                RectanglesPanel.Controls.RemoveAt(index);
             }
             else
             {
