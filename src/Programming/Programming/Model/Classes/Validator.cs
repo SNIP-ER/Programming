@@ -81,4 +81,22 @@ static class Validator
             throw new ArgumentException(String.Format($"Значение в свойстве {property} не попадает в диапазон!"));
         }
     }
+
+    /// <summary>
+    /// Проверка на попадание прямоугольника в диапазон панели.
+    /// </summary>
+    /// <param name="value">Координата центра прямоугольника.</param>
+    /// <param name="max">Наибольшее возможное значение.</param>
+    /// <returns>True или False.</returns>
+    public static bool AssertValueInRangePanel(int value, int max)
+    {
+        if ((value >= 0) && (value <= max))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
