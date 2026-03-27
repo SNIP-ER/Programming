@@ -445,7 +445,7 @@ namespace Programming
         {
             Random random = new Random();
 
-            Rectangle rectangle = new Rectangle(random.Next(0, 100), random.Next(0, 100),
+            Rectangle rectangle = new Rectangle(random.Next(10, 100), random.Next(10, 100),
                 new Point2D(random.Next(0, 530), random.Next(0, 390)));
 
             _rectangles.Add(rectangle);
@@ -456,11 +456,12 @@ namespace Programming
             // создание новой панели
             Panel newRectangle = new Panel();
             newRectangle.Location = new Point(rectangle.Center.StoreX, rectangle.Center.StoreY);
-            newRectangle.Size = new Size(rectangle.Width, rectangle.Height);
-            newRectangle.BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+            //newRectangle.Size = new Size(rectangle.Width, rectangle.Height);
 
             _rectanglePanles.Add(newRectangle);     // сохранение нового прямоугольника
             RectanglesPanel.Controls.Add(newRectangle);     // отображение новой панели
+
+            FindCollisions();
         }
 
         /// <summary>
@@ -480,6 +481,8 @@ namespace Programming
                 // удаление прямоугольника
                 _rectanglePanles.RemoveAt(index);
                 RectanglesPanel.Controls.RemoveAt(index);
+
+                FindCollisions();
             }
             else
             {
@@ -622,6 +625,52 @@ namespace Programming
                 _currentRectangle.Height = newHeight;
                 ReplaceLineInListBox();
                 RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        /// <summary>
+        /// Регистрация пересечения панелей.
+        /// </summary>
+        private void FindCollisions()
+        {
+            int count = _rectanglePanles.Count;
+
+            // перекраска всех панелей
+            for (int i = 0; i < count; i++)
+            {
+                _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+                _rectanglePanles[i].BorderStyle = BorderStyle.FixedSingle;
+            }
+
+            // проверка пересечений
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    bool flag = CollisionManager.IsCollision(_rectangles[i], _rectangles[j]);
+
+                    if (flag)
+                    {
+                        _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[j].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[i].BorderStyle = BorderStyle.None;
+                        _rectanglePanles[j].BorderStyle = BorderStyle.None;
+                    }
+                }
+
+                // утчет последнего из первого цикла и первого из второго цикла
+                if (count > 2)
+                {
+                    bool flagFinish = CollisionManager.IsCollision(_rectangles[count - 1], _rectangles[0]);
+
+                    if (flagFinish)
+                    {
+                        _rectanglePanles[count - 1].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[0].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[count - 1].BorderStyle = BorderStyle.None;
+                        _rectanglePanles[0].BorderStyle = BorderStyle.None;
+                    }
+                }
             }
         }
     }

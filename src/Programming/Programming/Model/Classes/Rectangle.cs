@@ -2,10 +2,11 @@
 {
     public Point2D Center { get; set; }
 
-    private int width, height, _id;
+    private float width, height;
+    private int _id;
     private static int _allRectanglesCount;
 
-    public int Width
+    public float Width
     {
         get { return width; }
         set
@@ -14,7 +15,7 @@
         }
     }
 
-    public int Height
+    public float Height
     {
         get { return height; }
         set
@@ -34,7 +35,7 @@
     }
 
     // Консруктор
-    public Rectangle(int width, int height, Point2D center)
+    public Rectangle(float width, float height, Point2D center)
     {
         Width = width;
         Height = height;
