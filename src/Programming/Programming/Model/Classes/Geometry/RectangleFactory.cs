@@ -3,15 +3,21 @@
 static class RectangleFactory
 {
     /// <summary>
-    /// Генерирует случайный прямоугольник.
+    /// Генерирует случайный прямоугольник
     /// </summary>
+    /// <param name="canvasWidth">Ширина поля.</param>
+    /// <param name="canvasHeight">Высота поля.</param>
     /// <returns>Прямоугольник.</returns>
-    public static Rectangle Randomize()
+    public static Rectangle Randomize(int canvasWidth, int canvasHeight)
     {
         Random random = new Random();
 
-        Rectangle rectangle = new Rectangle(random.Next(10, 100), random.Next(10, 100),
-            new Point2D(random.Next(0, 530), random.Next(0, 390)));
+        int rectangleWidth = random.Next(10, 100);
+        int rectangleHeight = random.Next(10, 100);
+        int centerX = random.Next((int)(15 + (rectangleWidth / 2)), (int)(canvasWidth - 15 - (rectangleWidth / 2)));
+        int centerY = random.Next((int)(15 + (rectangleHeight / 2)), (int)(canvasHeight - 15 - (rectangleHeight / 2)));
+
+        Rectangle rectangle = new Rectangle(rectangleWidth, rectangleHeight, new Point2D(centerX, centerY));
 
         return rectangle;
     }

@@ -443,7 +443,10 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesButtonAdd_Click(object sender, EventArgs e)
         {
-            Rectangle rectangle = RectangleFactory.Randomize();
+            int canvasWidth = RectanglesPanel.Width;
+            int canvasHeight = RectanglesPanel.Height;
+
+            Rectangle rectangle = RectangleFactory.Randomize(canvasWidth, canvasHeight);
 
             _rectangles.Add(rectangle);
 
