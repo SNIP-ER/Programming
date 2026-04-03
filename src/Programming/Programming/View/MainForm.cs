@@ -443,10 +443,7 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesButtonAdd_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-
-            Rectangle rectangle = new Rectangle(random.Next(10, 100), random.Next(10, 100),
-                new Point2D(random.Next(0, 530), random.Next(0, 390)));
+            Rectangle rectangle = RectangleFactory.Randomize();
 
             _rectangles.Add(rectangle);
 
@@ -455,7 +452,7 @@ namespace Programming
 
             // создание новой панели
             Panel newRectangle = new Panel();
-            newRectangle.Location = new Point((int)(rectangle.Center.StoreX - rectangle.Width / 2), 
+            newRectangle.Location = new Point((int)(rectangle.Center.StoreX - rectangle.Width / 2),
                 (int)(rectangle.Center.StoreY - rectangle.Height / 2));
             newRectangle.Size = new Size((int)rectangle.Width, (int)rectangle.Height);
 
@@ -502,25 +499,11 @@ namespace Programming
             {
                 _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
 
-                RectanglesTextBoxId.Text = _currentRectangle.Id.ToString();
-                RectanglesTextBoxX.Text = _currentRectangle.Center.StoreX.ToString();
-                RectanglesTextBoxY.Text = _currentRectangle.Center.StoreY.ToString();
-                RectanglesTextBoxWidth.Text = _currentRectangle.Width.ToString();
-                RectanglesTextBoxHeight.Text = _currentRectangle.Height.ToString();
-
-                // сброс цвета окошка для ввода при переключении между прямоугольниками
-                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
-                RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
-                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
-                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+                UpdateRectangleInfo(_currentRectangle);
             }
             else
             {
-                RectanglesTextBoxId.Text = "";
-                RectanglesTextBoxX.Text = "";
-                RectanglesTextBoxY.Text = "";
-                RectanglesTextBoxWidth.Text = "";
-                RectanglesTextBoxHeight.Text = "";
+                ClearRectangleInfo();
             }
         }
 
@@ -717,7 +700,17 @@ namespace Programming
         /// <param name="rectangle">Прямоугольник, в котором меняется значение.</param>
         private void UpdateRectangleInfo(Rectangle rectangle)
         {
+            RectanglesTextBoxId.Text = rectangle.Id.ToString();
+            RectanglesTextBoxX.Text = rectangle.Center.StoreX.ToString();
+            RectanglesTextBoxY.Text = rectangle.Center.StoreY.ToString();
+            RectanglesTextBoxWidth.Text = rectangle.Width.ToString();
+            RectanglesTextBoxHeight.Text = rectangle.Height.ToString();
 
+            // сброс цвета окошка для ввода при переключении между прямоугольниками
+            RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
         }
 
         /// <summary>
@@ -725,7 +718,11 @@ namespace Programming
         /// </summary>
         private void ClearRectangleInfo()
         {
-
+            RectanglesTextBoxId.Text = "";
+            RectanglesTextBoxX.Text = "";
+            RectanglesTextBoxY.Text = "";
+            RectanglesTextBoxWidth.Text = "";
+            RectanglesTextBoxHeight.Text = "";
         }
     }
 }
