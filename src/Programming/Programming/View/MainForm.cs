@@ -727,5 +727,45 @@ namespace Programming
             RectanglesTextBoxWidth.Text = "";
             RectanglesTextBoxHeight.Text = "";
         }
+
+        /// <summary>
+        /// Пользователь нажал на кнопку add.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonAdd_MouseDown(object sender, MouseEventArgs e)
+        {
+            RectanglesButtonAdd.Image = Properties.Resources.add_pressed;
+        }
+
+        /// <summary>
+        /// Пользователь отпустил кнопку add.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonAdd_MouseUp(object sender, MouseEventArgs e)
+        {
+            RectanglesButtonAdd.Image = Properties.Resources.add;
+        }
+
+        /// <summary>
+        /// Пользователь нажал на кнопку remove.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonRemove_MouseDown(object sender, MouseEventArgs e)
+        {
+            RectanglesButtonRemove.Image = Properties.Resources.remove_pressed;
+        }
+
+        /// <summary>
+        /// Пользователь отпустил кнопку remove.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RectanglesButtonRemove_MouseUp(object sender, MouseEventArgs e)
+        {
+            RectanglesButtonRemove.Image = Properties.Resources.remove;
+        }
     }
 }

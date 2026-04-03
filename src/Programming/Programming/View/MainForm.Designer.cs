@@ -97,8 +97,7 @@
             this.RectanglesTextBoxY = new System.Windows.Forms.TextBox();
             this.RectanglesLabelY = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.RectanglesButtonRemove = new System.Windows.Forms.Button();
-            this.RectanglesButtonAdd = new System.Windows.Forms.Button();
+            this.RectanglesButtonAdd = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.RectanglesLabelX = new System.Windows.Forms.Label();
             this.RectanglesTextBoxX = new System.Windows.Forms.TextBox();
@@ -106,6 +105,7 @@
             this.RectanglesLabelSelected = new System.Windows.Forms.Label();
             this.RectanglesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RectanglesPanel = new System.Windows.Forms.Panel();
+            this.RectanglesButtonRemove = new System.Windows.Forms.PictureBox();
             this.AllTabControl.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.SeasonHandleGroupBox.SuspendLayout();
@@ -123,8 +123,10 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RectanglesButtonAdd)).BeginInit();
             this.panel3.SuspendLayout();
             this.RectanglesTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RectanglesButtonRemove)).BeginInit();
             this.SuspendLayout();
             // 
             // AllTabControl
@@ -871,27 +873,19 @@
             this.panel1.Size = new System.Drawing.Size(196, 47);
             this.panel1.TabIndex = 17;
             // 
-            // RectanglesButtonRemove
-            // 
-            this.RectanglesButtonRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RectanglesButtonRemove.Location = new System.Drawing.Point(114, 3);
-            this.RectanglesButtonRemove.Name = "RectanglesButtonRemove";
-            this.RectanglesButtonRemove.Size = new System.Drawing.Size(40, 23);
-            this.RectanglesButtonRemove.TabIndex = 3;
-            this.RectanglesButtonRemove.Text = "Remove";
-            this.RectanglesButtonRemove.UseVisualStyleBackColor = true;
-            this.RectanglesButtonRemove.Click += new System.EventHandler(this.RectanglesButtonRemove_Click);
-            // 
             // RectanglesButtonAdd
             // 
-            this.RectanglesButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RectanglesButtonAdd.Location = new System.Drawing.Point(31, 3);
+            this.RectanglesButtonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RectanglesButtonAdd.Image = global::Programming.Properties.Resources.add;
+            this.RectanglesButtonAdd.Location = new System.Drawing.Point(40, 3);
             this.RectanglesButtonAdd.Name = "RectanglesButtonAdd";
-            this.RectanglesButtonAdd.Size = new System.Drawing.Size(44, 23);
-            this.RectanglesButtonAdd.TabIndex = 2;
-            this.RectanglesButtonAdd.Text = "Add";
-            this.RectanglesButtonAdd.UseVisualStyleBackColor = true;
+            this.RectanglesButtonAdd.Size = new System.Drawing.Size(37, 28);
+            this.RectanglesButtonAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.RectanglesButtonAdd.TabIndex = 4;
+            this.RectanglesButtonAdd.TabStop = false;
             this.RectanglesButtonAdd.Click += new System.EventHandler(this.RectanglesButtonAdd_Click);
+            this.RectanglesButtonAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectanglesButtonAdd_MouseDown);
+            this.RectanglesButtonAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectanglesButtonAdd_MouseUp);
             // 
             // panel3
             // 
@@ -960,6 +954,20 @@
             this.RectanglesPanel.Size = new System.Drawing.Size(531, 404);
             this.RectanglesPanel.TabIndex = 15;
             // 
+            // RectanglesButtonRemove
+            // 
+            this.RectanglesButtonRemove.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RectanglesButtonRemove.Image = global::Programming.Properties.Resources.remove;
+            this.RectanglesButtonRemove.Location = new System.Drawing.Point(108, 3);
+            this.RectanglesButtonRemove.Name = "RectanglesButtonRemove";
+            this.RectanglesButtonRemove.Size = new System.Drawing.Size(37, 28);
+            this.RectanglesButtonRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.RectanglesButtonRemove.TabIndex = 5;
+            this.RectanglesButtonRemove.TabStop = false;
+            this.RectanglesButtonRemove.Click += new System.EventHandler(this.RectanglesButtonRemove_Click);
+            this.RectanglesButtonRemove.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RectanglesButtonRemove_MouseDown);
+            this.RectanglesButtonRemove.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RectanglesButtonRemove_MouseUp);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -999,9 +1007,11 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RectanglesButtonAdd)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.RectanglesTableLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RectanglesButtonRemove)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1080,11 +1090,11 @@
         private System.Windows.Forms.Label RectanglesLabelRectangles;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button RectanglesButtonRemove;
-        private System.Windows.Forms.Button RectanglesButtonAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ListBox RectanglesListBox;
         private System.Windows.Forms.Label RectanglesLabelSelected;
+        private System.Windows.Forms.PictureBox RectanglesButtonAdd;
+        private System.Windows.Forms.PictureBox RectanglesButtonRemove;
     }
 }
 
