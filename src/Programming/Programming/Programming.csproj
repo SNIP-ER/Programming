@@ -53,6 +53,7 @@
     <Compile Include="Model\Classes\Point2D.cs" />
     <Compile Include="Model\Classes\Rectangle.cs" />
     <Compile Include="Model\Classes\RectangleClasses.cs" />
+    <Compile Include="Model\Classes\RectangleFactory.cs" />
     <Compile Include="Model\Classes\Ring.cs" />
     <Compile Include="Model\Classes\Song.cs" />
     <Compile Include="Model\Classes\Subject.cs" />

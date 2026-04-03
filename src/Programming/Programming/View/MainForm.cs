@@ -455,8 +455,9 @@ namespace Programming
 
             // создание новой панели
             Panel newRectangle = new Panel();
-            newRectangle.Location = new Point(rectangle.Center.StoreX, rectangle.Center.StoreY);
-            //newRectangle.Size = new Size(rectangle.Width, rectangle.Height);
+            newRectangle.Location = new Point((int)(rectangle.Center.StoreX - rectangle.Width / 2), 
+                (int)(rectangle.Center.StoreY - rectangle.Height / 2));
+            newRectangle.Size = new Size((int)rectangle.Width, (int)rectangle.Height);
 
             _rectanglePanles.Add(newRectangle);     // сохранение нового прямоугольника
             RectanglesPanel.Controls.Add(newRectangle);     // отображение новой панели
@@ -556,6 +557,15 @@ namespace Programming
                 _currentRectangle.Center.StoreX = newX;
                 ReplaceLineInListBox();
                 RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+
+                // Изменение прямоугольника
+                Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
+
+                currentPanel.Location = new Point((int)(_currentRectangle.Center.StoreX - _currentRectangle.Width / 2),
+                    (int)(_currentRectangle.Center.StoreY - _currentRectangle.Height / 2));
+                currentPanel.Size = new Size((int)_currentRectangle.Width, (int)_currentRectangle.Height);
+
+                FindCollisions();    // снова проверяем на пересечение
             }
         }
 
@@ -583,6 +593,15 @@ namespace Programming
                 _currentRectangle.Center.StoreY = newY;
                 ReplaceLineInListBox();
                 RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+
+                // Изменение прямоугольника
+                Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
+
+                currentPanel.Location = new Point((int)(_currentRectangle.Center.StoreX - _currentRectangle.Width / 2),
+                    (int)(_currentRectangle.Center.StoreY - _currentRectangle.Height / 2));
+                currentPanel.Size = new Size((int)_currentRectangle.Width, (int)_currentRectangle.Height);
+
+                FindCollisions();    // снова проверяем на пересечение
             }
         }
 
@@ -604,6 +623,15 @@ namespace Programming
                 _currentRectangle.Width = newWidth;
                 ReplaceLineInListBox();
                 RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+
+                // Изменение прямоугольника
+                Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
+
+                currentPanel.Location = new Point((int)(_currentRectangle.Center.StoreX - _currentRectangle.Width / 2),
+                    (int)(_currentRectangle.Center.StoreY - _currentRectangle.Height / 2));
+                currentPanel.Size = new Size((int)_currentRectangle.Width, (int)_currentRectangle.Height);
+
+                FindCollisions();    // снова проверяем на пересечение
             }
         }
 
@@ -625,6 +653,15 @@ namespace Programming
                 _currentRectangle.Height = newHeight;
                 ReplaceLineInListBox();
                 RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+
+                // Изменение прямоугольника
+                Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
+
+                currentPanel.Location = new Point((int)(_currentRectangle.Center.StoreX - _currentRectangle.Width / 2),
+                    (int)(_currentRectangle.Center.StoreY - _currentRectangle.Height / 2));
+                currentPanel.Size = new Size((int)_currentRectangle.Width, (int)_currentRectangle.Height);
+
+                FindCollisions();    // снова проверяем на пересечение
             }
         }
 
@@ -672,6 +709,23 @@ namespace Programming
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Обновление данных в текстовых полях по указанному прямоугольнику.
+        /// </summary>
+        /// <param name="rectangle">Прямоугольник, в котором меняется значение.</param>
+        private void UpdateRectangleInfo(Rectangle rectangle)
+        {
+
+        }
+
+        /// <summary>
+        /// Очищает все текстовые поля со занчениями прямоугольника.
+        /// </summary>
+        private void ClearRectangleInfo()
+        {
+
         }
     }
 }
