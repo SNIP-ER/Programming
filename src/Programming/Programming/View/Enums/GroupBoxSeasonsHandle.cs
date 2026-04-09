@@ -29,21 +29,21 @@ namespace Programming.View.Enums
             switch (SeasonComboBox.Text)
             {
                 case "Default":
-                this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#fff");
-                SeasonButton.BackColor = ColorTranslator.FromHtml("#e1e1e1");
+                this.BackColor = ColorTranslator.FromHtml(AppColors._lightGrey);
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._whiteHex);
+                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._lowLightGray);
                 break;
 
                 case "Spring":
-                this.BackColor = ColorTranslator.FromHtml("#559c45");
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#b1e3a6");
-                SeasonButton.BackColor = ColorTranslator.FromHtml("#dce87d");
+                this.BackColor = ColorTranslator.FromHtml(AppColors._green);
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._lightGreenHex);
+                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._yellow);
                 break;
 
                 case "Autumn":
-                this.BackColor = ColorTranslator.FromHtml("#e29c45");
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml("#e3b781");
-                SeasonButton.BackColor = ColorTranslator.FromHtml("#d68594");
+                this.BackColor = ColorTranslator.FromHtml(AppColors._orange);
+                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._lightOrange);
+                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._lightRedHex);
                 break;
 
                 case "Summer":

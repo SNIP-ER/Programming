@@ -74,11 +74,11 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Rating = Convert.ToDouble(FilmRatingTextBox.Text);
-                FilmRatingTextBox.BackColor = System.Drawing.Color.White;
+                FilmRatingTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
             }
             catch
             {
-                FilmRatingTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                FilmRatingTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -94,11 +94,11 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Year = Convert.ToInt32(FilmYearTextBox.Text);
-                FilmYearTextBox.BackColor = System.Drawing.Color.White;
+                FilmYearTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
             }
             catch
             {
-                FilmYearTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                FilmYearTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -114,11 +114,11 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Duration = Convert.ToInt32(FilmDurationTextBox.Text);
-                FilmDurationTextBox.BackColor = System.Drawing.Color.White;
+                FilmDurationTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
             }
             catch
             {
-                FilmDurationTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                FilmDurationTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

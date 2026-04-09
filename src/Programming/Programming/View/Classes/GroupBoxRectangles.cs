@@ -62,11 +62,11 @@ namespace Programming.View.Classes
             try
             {
                 _currentRectangleClasses.Length = float.Parse(RectanglesLengthTextBox.Text);
-                RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
+                RectanglesLengthTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
             }
             catch
             {
-                RectanglesLengthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesLengthTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -82,11 +82,11 @@ namespace Programming.View.Classes
             try
             {
                 _currentRectangleClasses.Width = float.Parse(RectanglesWidthTextBox.Text);
-                RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
+                RectanglesWidthTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
             }
             catch
             {
-                RectanglesWidthTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesWidthTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

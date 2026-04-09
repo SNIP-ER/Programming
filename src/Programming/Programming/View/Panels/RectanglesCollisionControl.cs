@@ -113,13 +113,13 @@ namespace Programming.View.Panels
         {
             if (!int.TryParse(RectanglesTextBoxX.Text, out int newX))
             {
-                RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (Validator.AssertValueInRangePanel(int.Parse(RectanglesTextBoxX.Text), 530) == false)
             {
-                RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxX.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры от 0 до 530!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -127,7 +127,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Center.StoreX = newX;
                 ReplaceLineInListBox();
-                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxX.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -149,13 +149,13 @@ namespace Programming.View.Panels
         {
             if (!int.TryParse(RectanglesTextBoxY.Text, out int newY))
             {
-                RectanglesTextBoxY.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxY.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (Validator.AssertValueInRangePanel(int.Parse(RectanglesTextBoxY.Text), 390) == false)
             {
-                RectanglesTextBoxY.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxY.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры от 0 до 390!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -163,7 +163,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Center.StoreY = newY;
                 ReplaceLineInListBox();
-                RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxY.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -185,7 +185,7 @@ namespace Programming.View.Panels
         {
             if (!float.TryParse(RectanglesTextBoxWidth.Text, out float newWidth))
             {
-                RectanglesTextBoxWidth.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxWidth.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -193,7 +193,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Width = newWidth;
                 ReplaceLineInListBox();
-                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -215,7 +215,7 @@ namespace Programming.View.Panels
         {
             if (!float.TryParse(RectanglesTextBoxHeight.Text, out float newHeight))
             {
-                RectanglesTextBoxHeight.BackColor = ColorTranslator.FromHtml("#FFB6C1");
+                RectanglesTextBoxHeight.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -223,7 +223,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Height = newHeight;
                 ReplaceLineInListBox();
-                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -246,7 +246,7 @@ namespace Programming.View.Panels
             // перекраска всех панелей
             for (int i = 0; i < count; i++)
             {
-                _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(127, 127, 255, 127);
+                _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(AppColors._lightGreen);
                 _rectanglePanles[i].BorderStyle = BorderStyle.FixedSingle;
             }
 
@@ -259,8 +259,8 @@ namespace Programming.View.Panels
 
                     if (flag)
                     {
-                        _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
-                        _rectanglePanles[j].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[i].BackColor = System.Drawing.Color.FromArgb(AppColors._lightRed);
+                        _rectanglePanles[j].BackColor = System.Drawing.Color.FromArgb(AppColors._lightRed);
                         _rectanglePanles[i].BorderStyle = BorderStyle.None;
                         _rectanglePanles[j].BorderStyle = BorderStyle.None;
                     }
@@ -273,8 +273,8 @@ namespace Programming.View.Panels
 
                     if (flagFinish)
                     {
-                        _rectanglePanles[count - 1].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
-                        _rectanglePanles[0].BackColor = System.Drawing.Color.FromArgb(127, 255, 127, 127);
+                        _rectanglePanles[count - 1].BackColor = System.Drawing.Color.FromArgb(AppColors._lightRed);
+                        _rectanglePanles[0].BackColor = System.Drawing.Color.FromArgb(AppColors._lightRed);
                         _rectanglePanles[count - 1].BorderStyle = BorderStyle.None;
                         _rectanglePanles[0].BorderStyle = BorderStyle.None;
                     }
@@ -295,10 +295,10 @@ namespace Programming.View.Panels
             RectanglesTextBoxHeight.Text = rectangle.Height.ToString();
 
             // сброс цвета окошка для ввода при переключении между прямоугольниками
-            RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
-            RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
-            RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
-            RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxX.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+            RectanglesTextBoxY.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+            RectanglesTextBoxWidth.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+            RectanglesTextBoxHeight.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
         }
 
         /// <summary>
