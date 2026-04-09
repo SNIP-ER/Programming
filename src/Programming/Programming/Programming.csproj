@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Classes\AppColors.cs" />
     <Compile Include="Model\Classes\Geometry\CollisionManager.cs" />
     <Compile Include="Model\Classes\Contact.cs" />
     <Compile Include="Model\Classes\Film.cs" />
@@ -65,6 +66,18 @@
     <Compile Include="Model\Enums\Manufacturers.cs" />
     <Compile Include="Model\Enums\Season.cs" />
     <Compile Include="Model\Enums\Weekday.cs" />
+    <Compile Include="View\Classes\GroupBoxMovies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Classes\GroupBoxMovies.Designer.cs">
+      <DependentUpon>GroupBoxMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Classes\GroupBoxRectangles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Classes\GroupBoxRectangles.Designer.cs">
+      <DependentUpon>GroupBoxRectangles.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Enums\GroupBoxEnumerations.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +120,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Classes\GroupBoxMovies.resx">
+      <DependentUpon>GroupBoxMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Classes\GroupBoxRectangles.resx">
+      <DependentUpon>GroupBoxRectangles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Enums\GroupBoxEnumerations.resx">
       <DependentUpon>GroupBoxEnumerations.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,8 +160,6 @@
     <Resource Include="Resources\remove_pressed.png" />
     <Resource Include="Resources\remove.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
