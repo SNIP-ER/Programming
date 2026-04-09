@@ -598,10 +598,10 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesTextBoxWidth_Leave(object sender, EventArgs e)
         {
-            if (!int.TryParse(RectanglesTextBoxWidth.Text, out int newWidth))
+            if (!float.TryParse(RectanglesTextBoxWidth.Text, out float newWidth))
             {
                 RectanglesTextBoxWidth.BackColor = ColorTranslator.FromHtml("#FFB6C1");
-                MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -628,10 +628,10 @@ namespace Programming
         /// <param name="e"></param>
         private void RectanglesTextBoxHeight_Leave(object sender, EventArgs e)
         {
-            if (!int.TryParse(RectanglesTextBoxHeight.Text, out int newHeight))
+            if (!float.TryParse(RectanglesTextBoxHeight.Text, out float newHeight))
             {
                 RectanglesTextBoxHeight.BackColor = ColorTranslator.FromHtml("#FFB6C1");
-                MessageBox.Show("Можно вводить только цифры!", "Ошибка!",
+                MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
