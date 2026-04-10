@@ -37,7 +37,13 @@ class RectangleClasses
     public Point2D Center { get; set; }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="RectangleClasses"/>.
+    /// </summary>
+    /// <param name="length">Длина прямоугольника.</param>
+    /// <param name="width">Ширина прямоугольника.</param>
+    /// <param name="color">Цвет прямоугольника.</param>
+    /// <param name="center">Координаты центра прямоугольника.</param>
     public RectangleClasses(float length, float width, string color, Point2D center)
     {
         Length = length;

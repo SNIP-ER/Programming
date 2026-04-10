@@ -35,7 +35,14 @@ class Film
     public string Genre { get; set; }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Film"/>.
+    /// </summary>
+    /// <param name="year">Год. От 1900.</param>
+    /// <param name="rating">Рейтинг. От 0 до 10.</param>
+    /// <param name="name">Название.</param>
+    /// <param name="genre">Жанр.</param>
+    /// <param name="duration">Длительность в минутах.</param>
     public Film(int year, double rating, string name, string genre, int duration)
     {
         Year = year;

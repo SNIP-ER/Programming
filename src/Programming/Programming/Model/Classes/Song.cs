@@ -13,10 +13,15 @@ class Song
         {
             length = Validator.AssertOnPositiveValue(value, "Length");
         }
-    }     
+    }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Song"/>.
+    /// </summary>
+    /// <param name="name">Название песни.</param>
+    /// <param name="author">Название автора.</param>
+    /// <param name="length">Длина песни. Измеряется в секундах.</param>
     public Song(string name, string author, int length)
     {
         Name = name;

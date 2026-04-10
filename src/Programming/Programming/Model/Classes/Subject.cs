@@ -24,7 +24,12 @@ class Subject
     public int Rating { get; set; }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Subject"/>.
+    /// </summary>
+    /// <param name="credit">Зачет / незачет/</param>
+    /// <param name="name">Название предмета.</param>
+    /// <param name="rating">Рейтинг.</param>
     public Subject(string credit, string name, int rating)
     {
         Credit = credit;

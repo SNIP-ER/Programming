@@ -33,7 +33,12 @@ class Time
     }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Time"/>.
+    /// </summary>
+    /// <param name="hours">Количество часов. От 0 до 23.</param>
+    /// <param name="minutes">Количество минут. От 0 до 59.</param>
+    /// <param name="seconds">Количество секунд. От 0 до 59.</param>
     public Time(int hours, int minutes, int seconds)
     {
         Hours = hours;

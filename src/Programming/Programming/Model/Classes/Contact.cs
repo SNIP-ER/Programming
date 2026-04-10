@@ -59,7 +59,12 @@ class Contact
         }
     }
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Contact"/>.
+    /// </summary>
+    /// <param name="number">Номер телефона. Начинается с +.</param>
+    /// <param name="name">Имя.</param>
+    /// <param name="surName">Фамилия.</param>
     public Contact(string number, string name, string surName)
     {
         Number = number;

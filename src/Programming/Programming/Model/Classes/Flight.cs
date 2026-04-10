@@ -15,7 +15,12 @@
     }
 
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Flight"/>.
+    /// </summary>
+    /// <param name="departurePoint">Место отправления.</param>
+    /// <param name="destination">Место назначения.</param>
+    /// <param name="flightTime">Время полета.</param>
     public Flight(string departurePoint, string destination, int flightTime)
     {
         DeparturePoint = departurePoint;

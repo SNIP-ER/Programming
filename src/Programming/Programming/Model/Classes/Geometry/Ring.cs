@@ -39,7 +39,12 @@ class Ring
         }
     }
 
-    // Конструктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Ring"/>.
+    /// </summary>
+    /// <param name="center">Координаты центра кольца.</param>
+    /// <param name="outerRadius">Внутренний радиус кольца.</param>
+    /// <param name="innerRadius">Внешний радиус кольца.</param>
     public Ring(Point2D center, float outerRadius, float innerRadius)
     {
         Center = center;

@@ -34,7 +34,12 @@
         get { return _id; }
     }
 
-    // Консруктор
+    /// <summary>
+    /// Создаёт экземпляр класса <see cref="Rectangle"/>.
+    /// </summary>
+    /// <param name="width">Ширина прямоугольника.</param>
+    /// <param name="height">Высота прямоугольника.</param>
+    /// <param name="center">Координаты центра прямоугольника.</param>
     public Rectangle(float width, float height, Point2D center)
     {
         Width = width;
