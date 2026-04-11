@@ -127,7 +127,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Center.StoreX = newX;
                 ReplaceLineInListBox();
-                RectanglesTextBoxX.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -163,7 +163,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Center.StoreY = newY;
                 ReplaceLineInListBox();
-                RectanglesTextBoxY.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -193,7 +193,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Width = newWidth;
                 ReplaceLineInListBox();
-                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -223,7 +223,7 @@ namespace Programming.View.Panels
             {
                 _currentRectangle.Height = newHeight;
                 ReplaceLineInListBox();
-                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
 
                 // Изменение прямоугольника
                 Panel currentPanel = _rectanglePanles[RectanglesListBox.SelectedIndex];
@@ -295,10 +295,10 @@ namespace Programming.View.Panels
             RectanglesTextBoxHeight.Text = rectangle.Height.ToString();
 
             // сброс цвета окошка для ввода при переключении между прямоугольниками
-            RectanglesTextBoxX.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
-            RectanglesTextBoxY.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
-            RectanglesTextBoxWidth.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
-            RectanglesTextBoxHeight.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+            RectanglesTextBoxX.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxY.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxWidth.BackColor = System.Drawing.Color.White;
+            RectanglesTextBoxHeight.BackColor = System.Drawing.Color.White;
         }
 
         /// <summary>

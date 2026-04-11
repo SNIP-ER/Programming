@@ -62,7 +62,7 @@ namespace Programming.View.Classes
             try
             {
                 _currentRectangleClasses.Length = float.Parse(RectanglesLengthTextBox.Text);
-                RectanglesLengthTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesLengthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -82,7 +82,7 @@ namespace Programming.View.Classes
             try
             {
                 _currentRectangleClasses.Width = float.Parse(RectanglesWidthTextBox.Text);
-                RectanglesWidthTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                RectanglesWidthTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {

@@ -74,7 +74,7 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Rating = Convert.ToDouble(FilmRatingTextBox.Text);
-                FilmRatingTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                FilmRatingTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -94,7 +94,7 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Year = Convert.ToInt32(FilmYearTextBox.Text);
-                FilmYearTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                FilmYearTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {
@@ -114,7 +114,7 @@ namespace Programming.View.Classes
             try
             {
                 _currentFilm.Duration = Convert.ToInt32(FilmDurationTextBox.Text);
-                FilmDurationTextBox.BackColor = System.Drawing.Color.FromArgb(AppColors._white);
+                FilmDurationTextBox.BackColor = System.Drawing.Color.White;
             }
             catch
             {

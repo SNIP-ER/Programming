@@ -14,7 +14,6 @@ class AppColors
     public const string _lightOrange = "#e3b781";
     public const string _lightRedHex = "#d68594";
 
-    public const int _white = unchecked((int)0x7FFFFFFF);
     public const int _lightGreen = unchecked((int)0x7F7FFF7F);
     public const int _lightRed = unchecked((int)0x7FFF7F7F);
 }
