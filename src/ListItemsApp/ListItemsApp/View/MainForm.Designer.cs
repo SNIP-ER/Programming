@@ -1,6 +1,6 @@
 ﻿namespace ListItemsApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.NameItemsListBox = new System.Windows.Forms.ListBox();
             this.ItemInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CountTextBox = new System.Windows.Forms.TextBox();
             this.ManufacturerTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.CountLabel = new System.Windows.Forms.Label();
@@ -40,6 +40,9 @@
             this.ManufacturerLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TranslateComboBox = new System.Windows.Forms.ComboBox();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.RemButton = new System.Windows.Forms.Button();
+            this.ManualLabel = new System.Windows.Forms.Label();
             this.ItemInfoGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,12 +51,13 @@
             this.NameItemsListBox.FormattingEnabled = true;
             this.NameItemsListBox.Location = new System.Drawing.Point(12, 12);
             this.NameItemsListBox.Name = "NameItemsListBox";
-            this.NameItemsListBox.Size = new System.Drawing.Size(248, 329);
+            this.NameItemsListBox.Size = new System.Drawing.Size(248, 303);
             this.NameItemsListBox.TabIndex = 0;
+            this.NameItemsListBox.SelectedIndexChanged += new System.EventHandler(this.NameItemsListBox_SelectedIndexChanged);
             // 
             // ItemInfoGroupBox
             // 
-            this.ItemInfoGroupBox.Controls.Add(this.textBox3);
+            this.ItemInfoGroupBox.Controls.Add(this.CountTextBox);
             this.ItemInfoGroupBox.Controls.Add(this.ManufacturerTextBox);
             this.ItemInfoGroupBox.Controls.Add(this.NameTextBox);
             this.ItemInfoGroupBox.Controls.Add(this.CountLabel);
@@ -68,12 +72,12 @@
             this.ItemInfoGroupBox.TabStop = false;
             this.ItemInfoGroupBox.Text = "Selected Item";
             // 
-            // textBox3
+            // CountTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(223, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.CountTextBox.Location = new System.Drawing.Point(223, 123);
+            this.CountTextBox.Name = "CountTextBox";
+            this.CountTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CountTextBox.TabIndex = 7;
             // 
             // ManufacturerTextBox
             // 
@@ -112,6 +116,7 @@
             // CategoryComboBox
             // 
             this.CategoryComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryComboBox.FormattingEnabled = true;
             this.CategoryComboBox.Location = new System.Drawing.Point(212, 88);
             this.CategoryComboBox.Name = "CategoryComboBox";
@@ -147,27 +152,60 @@
             this.TranslateComboBox.Items.AddRange(new object[] {
             "ENG",
             "RUS"});
-            this.TranslateComboBox.Location = new System.Drawing.Point(667, 319);
+            this.TranslateComboBox.Location = new System.Drawing.Point(676, 319);
             this.TranslateComboBox.Name = "TranslateComboBox";
-            this.TranslateComboBox.Size = new System.Drawing.Size(68, 21);
+            this.TranslateComboBox.Size = new System.Drawing.Size(59, 21);
             this.TranslateComboBox.TabIndex = 2;
             this.TranslateComboBox.SelectedIndexChanged += new System.EventHandler(this.TranslateComboBox_SelectedIndexChanged);
             // 
-            // Form1
+            // AddButton
+            // 
+            this.AddButton.Location = new System.Drawing.Point(45, 321);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(56, 23);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // RemButton
+            // 
+            this.RemButton.Location = new System.Drawing.Point(162, 321);
+            this.RemButton.Name = "RemButton";
+            this.RemButton.Size = new System.Drawing.Size(56, 23);
+            this.RemButton.TabIndex = 4;
+            this.RemButton.Text = "Rem";
+            this.RemButton.UseVisualStyleBackColor = true;
+            this.RemButton.Click += new System.EventHandler(this.RemButton_Click);
+            // 
+            // ManualLabel
+            // 
+            this.ManualLabel.AutoSize = true;
+            this.ManualLabel.Location = new System.Drawing.Point(287, 195);
+            this.ManualLabel.Name = "ManualLabel";
+            this.ManualLabel.Size = new System.Drawing.Size(85, 13);
+            this.ManualLabel.TabIndex = 5;
+            this.ManualLabel.Text = "-- Инструкция --\r\n";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(747, 352);
+            this.Controls.Add(this.ManualLabel);
+            this.Controls.Add(this.RemButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.TranslateComboBox);
             this.Controls.Add(this.ItemInfoGroupBox);
             this.Controls.Add(this.NameItemsListBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "ListItemApp";
             this.ItemInfoGroupBox.ResumeLayout(false);
             this.ItemInfoGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,10 +218,13 @@
         private System.Windows.Forms.Label CountLabel;
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.ComboBox CategoryComboBox;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox CountTextBox;
         private System.Windows.Forms.TextBox ManufacturerTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.ComboBox TranslateComboBox;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button RemButton;
+        private System.Windows.Forms.Label ManualLabel;
     }
 }
 
