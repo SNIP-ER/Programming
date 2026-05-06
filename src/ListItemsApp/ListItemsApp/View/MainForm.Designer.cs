@@ -78,6 +78,7 @@
             this.CountTextBox.Name = "CountTextBox";
             this.CountTextBox.Size = new System.Drawing.Size(100, 20);
             this.CountTextBox.TabIndex = 7;
+            this.CountTextBox.Leave += new System.EventHandler(this.CountTextBox_Leave);
             // 
             // ManufacturerTextBox
             // 
@@ -85,6 +86,7 @@
             this.ManufacturerTextBox.Name = "ManufacturerTextBox";
             this.ManufacturerTextBox.Size = new System.Drawing.Size(295, 20);
             this.ManufacturerTextBox.TabIndex = 6;
+            this.ManufacturerTextBox.Leave += new System.EventHandler(this.ManufacturerTextBox_Leave);
             // 
             // NameTextBox
             // 
@@ -92,6 +94,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(295, 20);
             this.NameTextBox.TabIndex = 5;
+            this.NameTextBox.Leave += new System.EventHandler(this.NameTextBox_Leave);
             // 
             // CountLabel
             // 
@@ -122,6 +125,7 @@
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.CategoryComboBox.TabIndex = 2;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // ManufacturerLabel
             // 
