@@ -40,10 +40,12 @@
             this.ManufacturerLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.TranslateComboBox = new System.Windows.Forms.ComboBox();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.RemButton = new System.Windows.Forms.Button();
             this.ManualLabel = new System.Windows.Forms.Label();
+            this.AddPictureBox = new System.Windows.Forms.PictureBox();
+            this.RemPictureBox = new System.Windows.Forms.PictureBox();
             this.ItemInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // NameItemsListBox
@@ -51,7 +53,7 @@
             this.NameItemsListBox.FormattingEnabled = true;
             this.NameItemsListBox.Location = new System.Drawing.Point(12, 12);
             this.NameItemsListBox.Name = "NameItemsListBox";
-            this.NameItemsListBox.Size = new System.Drawing.Size(248, 303);
+            this.NameItemsListBox.Size = new System.Drawing.Size(248, 290);
             this.NameItemsListBox.TabIndex = 0;
             this.NameItemsListBox.SelectedIndexChanged += new System.EventHandler(this.NameItemsListBox_SelectedIndexChanged);
             // 
@@ -162,26 +164,6 @@
             this.TranslateComboBox.TabIndex = 2;
             this.TranslateComboBox.SelectedIndexChanged += new System.EventHandler(this.TranslateComboBox_SelectedIndexChanged);
             // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(45, 321);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(56, 23);
-            this.AddButton.TabIndex = 3;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // RemButton
-            // 
-            this.RemButton.Location = new System.Drawing.Point(162, 321);
-            this.RemButton.Name = "RemButton";
-            this.RemButton.Size = new System.Drawing.Size(56, 23);
-            this.RemButton.TabIndex = 4;
-            this.RemButton.Text = "Rem";
-            this.RemButton.UseVisualStyleBackColor = true;
-            this.RemButton.Click += new System.EventHandler(this.RemButton_Click);
-            // 
             // ManualLabel
             // 
             this.ManualLabel.AutoSize = true;
@@ -191,15 +173,43 @@
             this.ManualLabel.TabIndex = 5;
             this.ManualLabel.Text = "-- Инструкция --\r\n";
             // 
+            // AddPictureBox
+            // 
+            this.AddPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddPictureBox.Image = global::ListItemsApp.Properties.Resources.Add;
+            this.AddPictureBox.Location = new System.Drawing.Point(74, 308);
+            this.AddPictureBox.Name = "AddPictureBox";
+            this.AddPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.AddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AddPictureBox.TabIndex = 6;
+            this.AddPictureBox.TabStop = false;
+            this.AddPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddPictureBox_MouseDown);
+            this.AddPictureBox.MouseEnter += new System.EventHandler(this.AddPictureBox_MouseEnter);
+            this.AddPictureBox.MouseLeave += new System.EventHandler(this.AddPictureBox_MouseLeave);
+            // 
+            // RemPictureBox
+            // 
+            this.RemPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RemPictureBox.Image = global::ListItemsApp.Properties.Resources.Rem;
+            this.RemPictureBox.Location = new System.Drawing.Point(160, 308);
+            this.RemPictureBox.Name = "RemPictureBox";
+            this.RemPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.RemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RemPictureBox.TabIndex = 7;
+            this.RemPictureBox.TabStop = false;
+            this.RemPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RemPictureBox_MouseDown);
+            this.RemPictureBox.MouseEnter += new System.EventHandler(this.RemPictureBox_MouseEnter);
+            this.RemPictureBox.MouseLeave += new System.EventHandler(this.RemPictureBox_MouseLeave);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(747, 352);
+            this.Controls.Add(this.RemPictureBox);
+            this.Controls.Add(this.AddPictureBox);
             this.Controls.Add(this.ManualLabel);
-            this.Controls.Add(this.RemButton);
-            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.TranslateComboBox);
             this.Controls.Add(this.ItemInfoGroupBox);
             this.Controls.Add(this.NameItemsListBox);
@@ -208,6 +218,8 @@
             this.Text = "ListItemApp";
             this.ItemInfoGroupBox.ResumeLayout(false);
             this.ItemInfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RemPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,9 +238,9 @@
         private System.Windows.Forms.TextBox ManufacturerTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.ComboBox TranslateComboBox;
-        private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Button RemButton;
         private System.Windows.Forms.Label ManualLabel;
+        private System.Windows.Forms.PictureBox AddPictureBox;
+        private System.Windows.Forms.PictureBox RemPictureBox;
     }
 }
 

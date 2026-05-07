@@ -21,12 +21,13 @@ namespace ListItemsApp
         }
 
 
+
         /// <summary>
         /// Добавление нового товара.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AddButton_Click(object sender, EventArgs e)
+        private void AddPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             Items items = new Items("Name", "", 0, 0);
 
@@ -40,7 +41,7 @@ namespace ListItemsApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RemButton_Click(object sender, EventArgs e)
+        private void RemPictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             int index = NameItemsListBox.SelectedIndex;
 
@@ -51,6 +52,8 @@ namespace ListItemsApp
             }
             else { }
         }
+
+
 
         /// <summary>
         /// Заполнение текстовых полей данных по выбранному товару.
@@ -95,6 +98,8 @@ namespace ListItemsApp
             CountTextBox.Text = "";
             CategoryComboBox.SelectedIndex = 0;
         }
+
+
 
         /// <summary>
         /// Изменение названия товара вручную пользователем.
@@ -158,6 +163,60 @@ namespace ListItemsApp
                 _currentItem.Index = NameItemsListBox.SelectedIndex;
             }
         }
+
+
+
+        /// <summary>
+        /// Курсор находится в зоне кнопки Добавить товар.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddPictureBox_MouseEnter(object sender, EventArgs e) => ScalePictureBox((PictureBox)sender, true);
+
+        /// <summary>
+        /// Курсор уходит из зоны кнопки Добавить товар.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddPictureBox_MouseLeave(object sender, EventArgs e) => ScalePictureBox((PictureBox)sender, false);
+
+        /// <summary>
+        /// Курсор находится в зоне кнопки Удалить товар.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemPictureBox_MouseEnter(object sender, EventArgs e) => ScalePictureBox((PictureBox)sender, true);
+
+        /// <summary>
+        /// Курсор уходит из зоны кнопки Добавить товар.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemPictureBox_MouseLeave(object sender, EventArgs e) => ScalePictureBox((PictureBox)sender, false);
+
+        /// <summary>
+        /// Изменение размера PictureBox.
+        /// </summary>
+        /// <param name="pic"></param>
+        /// <param name="shrink"></param>
+        private void ScalePictureBox(PictureBox pic, bool shrink)
+        {
+            if (shrink)
+            {
+                pic.Width = (int)(pic.Width * 0.9);
+                pic.Height = (int)(pic.Height * 0.9);
+                pic.Left += (int)(pic.Width * 0.05);
+                pic.Top += (int)(pic.Height * 0.05);
+            }
+            else
+            {
+                pic.Left -= (int)(pic.Width * 0.05);
+                pic.Top -= (int)(pic.Height * 0.05);
+                pic.Width = (int)(pic.Width / 0.9);
+                pic.Height = (int)(pic.Height / 0.9);
+            }
+        }
+
 
 
         /// <summary>
