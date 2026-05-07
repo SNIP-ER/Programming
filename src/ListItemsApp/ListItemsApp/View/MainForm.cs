@@ -34,8 +34,9 @@ namespace ListItemsApp
             Items items = new Items("Name", "", 0, 0);
 
             _items.Add(items);
-
             NameItemsListBox.Items.Add($"{items.Name}");
+
+            SortItems();
         }
 
         /// <summary>
@@ -114,6 +115,8 @@ namespace ListItemsApp
             {
                 _currentItem.Name = NameTextBox.Text;
                 NameItemsListBox.Items[NameItemsListBox.SelectedIndex] = _currentItem.Name;
+
+                SortItems();
             }
         }
 
@@ -166,6 +169,41 @@ namespace ListItemsApp
             if (_currentItem != null)
             {
                 _currentItem.Index = NameItemsListBox.SelectedIndex;
+            }
+        }
+
+
+        /// <summary>
+        /// Сортировка списка товаров.
+        /// </summary>
+        private void SortItems()
+        {
+            int index = NameItemsListBox.SelectedIndex;
+            Items selected = null;
+            if (index != -1)
+                selected = _items[index];
+
+            // Сортировка списка
+            _items.Sort((a, b) => a.Name.CompareTo(b.Name));
+
+            // Заполнение списка заново
+            NameItemsListBox.Items.Clear();
+            for (int i = 0; i < _items.Count; i++)
+            {
+                NameItemsListBox.Items.Add(_items[i].Name);
+            }
+
+            // Вернуть выделение товара
+            if (selected != null)
+            {
+                for (int i = 0; i < _items.Count; i++)
+                {
+                    if (_items[i] == selected)
+                    {
+                        NameItemsListBox.SelectedIndex = i;
+                        break;
+                    }
+                }
             }
         }
 
