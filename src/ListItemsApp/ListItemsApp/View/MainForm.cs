@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ListItemsApp
 {
@@ -15,9 +20,6 @@ namespace ListItemsApp
             InitializeComponent();
 
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
-
-            // Изначально выбран английский язык интерфейса
-            TranslateComboBox.SelectedIndex = 0;
         }
 
 
@@ -144,7 +146,7 @@ namespace ListItemsApp
                 }
                 catch
                 {
-                    CountTextBox.BackColor = ColorTranslator.FromHtml(AppColors._error);
+                    CountTextBox.BackColor = ColorTranslator.FromHtml("#FFB6C1");
                     MessageBox.Show("Можно вводить только цифры !", "Ошибка!",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -158,6 +160,9 @@ namespace ListItemsApp
         /// <param name="e"></param>
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Убрать фокус с ComboBox чтобы не было синей подсветки
+            this.ActiveControl = null;
+
             if (_currentItem != null)
             {
                 _currentItem.Index = NameItemsListBox.SelectedIndex;
@@ -215,19 +220,6 @@ namespace ListItemsApp
                 pic.Width = (int)(pic.Width / 0.9);
                 pic.Height = (int)(pic.Height / 0.9);
             }
-        }
-
-
-
-        /// <summary>
-        /// Выбор языка интерфейса, в зависимости от выбранного варианта.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TranslateComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Изменяем фокус на саму форму, чтобы убрать выделение текста
-            this.ActiveControl = null;
         }
     }
 }

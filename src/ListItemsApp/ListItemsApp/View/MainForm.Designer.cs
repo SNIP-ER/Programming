@@ -39,8 +39,6 @@
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.ManufacturerLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.TranslateComboBox = new System.Windows.Forms.ComboBox();
-            this.ManualLabel = new System.Windows.Forms.Label();
             this.AddPictureBox = new System.Windows.Forms.PictureBox();
             this.RemPictureBox = new System.Windows.Forms.PictureBox();
             this.ItemInfoGroupBox.SuspendLayout();
@@ -51,10 +49,8 @@
             // NameItemsListBox
             // 
             this.NameItemsListBox.FormattingEnabled = true;
-            this.NameItemsListBox.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.NameItemsListBox, "NameItemsListBox");
             this.NameItemsListBox.Name = "NameItemsListBox";
-            this.NameItemsListBox.Size = new System.Drawing.Size(248, 290);
-            this.NameItemsListBox.TabIndex = 0;
             this.NameItemsListBox.SelectedIndexChanged += new System.EventHandler(this.NameItemsListBox_SelectedIndexChanged);
             // 
             // ItemInfoGroupBox
@@ -67,121 +63,63 @@
             this.ItemInfoGroupBox.Controls.Add(this.CategoryComboBox);
             this.ItemInfoGroupBox.Controls.Add(this.ManufacturerLabel);
             this.ItemInfoGroupBox.Controls.Add(this.NameLabel);
-            this.ItemInfoGroupBox.Location = new System.Drawing.Point(285, 12);
+            resources.ApplyResources(this.ItemInfoGroupBox, "ItemInfoGroupBox");
             this.ItemInfoGroupBox.Name = "ItemInfoGroupBox";
-            this.ItemInfoGroupBox.Size = new System.Drawing.Size(448, 157);
-            this.ItemInfoGroupBox.TabIndex = 1;
             this.ItemInfoGroupBox.TabStop = false;
-            this.ItemInfoGroupBox.Text = "Selected Item";
             // 
             // CountTextBox
             // 
-            this.CountTextBox.Location = new System.Drawing.Point(223, 123);
+            resources.ApplyResources(this.CountTextBox, "CountTextBox");
             this.CountTextBox.Name = "CountTextBox";
-            this.CountTextBox.Size = new System.Drawing.Size(100, 20);
-            this.CountTextBox.TabIndex = 7;
             this.CountTextBox.Leave += new System.EventHandler(this.CountTextBox_Leave);
             // 
             // ManufacturerTextBox
             // 
-            this.ManufacturerTextBox.Location = new System.Drawing.Point(131, 57);
+            resources.ApplyResources(this.ManufacturerTextBox, "ManufacturerTextBox");
             this.ManufacturerTextBox.Name = "ManufacturerTextBox";
-            this.ManufacturerTextBox.Size = new System.Drawing.Size(295, 20);
-            this.ManufacturerTextBox.TabIndex = 6;
             this.ManufacturerTextBox.Leave += new System.EventHandler(this.ManufacturerTextBox_Leave);
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(131, 25);
+            resources.ApplyResources(this.NameTextBox, "NameTextBox");
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(295, 20);
-            this.NameTextBox.TabIndex = 5;
             this.NameTextBox.Leave += new System.EventHandler(this.NameTextBox_Leave);
             // 
             // CountLabel
             // 
-            this.CountLabel.AutoSize = true;
-            this.CountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CountLabel.Location = new System.Drawing.Point(34, 124);
+            resources.ApplyResources(this.CountLabel, "CountLabel");
             this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(41, 16);
-            this.CountLabel.TabIndex = 4;
-            this.CountLabel.Text = "Count";
             // 
             // CategoryLabel
             // 
-            this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoryLabel.Location = new System.Drawing.Point(25, 89);
+            resources.ApplyResources(this.CategoryLabel, "CategoryLabel");
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(62, 16);
-            this.CategoryLabel.TabIndex = 3;
-            this.CategoryLabel.Text = "Category";
             // 
             // CategoryComboBox
             // 
             this.CategoryComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.CategoryComboBox, "CategoryComboBox");
             this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Location = new System.Drawing.Point(212, 88);
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CategoryComboBox.TabIndex = 2;
             this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // ManufacturerLabel
             // 
-            this.ManufacturerLabel.AutoSize = true;
-            this.ManufacturerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ManufacturerLabel.Location = new System.Drawing.Point(16, 58);
+            resources.ApplyResources(this.ManufacturerLabel, "ManufacturerLabel");
             this.ManufacturerLabel.Name = "ManufacturerLabel";
-            this.ManufacturerLabel.Size = new System.Drawing.Size(84, 16);
-            this.ManufacturerLabel.TabIndex = 1;
-            this.ManufacturerLabel.Text = "Manufacturer";
             // 
             // NameLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(34, 26);
+            resources.ApplyResources(this.NameLabel, "NameLabel");
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(44, 16);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Name";
-            // 
-            // TranslateComboBox
-            // 
-            this.TranslateComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TranslateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TranslateComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TranslateComboBox.FormattingEnabled = true;
-            this.TranslateComboBox.Items.AddRange(new object[] {
-            "ENG",
-            "RUS"});
-            this.TranslateComboBox.Location = new System.Drawing.Point(676, 319);
-            this.TranslateComboBox.Name = "TranslateComboBox";
-            this.TranslateComboBox.Size = new System.Drawing.Size(59, 21);
-            this.TranslateComboBox.TabIndex = 2;
-            this.TranslateComboBox.SelectedIndexChanged += new System.EventHandler(this.TranslateComboBox_SelectedIndexChanged);
-            // 
-            // ManualLabel
-            // 
-            this.ManualLabel.AutoSize = true;
-            this.ManualLabel.Location = new System.Drawing.Point(287, 195);
-            this.ManualLabel.Name = "ManualLabel";
-            this.ManualLabel.Size = new System.Drawing.Size(85, 13);
-            this.ManualLabel.TabIndex = 5;
-            this.ManualLabel.Text = "-- Инструкция --\r\n";
             // 
             // AddPictureBox
             // 
             this.AddPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddPictureBox.Image = global::ListItemsApp.Properties.Resources.Add;
-            this.AddPictureBox.Location = new System.Drawing.Point(74, 308);
+            resources.ApplyResources(this.AddPictureBox, "AddPictureBox");
             this.AddPictureBox.Name = "AddPictureBox";
-            this.AddPictureBox.Size = new System.Drawing.Size(32, 32);
-            this.AddPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.AddPictureBox.TabIndex = 6;
             this.AddPictureBox.TabStop = false;
             this.AddPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddPictureBox_MouseDown);
             this.AddPictureBox.MouseEnter += new System.EventHandler(this.AddPictureBox_MouseEnter);
@@ -191,11 +129,8 @@
             // 
             this.RemPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RemPictureBox.Image = global::ListItemsApp.Properties.Resources.Rem;
-            this.RemPictureBox.Location = new System.Drawing.Point(160, 308);
+            resources.ApplyResources(this.RemPictureBox, "RemPictureBox");
             this.RemPictureBox.Name = "RemPictureBox";
-            this.RemPictureBox.Size = new System.Drawing.Size(32, 32);
-            this.RemPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.RemPictureBox.TabIndex = 7;
             this.RemPictureBox.TabStop = false;
             this.RemPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RemPictureBox_MouseDown);
             this.RemPictureBox.MouseEnter += new System.EventHandler(this.RemPictureBox_MouseEnter);
@@ -203,25 +138,19 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(747, 352);
             this.Controls.Add(this.RemPictureBox);
             this.Controls.Add(this.AddPictureBox);
-            this.Controls.Add(this.ManualLabel);
-            this.Controls.Add(this.TranslateComboBox);
             this.Controls.Add(this.ItemInfoGroupBox);
             this.Controls.Add(this.NameItemsListBox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "ListItemApp";
             this.ItemInfoGroupBox.ResumeLayout(false);
             this.ItemInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AddPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RemPictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -237,8 +166,6 @@
         private System.Windows.Forms.TextBox CountTextBox;
         private System.Windows.Forms.TextBox ManufacturerTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.ComboBox TranslateComboBox;
-        private System.Windows.Forms.Label ManualLabel;
         private System.Windows.Forms.PictureBox AddPictureBox;
         private System.Windows.Forms.PictureBox RemPictureBox;
     }

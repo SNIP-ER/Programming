@@ -118,6 +118,317 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NameItemsListBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="NameItemsListBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 290</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NameItemsListBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;NameItemsListBox.Name" xml:space="preserve">
+    <value>NameItemsListBox</value>
+  </data>
+  <data name="&gt;&gt;NameItemsListBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameItemsListBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NameItemsListBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CountTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>223, 123</value>
+  </data>
+  <data name="CountTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="CountTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;CountTextBox.Name" xml:space="preserve">
+    <value>CountTextBox</value>
+  </data>
+  <data name="&gt;&gt;CountTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CountTextBox.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CountTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ManufacturerTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 57</value>
+  </data>
+  <data name="ManufacturerTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 20</value>
+  </data>
+  <data name="ManufacturerTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerTextBox.Name" xml:space="preserve">
+    <value>ManufacturerTextBox</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerTextBox.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="NameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 25</value>
+  </data>
+  <data name="NameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 20</value>
+  </data>
+  <data name="NameTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;NameTextBox.Name" xml:space="preserve">
+    <value>NameTextBox</value>
+  </data>
+  <data name="&gt;&gt;NameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameTextBox.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NameTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CountLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CountLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="CountLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 124</value>
+  </data>
+  <data name="CountLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 16</value>
+  </data>
+  <data name="CountLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CountLabel.Text" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="&gt;&gt;CountLabel.Name" xml:space="preserve">
+    <value>CountLabel</value>
+  </data>
+  <data name="&gt;&gt;CountLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CountLabel.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CountLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CategoryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CategoryLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="CategoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 89</value>
+  </data>
+  <data name="CategoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 16</value>
+  </data>
+  <data name="CategoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CategoryLabel.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="&gt;&gt;CategoryLabel.Name" xml:space="preserve">
+    <value>CategoryLabel</value>
+  </data>
+  <data name="&gt;&gt;CategoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CategoryLabel.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CategoryLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CategoryComboBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CategoryComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 88</value>
+  </data>
+  <data name="CategoryComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="CategoryComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;CategoryComboBox.Name" xml:space="preserve">
+    <value>CategoryComboBox</value>
+  </data>
+  <data name="&gt;&gt;CategoryComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CategoryComboBox.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;CategoryComboBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ManufacturerLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ManufacturerLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="ManufacturerLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 58</value>
+  </data>
+  <data name="ManufacturerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 16</value>
+  </data>
+  <data name="ManufacturerLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ManufacturerLabel.Text" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerLabel.Name" xml:space="preserve">
+    <value>ManufacturerLabel</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerLabel.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ManufacturerLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="NameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 26</value>
+  </data>
+  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 16</value>
+  </data>
+  <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NameLabel.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
+    <value>NameLabel</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="ItemInfoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 12</value>
+  </data>
+  <data name="ItemInfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>448, 157</value>
+  </data>
+  <data name="ItemInfoGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ItemInfoGroupBox.Text" xml:space="preserve">
+    <value>Selected Item</value>
+  </data>
+  <data name="&gt;&gt;ItemInfoGroupBox.Name" xml:space="preserve">
+    <value>ItemInfoGroupBox</value>
+  </data>
+  <data name="&gt;&gt;ItemInfoGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemInfoGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ItemInfoGroupBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AddPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 308</value>
+  </data>
+  <data name="AddPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="AddPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="AddPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;AddPictureBox.Name" xml:space="preserve">
+    <value>AddPictureBox</value>
+  </data>
+  <data name="&gt;&gt;AddPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AddPictureBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="RemPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 308</value>
+  </data>
+  <data name="RemPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 32</value>
+  </data>
+  <data name="RemPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="RemPictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;RemPictureBox.Name" xml:space="preserve">
+    <value>RemPictureBox</value>
+  </data>
+  <data name="&gt;&gt;RemPictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RemPictureBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;RemPictureBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>747, 352</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEA8AAAAAEAIAAo4AMAFgAAACgAAADwAAAAAAIAAAEAIAAAAAAAAMADAAAAAAAAAAAAAAAAAAAA
@@ -4355,5 +4666,14 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ListItemApp</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

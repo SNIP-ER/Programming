@@ -46,9 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Classes\AppColors.cs" />
     <Compile Include="Model\Classes\ClassesItems.cs" />
-    <Compile Include="Model\Classes\NameItems.cs" />
     <Compile Include="Model\Classes\Validator.cs" />
     <Compile Include="Model\Enums\Category.cs" />
     <Compile Include="View\MainForm.cs">
