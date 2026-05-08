@@ -168,7 +168,7 @@ namespace ListItemsApp
 
             if (_currentItem != null)
             {
-                _currentItem.Index = NameItemsListBox.SelectedIndex;
+                _currentItem.Index = CategoryComboBox.SelectedIndex;
             }
         }
 

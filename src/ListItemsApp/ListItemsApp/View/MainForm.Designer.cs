@@ -48,13 +48,14 @@
             // 
             // NameItemsListBox
             // 
-            this.NameItemsListBox.FormattingEnabled = true;
             resources.ApplyResources(this.NameItemsListBox, "NameItemsListBox");
+            this.NameItemsListBox.FormattingEnabled = true;
             this.NameItemsListBox.Name = "NameItemsListBox";
             this.NameItemsListBox.SelectedIndexChanged += new System.EventHandler(this.NameItemsListBox_SelectedIndexChanged);
             // 
             // ItemInfoGroupBox
             // 
+            resources.ApplyResources(this.ItemInfoGroupBox, "ItemInfoGroupBox");
             this.ItemInfoGroupBox.Controls.Add(this.CountTextBox);
             this.ItemInfoGroupBox.Controls.Add(this.ManufacturerTextBox);
             this.ItemInfoGroupBox.Controls.Add(this.NameTextBox);
@@ -63,7 +64,6 @@
             this.ItemInfoGroupBox.Controls.Add(this.CategoryComboBox);
             this.ItemInfoGroupBox.Controls.Add(this.ManufacturerLabel);
             this.ItemInfoGroupBox.Controls.Add(this.NameLabel);
-            resources.ApplyResources(this.ItemInfoGroupBox, "ItemInfoGroupBox");
             this.ItemInfoGroupBox.Name = "ItemInfoGroupBox";
             this.ItemInfoGroupBox.TabStop = false;
             // 
