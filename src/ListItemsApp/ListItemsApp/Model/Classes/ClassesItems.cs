@@ -1,7 +1,14 @@
-﻿class Items
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+using System.IO;
+
+class Items
 {
     private string name, manufacturer;
     private int count, index;
+
+    // Путь к файлу
+    private static readonly string DataFilePath = "products.json";
 
 
     public string Name
@@ -43,5 +50,33 @@
     public Items()
     {
 
+    }
+
+
+    // Сохранение списка товаров в файл
+    public static void SaveToFile(string filePath, List<Items> items)
+    {
+        string json = JsonConvert.SerializeObject(items, Formatting.Indented);
+        File.WriteAllText(filePath, json);
+    }
+
+    // Загрузка списка товаров из файла
+    public static List<Items> LoadFromFile(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+
+            return JsonConvert.DeserializeObject<List<Items>>(json);
+        }
+
+        // Возврат пустого списка, если не загрузились данные из файла
+        return new List<Items>();
+    }
+
+    // Получить путь к файлу данных
+    public static string GetDataFilePath()
+    {
+        return DataFilePath;
     }
 }

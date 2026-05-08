@@ -14,12 +14,20 @@ namespace ListItemsApp
     {
         private List<Items> _items = new List<Items>();
         private Items _currentItem;
+        private string _dataFilePath;
 
         public MainForm()
         {
             InitializeComponent();
 
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
+
+            // Путь к файлу данных
+            _dataFilePath = Items.GetDataFilePath();
+            // Загрузка данных из файла
+            LoadDataOnStartup();
+            // Событие закрытия окна
+            this.FormClosing += MainFormClosing;
         }
 
 
@@ -257,6 +265,63 @@ namespace ListItemsApp
                 pic.Top -= (int)(pic.Height * 0.05);
                 pic.Width = (int)(pic.Width / 0.9);
                 pic.Height = (int)(pic.Height / 0.9);
+            }
+        }
+
+
+
+        /// <summary>
+        /// Загрузка данных из файла при запуске программы.
+        /// </summary>
+        private void LoadDataOnStartup()
+        {
+            try
+            {
+                _items = Items.LoadFromFile(_dataFilePath);
+
+                if (_items.Count > 0)
+                {
+                    // Заполнение ListBox
+                    NameItemsListBox.Items.Clear();
+
+                    foreach (var item in _items)
+                    {
+                        NameItemsListBox.Items.Add(item.Name);
+                    }
+
+                    SortItems();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Если не удалось загрузить
+                _items = new List<Items>();
+                System.Diagnostics.Debug.WriteLine($"Ошибка загрузки данных: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Сохранение данных при закрытии программы.
+        /// </summary>
+        private void MainFormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                Items.SaveToFile(_dataFilePath, _items);
+            }
+            catch (Exception ex)
+            {
+                var result = MessageBox.Show(
+                    $"Не удалось сохранить данные: {ex.Message}\n\nВсё равно выйти?",
+                    "Ошибка сохранения",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Отмена закрытия
+                }
             }
         }
     }
