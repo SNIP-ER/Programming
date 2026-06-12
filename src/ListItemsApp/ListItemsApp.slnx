@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="ListItemsApp/ListItemsApp.csproj" Id="14a43e47-3cb2-4300-bd55-5d68f81c5f6c" />
+  <Project Path="ListItemsAppSetup/ListItemsAppSetup.vdproj" Type="Installer" />
 </Solution>
