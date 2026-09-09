@@ -119,22 +119,16 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="NameItemsListBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="NameItemsListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>Top, Bottom, Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="NameItemsListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 23</value>
-  </data>
-  <data name="NameItemsListBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>12, 12</value>
   </data>
   <data name="NameItemsListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 554</value>
+    <value>248, 290</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="NameItemsListBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -151,16 +145,16 @@
     <value>3</value>
   </data>
   <data name="ItemInfoGroupBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="CountTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="CountTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 237</value>
-  </data>
-  <data name="CountTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>223, 123</value>
   </data>
   <data name="CountTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 31</value>
+    <value>100, 20</value>
   </data>
   <data name="CountTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -177,14 +171,14 @@
   <data name="&gt;&gt;CountTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="ManufacturerTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 110</value>
+  <data name="ManufacturerTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="ManufacturerTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+  <data name="ManufacturerTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 57</value>
   </data>
   <data name="ManufacturerTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 31</value>
+    <value>295, 20</value>
   </data>
   <data name="ManufacturerTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -201,14 +195,14 @@
   <data name="&gt;&gt;ManufacturerTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="NameTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 48</value>
+  <data name="NameTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="NameTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+  <data name="NameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 25</value>
   </data>
   <data name="NameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>586, 31</value>
+    <value>295, 20</value>
   </data>
   <data name="NameTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -232,13 +226,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="CountLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 238</value>
-  </data>
-  <data name="CountLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
+    <value>34, 124</value>
   </data>
   <data name="CountLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 30</value>
+    <value>41, 16</value>
   </data>
   <data name="CountLabel.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -265,13 +256,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="CategoryLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>50, 171</value>
-  </data>
-  <data name="CategoryLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
+    <value>25, 89</value>
   </data>
   <data name="CategoryLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 30</value>
+    <value>62, 16</value>
   </data>
   <data name="CategoryLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -291,17 +279,17 @@
   <data name="&gt;&gt;CategoryLabel.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="CategoryComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="CategoryComboBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="CategoryComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 169</value>
-  </data>
-  <data name="CategoryComboBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>212, 88</value>
   </data>
   <data name="CategoryComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 33</value>
+    <value>121, 21</value>
   </data>
   <data name="CategoryComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -325,13 +313,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="ManufacturerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 112</value>
-  </data>
-  <data name="ManufacturerLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
+    <value>16, 58</value>
   </data>
   <data name="ManufacturerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 30</value>
+    <value>84, 16</value>
   </data>
   <data name="ManufacturerLabel.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -358,13 +343,10 @@
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 50</value>
-  </data>
-  <data name="NameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 0, 6, 0</value>
+    <value>34, 26</value>
   </data>
   <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 30</value>
+    <value>44, 16</value>
   </data>
   <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -385,16 +367,10 @@
     <value>7</value>
   </data>
   <data name="ItemInfoGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>570, 23</value>
-  </data>
-  <data name="ItemInfoGroupBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
-  </data>
-  <data name="ItemInfoGroupBox.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>285, 12</value>
   </data>
   <data name="ItemInfoGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 302</value>
+    <value>448, 157</value>
   </data>
   <data name="ItemInfoGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -414,14 +390,14 @@
   <data name="&gt;&gt;ItemInfoGroupBox.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="AddPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 592</value>
+  <data name="AddPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
-  <data name="AddPictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+  <data name="AddPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 308</value>
   </data>
   <data name="AddPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 62</value>
+    <value>32, 32</value>
   </data>
   <data name="AddPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -441,14 +417,14 @@
   <data name="&gt;&gt;AddPictureBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="RemPictureBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 592</value>
+  <data name="RemPictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
-  <data name="RemPictureBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+  <data name="RemPictureBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 308</value>
   </data>
   <data name="RemPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 62</value>
+    <value>32, 32</value>
   </data>
   <data name="RemPictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -472,10 +448,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>12, 25</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1494, 677</value>
+    <value>747, 352</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4714,9 +4690,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
 </value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ListItemApp</value>

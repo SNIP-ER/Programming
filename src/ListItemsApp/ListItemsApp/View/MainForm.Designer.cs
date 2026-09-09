@@ -97,9 +97,9 @@
             // 
             // CategoryComboBox
             // 
+            resources.ApplyResources(this.CategoryComboBox, "CategoryComboBox");
             this.CategoryComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.CategoryComboBox, "CategoryComboBox");
             this.CategoryComboBox.FormattingEnabled = true;
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
@@ -116,9 +116,9 @@
             // 
             // AddPictureBox
             // 
+            resources.ApplyResources(this.AddPictureBox, "AddPictureBox");
             this.AddPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddPictureBox.Image = global::ListItemsApp.Properties.Resources.Add;
-            resources.ApplyResources(this.AddPictureBox, "AddPictureBox");
             this.AddPictureBox.Name = "AddPictureBox";
             this.AddPictureBox.TabStop = false;
             this.AddPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddPictureBox_MouseDown);
@@ -127,9 +127,9 @@
             // 
             // RemPictureBox
             // 
+            resources.ApplyResources(this.RemPictureBox, "RemPictureBox");
             this.RemPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RemPictureBox.Image = global::ListItemsApp.Properties.Resources.Rem;
-            resources.ApplyResources(this.RemPictureBox, "RemPictureBox");
             this.RemPictureBox.Name = "RemPictureBox";
             this.RemPictureBox.TabStop = false;
             this.RemPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RemPictureBox_MouseDown);
