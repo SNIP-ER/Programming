@@ -61,7 +61,7 @@
             this.FilmsGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FilmsGroupBox.Location = new System.Drawing.Point(0, 0);
             this.FilmsGroupBox.Name = "FilmsGroupBox";
-            this.FilmsGroupBox.Size = new System.Drawing.Size(422, 233);
+            this.FilmsGroupBox.Size = new System.Drawing.Size(410, 310);
             this.FilmsGroupBox.TabIndex = 4;
             this.FilmsGroupBox.TabStop = false;
             this.FilmsGroupBox.Text = "Films";
@@ -195,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.FilmsGroupBox);
             this.Name = "GroupBoxMovies";
-            this.Size = new System.Drawing.Size(422, 233);
+            this.Size = new System.Drawing.Size(410, 310);
             this.FilmsGroupBox.ResumeLayout(false);
             this.FilmsGroupBox.PerformLayout();
             this.ResumeLayout(false);

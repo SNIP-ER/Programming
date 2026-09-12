@@ -28,26 +28,16 @@ namespace Programming.View.Enums
         {
             switch (SeasonComboBox.Text)
             {
-                case "Default":
-                this.BackColor = ColorTranslator.FromHtml(AppColors._lightGrey);
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._whiteHex);
-                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._lowLightGray);
-                break;
-
                 case "Spring":
-                this.BackColor = ColorTranslator.FromHtml(AppColors._green);
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._lightGreenHex);
-                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._yellow);
+                MessageBox.Show("О! Весна!", "Spring", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
 
                 case "Autumn":
-                this.BackColor = ColorTranslator.FromHtml(AppColors._orange);
-                SeasonComboBox.BackColor = ColorTranslator.FromHtml(AppColors._lightOrange);
-                SeasonButton.BackColor = ColorTranslator.FromHtml(AppColors._lightRedHex);
+                MessageBox.Show("Эх! Пора на учебу!", "Autumn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
 
                 case "Summer":
-                MessageBox.Show("Ура! Лето!", "Summer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ура! Каникулы!", "Summer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 break;
 
                 case "Winter":

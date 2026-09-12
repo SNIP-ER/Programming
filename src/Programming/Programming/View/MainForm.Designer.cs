@@ -28,27 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.AllTabControl = new System.Windows.Forms.TabControl();
             this.EnumsTabControl = new System.Windows.Forms.TabPage();
-            this.Classes = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.RectanglesInstructionGroupBox = new System.Windows.Forms.GroupBox();
-            this.RectanglesInstructionLabel = new System.Windows.Forms.Label();
-            this.Rectangles = new System.Windows.Forms.TabPage();
-            this.RectanglesButtonsTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxSeasonsHandle1 = new Programming.View.Enums.GroupBoxSeasonsHandle();
             this.groupBoxWeekdayParsing1 = new Programming.View.Enums.GroupBoxWeekdayParsing();
             this.groupBoxEnumerations1 = new Programming.View.Enums.GroupBoxEnumerations();
-            this.groupBoxRectangles1 = new Programming.View.Classes.GroupBoxRectangles();
-            this.rectanglesCollisionControl1 = new Programming.View.Panels.RectanglesCollisionControl();
+            this.Classes = new System.Windows.Forms.TabPage();
             this.groupBoxMovies1 = new Programming.View.Classes.GroupBoxMovies();
+            this.groupBoxRectangles1 = new Programming.View.Classes.GroupBoxRectangles();
+            this.Rectangles = new System.Windows.Forms.TabPage();
+            this.rectanglesCollisionControl1 = new Programming.View.Panels.RectanglesCollisionControl();
+            this.RectanglesButtonsTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AllTabControl.SuspendLayout();
             this.EnumsTabControl.SuspendLayout();
             this.Classes.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.RectanglesInstructionGroupBox.SuspendLayout();
             this.Rectangles.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,84 +71,6 @@
             this.EnumsTabControl.Text = "Enums";
             this.EnumsTabControl.UseVisualStyleBackColor = true;
             // 
-            // Classes
-            // 
-            this.Classes.Controls.Add(this.groupBoxMovies1);
-            this.Classes.Controls.Add(this.groupBoxRectangles1);
-            this.Classes.Controls.Add(this.groupBox1);
-            this.Classes.Controls.Add(this.RectanglesInstructionGroupBox);
-            this.Classes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Classes.Location = new System.Drawing.Point(4, 22);
-            this.Classes.Name = "Classes";
-            this.Classes.Size = new System.Drawing.Size(742, 410);
-            this.Classes.TabIndex = 1;
-            this.Classes.Text = "Classes";
-            this.Classes.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(317, 239);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(475, 171);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Инструкция";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 117);
-            this.label1.TabIndex = 0;
-            this.label1.Text = resources.GetString("label1.Text");
-            // 
-            // RectanglesInstructionGroupBox
-            // 
-            this.RectanglesInstructionGroupBox.Controls.Add(this.RectanglesInstructionLabel);
-            this.RectanglesInstructionGroupBox.Location = new System.Drawing.Point(0, 239);
-            this.RectanglesInstructionGroupBox.Name = "RectanglesInstructionGroupBox";
-            this.RectanglesInstructionGroupBox.Size = new System.Drawing.Size(310, 171);
-            this.RectanglesInstructionGroupBox.TabIndex = 2;
-            this.RectanglesInstructionGroupBox.TabStop = false;
-            this.RectanglesInstructionGroupBox.Text = "Инструкция";
-            // 
-            // RectanglesInstructionLabel
-            // 
-            this.RectanglesInstructionLabel.AutoSize = true;
-            this.RectanglesInstructionLabel.Location = new System.Drawing.Point(7, 20);
-            this.RectanglesInstructionLabel.Name = "RectanglesInstructionLabel";
-            this.RectanglesInstructionLabel.Size = new System.Drawing.Size(294, 117);
-            this.RectanglesInstructionLabel.TabIndex = 0;
-            this.RectanglesInstructionLabel.Text = resources.GetString("RectanglesInstructionLabel.Text");
-            // 
-            // Rectangles
-            // 
-            this.Rectangles.Controls.Add(this.rectanglesCollisionControl1);
-            this.Rectangles.Controls.Add(this.RectanglesButtonsTableLayoutPanel1);
-            this.Rectangles.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Rectangles.Location = new System.Drawing.Point(4, 22);
-            this.Rectangles.Name = "Rectangles";
-            this.Rectangles.Size = new System.Drawing.Size(742, 410);
-            this.Rectangles.TabIndex = 2;
-            this.Rectangles.Text = "Rectangles";
-            this.Rectangles.UseVisualStyleBackColor = true;
-            // 
-            // RectanglesButtonsTableLayoutPanel1
-            // 
-            this.RectanglesButtonsTableLayoutPanel1.AutoSize = true;
-            this.RectanglesButtonsTableLayoutPanel1.ColumnCount = 2;
-            this.RectanglesButtonsTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RectanglesButtonsTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RectanglesButtonsTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RectanglesButtonsTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.RectanglesButtonsTableLayoutPanel1.Name = "RectanglesButtonsTableLayoutPanel1";
-            this.RectanglesButtonsTableLayoutPanel1.RowCount = 1;
-            this.RectanglesButtonsTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RectanglesButtonsTableLayoutPanel1.Size = new System.Drawing.Size(742, 0);
-            this.RectanglesButtonsTableLayoutPanel1.TabIndex = 16;
-            // 
             // groupBoxSeasonsHandle1
             // 
             this.groupBoxSeasonsHandle1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -180,12 +95,43 @@
             this.groupBoxEnumerations1.Size = new System.Drawing.Size(736, 240);
             this.groupBoxEnumerations1.TabIndex = 5;
             // 
+            // Classes
+            // 
+            this.Classes.Controls.Add(this.groupBoxMovies1);
+            this.Classes.Controls.Add(this.groupBoxRectangles1);
+            this.Classes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Classes.Location = new System.Drawing.Point(4, 22);
+            this.Classes.Name = "Classes";
+            this.Classes.Size = new System.Drawing.Size(742, 410);
+            this.Classes.TabIndex = 1;
+            this.Classes.Text = "Classes";
+            this.Classes.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxMovies1
+            // 
+            this.groupBoxMovies1.Location = new System.Drawing.Point(317, 0);
+            this.groupBoxMovies1.Name = "groupBoxMovies1";
+            this.groupBoxMovies1.Size = new System.Drawing.Size(422, 410);
+            this.groupBoxMovies1.TabIndex = 6;
+            // 
             // groupBoxRectangles1
             // 
             this.groupBoxRectangles1.Location = new System.Drawing.Point(0, 0);
             this.groupBoxRectangles1.Name = "groupBoxRectangles1";
-            this.groupBoxRectangles1.Size = new System.Drawing.Size(310, 233);
+            this.groupBoxRectangles1.Size = new System.Drawing.Size(310, 410);
             this.groupBoxRectangles1.TabIndex = 5;
+            // 
+            // Rectangles
+            // 
+            this.Rectangles.Controls.Add(this.rectanglesCollisionControl1);
+            this.Rectangles.Controls.Add(this.RectanglesButtonsTableLayoutPanel1);
+            this.Rectangles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Rectangles.Location = new System.Drawing.Point(4, 22);
+            this.Rectangles.Name = "Rectangles";
+            this.Rectangles.Size = new System.Drawing.Size(742, 410);
+            this.Rectangles.TabIndex = 2;
+            this.Rectangles.Text = "Rectangles";
+            this.Rectangles.UseVisualStyleBackColor = true;
             // 
             // rectanglesCollisionControl1
             // 
@@ -195,12 +141,19 @@
             this.rectanglesCollisionControl1.Size = new System.Drawing.Size(742, 410);
             this.rectanglesCollisionControl1.TabIndex = 17;
             // 
-            // groupBoxMovies1
+            // RectanglesButtonsTableLayoutPanel1
             // 
-            this.groupBoxMovies1.Location = new System.Drawing.Point(317, 0);
-            this.groupBoxMovies1.Name = "groupBoxMovies1";
-            this.groupBoxMovies1.Size = new System.Drawing.Size(422, 233);
-            this.groupBoxMovies1.TabIndex = 6;
+            this.RectanglesButtonsTableLayoutPanel1.AutoSize = true;
+            this.RectanglesButtonsTableLayoutPanel1.ColumnCount = 2;
+            this.RectanglesButtonsTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.RectanglesButtonsTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.RectanglesButtonsTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RectanglesButtonsTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.RectanglesButtonsTableLayoutPanel1.Name = "RectanglesButtonsTableLayoutPanel1";
+            this.RectanglesButtonsTableLayoutPanel1.RowCount = 1;
+            this.RectanglesButtonsTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.RectanglesButtonsTableLayoutPanel1.Size = new System.Drawing.Size(742, 0);
+            this.RectanglesButtonsTableLayoutPanel1.TabIndex = 16;
             // 
             // MainForm
             // 
@@ -214,10 +167,6 @@
             this.AllTabControl.ResumeLayout(false);
             this.EnumsTabControl.ResumeLayout(false);
             this.Classes.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.RectanglesInstructionGroupBox.ResumeLayout(false);
-            this.RectanglesInstructionGroupBox.PerformLayout();
             this.Rectangles.ResumeLayout(false);
             this.Rectangles.PerformLayout();
             this.ResumeLayout(false);
@@ -229,10 +178,6 @@
         private System.Windows.Forms.TabControl AllTabControl;
         private System.Windows.Forms.TabPage EnumsTabControl;
         internal System.Windows.Forms.TabPage Classes;
-        private System.Windows.Forms.GroupBox RectanglesInstructionGroupBox;
-        private System.Windows.Forms.Label RectanglesInstructionLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage Rectangles;
         private System.Windows.Forms.TableLayoutPanel RectanglesButtonsTableLayoutPanel1;
         private View.Panels.RectanglesCollisionControl rectanglesCollisionControl1;

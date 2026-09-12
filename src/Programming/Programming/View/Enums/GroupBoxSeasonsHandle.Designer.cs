@@ -54,7 +54,6 @@
             this.SeasonComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SeasonComboBox.FormattingEnabled = true;
             this.SeasonComboBox.Items.AddRange(new object[] {
-            "Default",
             "Winter",
             "Spring",
             "Summer",

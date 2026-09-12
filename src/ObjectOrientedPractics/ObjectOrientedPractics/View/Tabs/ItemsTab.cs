@@ -14,5 +14,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
         }
+
+        List<Item> _items = new();
     }
 }

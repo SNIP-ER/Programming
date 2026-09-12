@@ -117,26 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>При выборе фильма справа пишется его название, жанр, рейтинг, год и 
-продолжительность .
-
-Можно вписывать свои значения:
-1) Rating можно вписывать только цифры и , . Диапазон - от 0 до 10 .
-2) Year (от 1900 до 2026) и Duration (в минутах) можно вписывать только цифры .
-3) Не должно быть пустых полей !
-
-При нажатии на кнопку Find - выделится фильм с наибольшим рейтингом.</value>
-  </data>
-  <data name="RectanglesInstructionLabel.Text" xml:space="preserve">
-    <value>При выборе прямоугольника справа пишется его 
-длина, ширина и цвет .
-
-Можно вписывать свои значения:
-1) Length и Width можно вписывать только цифры и , .
-2) Не должно быть пустых полей !
-
-При нажатии на кнопку Find - выделится прямоугольник
-с наибольшей шириной .</value>
-  </data>
 </root>
