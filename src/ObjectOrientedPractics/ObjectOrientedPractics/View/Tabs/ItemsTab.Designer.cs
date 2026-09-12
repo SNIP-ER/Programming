@@ -104,6 +104,7 @@
             buttonItemsRemove.TabIndex = 5;
             buttonItemsRemove.Text = "Remove";
             buttonItemsRemove.UseVisualStyleBackColor = true;
+            buttonItemsRemove.Click += buttonItemsRemove_Click;
             // 
             // buttonItemsAdd
             // 
@@ -114,6 +115,7 @@
             buttonItemsAdd.TabIndex = 5;
             buttonItemsAdd.Text = "Add";
             buttonItemsAdd.UseVisualStyleBackColor = true;
+            buttonItemsAdd.Click += buttonItemsAdd_Click;
             // 
             // listBoxItems
             // 
@@ -124,6 +126,7 @@
             listBoxItems.Name = "listBoxItems";
             listBoxItems.Size = new Size(254, 349);
             listBoxItems.TabIndex = 3;
+            listBoxItems.SelectedIndexChanged += listBoxItems_SelectedIndexChanged;
             // 
             // labelItems
             // 
@@ -164,6 +167,7 @@
             textBoxSelectedItemDescription.Name = "textBoxSelectedItemDescription";
             textBoxSelectedItemDescription.Size = new Size(380, 135);
             textBoxSelectedItemDescription.TabIndex = 11;
+            textBoxSelectedItemDescription.Leave += textBoxSelectedItemDescription_Leave;
             // 
             // labelSelectedItemDescription
             // 
@@ -186,6 +190,7 @@
             textBoxSelectedItemName.Name = "textBoxSelectedItemName";
             textBoxSelectedItemName.Size = new Size(380, 91);
             textBoxSelectedItemName.TabIndex = 9;
+            textBoxSelectedItemName.Leave += textBoxSelectedItemName_Leave;
             // 
             // labelSelectedItemName
             // 
@@ -205,6 +210,7 @@
             textBoxSelectedItemCost.Name = "textBoxSelectedItemCost";
             textBoxSelectedItemCost.Size = new Size(132, 23);
             textBoxSelectedItemCost.TabIndex = 7;
+            textBoxSelectedItemCost.Leave += textBoxSelectedItemCost_Leave;
             // 
             // textBoxSelectedItemId
             // 
@@ -212,6 +218,7 @@
             textBoxSelectedItemId.Location = new Point(66, 34);
             textBoxSelectedItemId.Margin = new Padding(2, 1, 2, 1);
             textBoxSelectedItemId.Name = "textBoxSelectedItemId";
+            textBoxSelectedItemId.ReadOnly = true;
             textBoxSelectedItemId.Size = new Size(132, 23);
             textBoxSelectedItemId.TabIndex = 6;
             // 

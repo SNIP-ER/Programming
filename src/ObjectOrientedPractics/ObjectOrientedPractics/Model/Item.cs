@@ -57,6 +57,14 @@ class Item
     }
 
     /// <summary>
+    /// ID товара.
+    /// </summary>
+    public int Id
+    {
+        get { return _id; }
+    }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Item"/>.
     /// </summary>
     /// <param name="number">Номер телефона. Начинается с +.</param>
@@ -73,6 +81,7 @@ class Item
 
     public Item()
     {
-
+        _count++;
+        _id = _count;
     }
 }
