@@ -110,11 +110,17 @@ namespace ObjectOrientedPractics.View.Tabs
                 MessageBox.Show("Можно вводить только цифры и , !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (ValueValidator.AssertFloatOnSize(newCost, 100000, "bool"))
             {
                 _currentItem.Cost = newCost;
                 ReplaceLineInListBox();
                 textBoxSelectedItemCost.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                textBoxSelectedItemCost.BackColor = ColorTranslator.FromHtml(AppColors._error);
+                MessageBox.Show("Число не должно быть отрицательным и больше 100000 !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -130,10 +136,17 @@ namespace ObjectOrientedPractics.View.Tabs
                 MessageBox.Show("Сначала выберите товар!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (ValueValidator.AssertStringOnLength(textBoxSelectedItemName.Text, 200, "bool"))
             {
                 _currentItem.Name = textBoxSelectedItemName.Text;
                 ReplaceLineInListBox();
+                textBoxSelectedItemName.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                textBoxSelectedItemName.BackColor = ColorTranslator.FromHtml(AppColors._error);
+                MessageBox.Show("Поле не должно быть пустым и больше 200 символов !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -149,10 +162,17 @@ namespace ObjectOrientedPractics.View.Tabs
                 MessageBox.Show("Сначала выберите товар!", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
+            else if (ValueValidator.AssertStringOnLength(textBoxSelectedItemDescription.Text, 1000, "bool"))
             {
                 _currentItem.Info = textBoxSelectedItemDescription.Text;
                 ReplaceLineInListBox();
+                textBoxSelectedItemDescription.BackColor = System.Drawing.Color.White;
+            }
+            else
+            {
+                textBoxSelectedItemDescription.BackColor = ColorTranslator.FromHtml(AppColors._error);
+                MessageBox.Show("Поле не должно быть пустым и больше 1000 символов !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

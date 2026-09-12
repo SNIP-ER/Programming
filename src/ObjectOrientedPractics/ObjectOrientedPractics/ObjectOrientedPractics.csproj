@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="View\Tabs\ItemsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>

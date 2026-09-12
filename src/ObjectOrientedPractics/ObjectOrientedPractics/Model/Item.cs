@@ -48,11 +48,10 @@ class Item
         get { return _cost; }
         set
         {
-            if (value > 100000 || value < 0)
+            if (ValueValidator.AssertFloatOnSize(value, 100000, "Cost"))
             {
-                throw new ArgumentOutOfRangeException("Можно вводить от 0 до 100000 символов!");
+                _cost = value;
             }
-            _cost = value;
         }
     }
 
