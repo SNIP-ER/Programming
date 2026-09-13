@@ -72,7 +72,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Обновить текст о товаре.
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="item">Выбранный товар.</param>
         private void UpdateItemInfo(Item item)
         {
             textBoxSelectedItemId.Text = item.Id.ToString();

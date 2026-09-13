@@ -12,12 +12,12 @@ class Customer
     /// <summary>
     /// Полное имя покупателя.
     /// </summary>
-    public string Fullname
+    public string FullName
     {
         get { return _fullname; }
         set
         {
-            if (ValueValidator.AssertStringOnLength(value, 200, "Fullname"))
+            if (ValueValidator.AssertStringOnLength(value, 200, "FullName"))
             {
                 _fullname = value;
             }
@@ -40,6 +40,14 @@ class Customer
     }
 
     /// <summary>
+    /// ID покупателя.
+    /// </summary>
+    public int Id
+    {
+        get { return _id; }
+    }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
     /// </summary>
     /// <param name="number">Номер телефона. Начинается с +.</param>
@@ -49,7 +57,7 @@ class Customer
     {
         _count++;
         _id = _count;
-        Fullname = _fullname;
+        FullName = _fullname;
         Address = _address;
     }
 

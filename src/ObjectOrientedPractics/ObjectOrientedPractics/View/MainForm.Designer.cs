@@ -31,13 +31,17 @@
             tabControl = new TabControl();
             tabPageItems = new TabPage();
             itemsTab = new ObjectOrientedPractics.View.Tabs.ItemsTab();
+            tabPageCustomers = new TabPage();
+            customersTab1 = new ObjectOrientedPractics.View.Tabs.CustomersTab();
             tabControl.SuspendLayout();
             tabPageItems.SuspendLayout();
+            tabPageCustomers.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl
             // 
             tabControl.Controls.Add(tabPageItems);
+            tabControl.Controls.Add(tabPageCustomers);
             tabControl.Dock = DockStyle.Fill;
             tabControl.Location = new Point(0, 0);
             tabControl.Margin = new Padding(2, 1, 2, 1);
@@ -67,6 +71,24 @@
             itemsTab.Size = new Size(669, 417);
             itemsTab.TabIndex = 0;
             // 
+            // tabPageCustomers
+            // 
+            tabPageCustomers.Controls.Add(customersTab1);
+            tabPageCustomers.Location = new Point(4, 24);
+            tabPageCustomers.Name = "tabPageCustomers";
+            tabPageCustomers.Size = new Size(673, 419);
+            tabPageCustomers.TabIndex = 1;
+            tabPageCustomers.Text = "Customers";
+            tabPageCustomers.UseVisualStyleBackColor = true;
+            // 
+            // customersTab1
+            // 
+            customersTab1.Dock = DockStyle.Fill;
+            customersTab1.Location = new Point(0, 0);
+            customersTab1.Name = "customersTab1";
+            customersTab1.Size = new Size(673, 419);
+            customersTab1.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -79,6 +101,7 @@
             Text = "MainForm";
             tabControl.ResumeLayout(false);
             tabPageItems.ResumeLayout(false);
+            tabPageCustomers.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -87,5 +110,7 @@
         private TabControl tabControl;
         private TabPage tabPageItems;
         private View.Tabs.ItemsTab itemsTab;
+        private TabPage tabPageCustomers;
+        private View.Tabs.CustomersTab customersTab1;
     }
 }
