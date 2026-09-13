@@ -38,6 +38,7 @@
             panelSelectedCustomer = new Panel();
             tableLayoutPanelSelectedCustomer = new TableLayoutPanel();
             panelSelectedCustomerInfo = new Panel();
+            buttonSelectedCustomerRandom = new Button();
             textBoxSelectedCustomerAddress = new TextBox();
             textBoxSelectedCustomerFullName = new TextBox();
             textBoxSelectedCustomerId = new TextBox();
@@ -107,6 +108,7 @@
             tableLayoutPanelCustomersButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanelCustomersButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanelCustomersButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanelCustomersButtons.Controls.Add(buttonSelectedCustomerRandom, 2, 0);
             tableLayoutPanelCustomersButtons.Controls.Add(buttonCustomersAdd, 0, 0);
             tableLayoutPanelCustomersButtons.Controls.Add(buttonCustomersRemove, 1, 0);
             tableLayoutPanelCustomersButtons.Location = new Point(0, 364);
@@ -177,6 +179,17 @@
             panelSelectedCustomerInfo.Name = "panelSelectedCustomerInfo";
             panelSelectedCustomerInfo.Size = new Size(390, 160);
             panelSelectedCustomerInfo.TabIndex = 0;
+            // 
+            // buttonSelectedCustomerRandom
+            // 
+            buttonSelectedCustomerRandom.Dock = DockStyle.Fill;
+            buttonSelectedCustomerRandom.Location = new Point(177, 3);
+            buttonSelectedCustomerRandom.Name = "buttonSelectedCustomerRandom";
+            buttonSelectedCustomerRandom.Size = new Size(81, 44);
+            buttonSelectedCustomerRandom.TabIndex = 10;
+            buttonSelectedCustomerRandom.Text = "Random";
+            buttonSelectedCustomerRandom.UseVisualStyleBackColor = true;
+            buttonSelectedCustomerRandom.Click += buttonSelectedCustomerRandom_Click;
             // 
             // textBoxSelectedCustomerAddress
             // 
@@ -289,5 +302,6 @@
         private TextBox textBoxSelectedCustomerFullName;
         private Button buttonCustomersAdd;
         private Button buttonCustomersRemove;
+        private Button buttonSelectedCustomerRandom;
     }
 }

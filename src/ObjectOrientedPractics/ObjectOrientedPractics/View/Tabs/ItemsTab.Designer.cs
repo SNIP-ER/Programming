@@ -45,6 +45,7 @@
             labelSelectedItemCost = new Label();
             labelSelectedItemId = new Label();
             labelSelectedItem = new Label();
+            buttonItemsRandom = new Button();
             tableLayoutPanelIAll.SuspendLayout();
             panelItems.SuspendLayout();
             tableLayoutPanelButtons.SuspendLayout();
@@ -88,6 +89,7 @@
             tableLayoutPanelButtons.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanelButtons.Controls.Add(buttonItemsRemove, 1, 0);
             tableLayoutPanelButtons.Controls.Add(buttonItemsAdd, 0, 0);
+            tableLayoutPanelButtons.Controls.Add(buttonItemsRandom, 2, 0);
             tableLayoutPanelButtons.Location = new Point(4, 369);
             tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
             tableLayoutPanelButtons.RowCount = 1;
@@ -253,6 +255,17 @@
             labelSelectedItem.TabIndex = 3;
             labelSelectedItem.Text = "Selected Item";
             // 
+            // buttonItemsRandom
+            // 
+            buttonItemsRandom.Dock = DockStyle.Fill;
+            buttonItemsRandom.Location = new Point(171, 3);
+            buttonItemsRandom.Name = "buttonItemsRandom";
+            buttonItemsRandom.Size = new Size(78, 34);
+            buttonItemsRandom.TabIndex = 6;
+            buttonItemsRandom.Text = "Random";
+            buttonItemsRandom.UseVisualStyleBackColor = true;
+            buttonItemsRandom.Click += buttonItemsRandom_Click;
+            // 
             // ItemsTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -289,5 +302,6 @@
         private Label labelSelectedItemName;
         private TextBox textBoxSelectedItemDescription;
         private Label labelSelectedItemDescription;
+        private Button buttonItemsRandom;
     }
 }

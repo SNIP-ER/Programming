@@ -52,6 +52,20 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
+        /// Добвление случайного товара.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonItemsRandom_Click(object sender, EventArgs e)
+        {
+            Item item = ItemFactory.Randomize();
+
+            _items.Add(item);
+
+            listBoxItems.Items.Add($"{item.Name}");
+        }
+
+        /// <summary>
         /// Заполнение полей выбранной карточки товара.
         /// </summary>
         /// <param name="sender"></param>

@@ -63,6 +63,7 @@ class Customer
 
     public Customer()
     {
-
+        _count++;
+        _id = _count;
     }
 }

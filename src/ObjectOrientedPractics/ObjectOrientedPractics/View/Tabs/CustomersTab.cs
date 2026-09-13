@@ -49,6 +49,20 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
+        /// Добавить случайного пользователя.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonSelectedCustomerRandom_Click(object sender, EventArgs e)
+        {
+            Customer customer = CustomerFactory.Randomize();
+
+            _customers.Add(customer);
+
+            listBoxCustomers.Items.Add($"{customer.FullName}");
+        }
+
+        /// <summary>
         /// Заполнение полей выбранного пользователя.
         /// </summary>
         /// <param name="sender"></param>

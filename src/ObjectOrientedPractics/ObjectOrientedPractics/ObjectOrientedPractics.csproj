@@ -14,4 +14,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Image\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
