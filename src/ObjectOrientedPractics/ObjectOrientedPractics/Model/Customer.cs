@@ -50,9 +50,8 @@ class Customer
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
     /// </summary>
-    /// <param name="number">Номер телефона. Начинается с +.</param>
-    /// <param name="name">Имя.</param>
-    /// <param name="surName">Фамилия.</param>
+    /// <param name="_fullname">Фамилия.</param>
+    /// <param name="_address">Адресс доставки.</param>
     public Customer(string _fullname, string _address)
     {
         _count++;

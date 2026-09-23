@@ -66,9 +66,9 @@ class Item
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Item"/>.
     /// </summary>
-    /// <param name="number">Номер телефона. Начинается с +.</param>
-    /// <param name="name">Имя.</param>
-    /// <param name="surName">Фамилия.</param>
+    /// <param name="_name">Название товара.</param>
+    /// <param name="_info">Информация о товаре.</param>
+    /// <param name="_cost">Цена товара.</param>
     public Item(string _name, string _info, float _cost)
     {
         _count++;
