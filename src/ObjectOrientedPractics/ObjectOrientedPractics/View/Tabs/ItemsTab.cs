@@ -18,6 +18,8 @@ namespace ObjectOrientedPractics.View.Tabs
         public ItemsTab()
         {
             InitializeComponent();
+
+            comboBoxSelectedItemCategory.Items.AddRange(Enum.GetNames(typeof(Category)));
         }
 
 
@@ -28,7 +30,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsAdd_Click(object sender, EventArgs e)
         {
-            Item item = new Item("Name", "Info", 0);
+            Item item = new Item("Name", "Info", 0, Category.none);
 
             _items.Add(item);
 
@@ -93,6 +95,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedItemCost.Text = item.Cost.ToString();
             textBoxSelectedItemName.Text = item.Name;
             textBoxSelectedItemDescription.Text = item.Info;
+            comboBoxSelectedItemCategory.SelectedIndex = (int)item.Category;
         }
 
         /// <summary>
@@ -104,6 +107,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedItemCost.Text = "";
             textBoxSelectedItemName.Text = "";
             textBoxSelectedItemDescription.Text = "";
+            comboBoxSelectedItemCategory.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -187,6 +191,24 @@ namespace ObjectOrientedPractics.View.Tabs
                 textBoxSelectedItemDescription.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Поле не должно быть пустым и больше 1000 символов !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Сохранение выбранной категории.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBoxSelectedItemCategory_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (listBoxItems.SelectedIndex == -1)
+            {
+                MessageBox.Show("Сначала выберите товар!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _currentItem.Category = (Category)comboBoxSelectedItemCategory.SelectedIndex;
             }
         }
 

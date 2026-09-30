@@ -64,23 +64,31 @@ class Item
     }
 
     /// <summary>
+    /// Категория товара.
+    /// </summary>
+    public Category Category { get; set; }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Item"/>.
     /// </summary>
     /// <param name="_name">Название товара.</param>
     /// <param name="_info">Информация о товаре.</param>
     /// <param name="_cost">Цена товара.</param>
-    public Item(string _name, string _info, float _cost)
+    /// <param name="_category">Категория товара.</param>
+    public Item(string _name, string _info, float _cost, Category _category)
     {
         _count++;
         _id = _count;
         Name = _name;
         Info = _info;
         Cost = _cost;
+        Category = _category;
     }
 
     public Item()
     {
         _count++;
         _id = _count;
+        Category = Category.none;
     }
 }
