@@ -34,7 +34,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _items.Add(item);
 
-            listBoxItems.Items.Add($"{item.Name}");
+            listBoxItems.Items.Add(item);
         }
 
         /// <summary>
@@ -44,12 +44,12 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsRemove_Click(object sender, EventArgs e)
         {
-            int index = listBoxItems.SelectedIndex;
+            Item item = listBoxItems.SelectedItem as Item;
 
-            if (index != -1)
+            if (item != null)
             {
-                _items.RemoveAt(index);
-                listBoxItems.Items.RemoveAt(index);
+                _items.Remove(item);
+                listBoxItems.Items.Remove(item);
             }
         }
 
@@ -64,7 +64,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _items.Add(item);
 
-            listBoxItems.Items.Add($"{item.Name}");
+            listBoxItems.Items.Add(item);
         }
 
         /// <summary>
@@ -74,9 +74,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void listBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxItems.SelectedIndex != -1)
+            _currentItem = listBoxItems.SelectedItem as Item;
+
+            if (_currentItem != null)
             {
-                _currentItem = _items[listBoxItems.SelectedIndex];
                 UpdateItemInfo(_currentItem);
             }
             else
@@ -217,7 +218,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void ReplaceLineInListBox()
         {
-            listBoxItems.Items[listBoxItems.SelectedIndex] = $"{_currentItem.Name}";
+            listBoxItems.Items[listBoxItems.SelectedIndex] = _currentItem;
         }
     }
 }

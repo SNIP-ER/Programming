@@ -135,6 +135,7 @@
             // listBoxItems
             // 
             listBoxItems.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxItems.DisplayMember = "Name";
             listBoxItems.FormattingEnabled = true;
             listBoxItems.Location = new Point(2, 16);
             listBoxItems.Margin = new Padding(2, 1, 2, 1);
