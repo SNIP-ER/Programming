@@ -14,6 +14,17 @@ namespace ObjectOrientedPractics.View.Tabs
         private List<Item> _items = new List<Item>();
         private Item _currentItem;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Item> Items
+        {
+            get { return _items; }
+            set
+            {
+                _items = value ?? new List<Item>();
+                UpdateItemsListBox();
+            }
+        }
+
 
         public ItemsTab()
         {
@@ -219,6 +230,18 @@ namespace ObjectOrientedPractics.View.Tabs
         private void ReplaceLineInListBox()
         {
             listBoxItems.Items[listBoxItems.SelectedIndex] = _currentItem;
+        }
+
+        /// <summary>
+        /// Сихранизация того, что хранится, с тем что показывается.
+        /// </summary>
+        private void UpdateItemsListBox()
+        {
+            listBoxItems.Items.Clear();
+            foreach (Item item in _items)
+            {
+                listBoxItems.Items.Add(item);
+            }
         }
     }
 }

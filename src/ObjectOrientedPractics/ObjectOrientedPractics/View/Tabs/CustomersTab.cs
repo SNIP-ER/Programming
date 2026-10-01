@@ -15,6 +15,17 @@ namespace ObjectOrientedPractics.View.Tabs
         private List<Customer> _customers = new List<Customer>();
         private Customer _currentCustomer;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Customer> Customers
+        {
+            get { return _customers; }
+            set
+            {
+                _customers = value ?? new List<Customer>();
+                UpdateItemsListBox();
+            }
+        }
+
         public CustomersTab()
         {
             InitializeComponent();
@@ -136,6 +147,18 @@ namespace ObjectOrientedPractics.View.Tabs
         private void ReplaceLineInListBox()
         {
             listBoxCustomers.Items[listBoxCustomers.SelectedIndex] = _currentCustomer;
+        }
+
+        /// <summary>
+        /// Сихранизация того, что хранится, с тем что показывается.
+        /// </summary>
+        private void UpdateItemsListBox()
+        {
+            listBoxCustomers.Items.Clear();
+            foreach (Customer customer in _customers)
+            {
+                listBoxCustomers.Items.Add(customer);
+            }
         }
     }
 }

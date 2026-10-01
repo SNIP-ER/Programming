@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-class Customer
+public class Customer
 {
     private static int _count;
     private readonly int _id;

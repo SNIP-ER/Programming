@@ -33,7 +33,7 @@
             tabPageItems = new TabPage();
             itemsTab = new ObjectOrientedPractics.View.Tabs.ItemsTab();
             tabPageCustomers = new TabPage();
-            customersTab1 = new ObjectOrientedPractics.View.Tabs.CustomersTab();
+            customersTab = new ObjectOrientedPractics.View.Tabs.CustomersTab();
             tabControl.SuspendLayout();
             tabPageItems.SuspendLayout();
             tabPageCustomers.SuspendLayout();
@@ -74,7 +74,7 @@
             // 
             // tabPageCustomers
             // 
-            tabPageCustomers.Controls.Add(customersTab1);
+            tabPageCustomers.Controls.Add(customersTab);
             tabPageCustomers.Location = new Point(4, 24);
             tabPageCustomers.Name = "tabPageCustomers";
             tabPageCustomers.Size = new Size(673, 419);
@@ -82,13 +82,13 @@
             tabPageCustomers.Text = "Customers";
             tabPageCustomers.UseVisualStyleBackColor = true;
             // 
-            // customersTab1
+            // customersTab
             // 
-            customersTab1.Dock = DockStyle.Fill;
-            customersTab1.Location = new Point(0, 0);
-            customersTab1.Name = "customersTab1";
-            customersTab1.Size = new Size(673, 419);
-            customersTab1.TabIndex = 0;
+            customersTab.Dock = DockStyle.Fill;
+            customersTab.Location = new Point(0, 0);
+            customersTab.Name = "customersTab";
+            customersTab.Size = new Size(673, 419);
+            customersTab.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -113,6 +113,6 @@
         private TabPage tabPageItems;
         private View.Tabs.ItemsTab itemsTab;
         private TabPage tabPageCustomers;
-        private View.Tabs.CustomersTab customersTab1;
+        private View.Tabs.CustomersTab customersTab;
     }
 }

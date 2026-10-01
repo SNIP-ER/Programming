@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-class Item
+public class Item
 {
     private static int _count;
     private readonly int _id;

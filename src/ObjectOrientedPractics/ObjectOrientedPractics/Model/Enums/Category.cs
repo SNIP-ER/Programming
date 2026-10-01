@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Категории товара.
 /// </summary>
-enum Category
+public enum Category
 {
     /// <summary>
     /// Без категории, значение по умолчанию.
