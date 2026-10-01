@@ -7,7 +7,7 @@ class Customer
     private static int _count;
     private readonly int _id;
     private string _fullname;
-    private string _address;
+    private Address _address;
 
     /// <summary>
     /// Полное имя покупателя.
@@ -27,16 +27,10 @@ class Customer
     /// <summary>
     /// Адрес доставки для покупателя.
     /// </summary>
-    public string Address
+    public Address Address
     {
         get { return _address; }
-        set
-        {
-            if (ValueValidator.AssertStringOnLength(value, 500, "Address"))
-            {
-                _address = value;
-            }
-        }
+        set { _address = value; }
     }
 
     /// <summary>
@@ -52,7 +46,7 @@ class Customer
     /// </summary>
     /// <param name="_fullname">Фамилия.</param>
     /// <param name="_address">Адресс доставки.</param>
-    public Customer(string _fullname, string _address)
+    public Customer(string _fullname, Address _address)
     {
         _count++;
         _id = _count;

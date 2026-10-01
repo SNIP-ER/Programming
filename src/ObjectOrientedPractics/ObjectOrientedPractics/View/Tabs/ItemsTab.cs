@@ -133,7 +133,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Cost = newCost;
                 ReplaceLineInListBox();
-                textBoxSelectedItemCost.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemCost.BackColor = Color.White;
             }
             else
             {
@@ -159,7 +159,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Name = textBoxSelectedItemName.Text;
                 ReplaceLineInListBox();
-                textBoxSelectedItemName.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemName.BackColor = Color.White;
             }
             else
             {
@@ -185,7 +185,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = textBoxSelectedItemDescription.Text;
                 ReplaceLineInListBox();
-                textBoxSelectedItemDescription.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemDescription.BackColor = Color.White;
             }
             else
             {

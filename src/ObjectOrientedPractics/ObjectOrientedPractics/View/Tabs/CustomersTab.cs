@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ObjectOrientedPractics.View.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,11 +27,11 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonCustomersAdd_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer("FullName", "Address");
+            Customer customer = new Customer("FullName", new Address(111111, "None", "None", "None", "None", "None"));
 
             _customers.Add(customer);
 
-            listBoxCustomers.Items.Add($"{customer.FullName}");
+            listBoxCustomers.Items.Add(customer);
         }
 
         /// <summary>
@@ -39,12 +41,12 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonCustomersRemove_Click(object sender, EventArgs e)
         {
-            int index = listBoxCustomers.SelectedIndex;
+            Customer customer = listBoxCustomers.SelectedItem as Customer;
 
-            if (index != -1)
+            if (customer != null)
             {
-                _customers.RemoveAt(index);
-                listBoxCustomers.Items.RemoveAt(index);
+                _customers.Remove(customer);
+                listBoxCustomers.Items.Remove(customer);
             }
         }
 
@@ -59,7 +61,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _customers.Add(customer);
 
-            listBoxCustomers.Items.Add($"{customer.FullName}");
+            listBoxCustomers.Items.Add(customer);
         }
 
         /// <summary>
@@ -69,9 +71,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void listBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxCustomers.SelectedIndex != -1)
+            _currentCustomer = listBoxCustomers.SelectedItem as Customer;
+
+            if (_currentCustomer != null)
             {
-                _currentCustomer = _customers[listBoxCustomers.SelectedIndex];
                 UpdateItemInfo(_currentCustomer);
             }
             else
@@ -88,7 +91,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             textBoxSelectedCustomerId.Text = customer.Id.ToString();
             textBoxSelectedCustomerFullName.Text = customer.FullName;
-            textBoxSelectedCustomerAddress.Text = customer.Address;
+            addressControl.Address = customer.Address;
         }
 
         /// <summary>
@@ -98,7 +101,7 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             textBoxSelectedCustomerId.Text = "";
             textBoxSelectedCustomerFullName.Text = "";
-            textBoxSelectedCustomerAddress.Text = "";
+            addressControl.Address = null;
         }
 
         /// <summary>
@@ -117,7 +120,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.FullName = textBoxSelectedCustomerFullName.Text;
                 ReplaceLineInListBox();
-                textBoxSelectedCustomerFullName.BackColor = System.Drawing.Color.White;
+                textBoxSelectedCustomerFullName.BackColor = Color.White;
             }
             else
             {
@@ -128,37 +131,11 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
-        /// Сохранение изменений в строке с адерсом.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void textBoxSelectedCustomerAddress_Leave(object sender, EventArgs e)
-        {
-            if (listBoxCustomers.SelectedIndex == -1)
-            {
-                MessageBox.Show("Сначала выберите пользователя!", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (ValueValidator.AssertStringOnLength(textBoxSelectedCustomerAddress.Text, 500, "bool"))
-            {
-                _currentCustomer.Address = textBoxSelectedCustomerAddress.Text;
-                ReplaceLineInListBox();
-                textBoxSelectedCustomerAddress.BackColor = System.Drawing.Color.White;
-            }
-            else
-            {
-                textBoxSelectedCustomerAddress.BackColor = ColorTranslator.FromHtml(AppColors._error);
-                MessageBox.Show("Поле не должно быть пустым и больше 500 символов !", "Ошибка!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
         /// Обновить название пользователя в списке.
         /// </summary>
         private void ReplaceLineInListBox()
         {
-            listBoxCustomers.Items[listBoxCustomers.SelectedIndex] = $"{_currentCustomer.FullName}";
+            listBoxCustomers.Items[listBoxCustomers.SelectedIndex] = _currentCustomer;
         }
     }
 }
