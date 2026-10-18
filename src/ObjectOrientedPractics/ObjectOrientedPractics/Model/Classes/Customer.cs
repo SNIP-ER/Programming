@@ -47,6 +47,11 @@ public class Customer
     public Cart Cart { get; }
 
     /// <summary>
+    /// Список заказов покупателя.
+    /// </summary>
+    public List<Order> Orders { get; set; }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
     /// </summary>
     /// <param name="_fullname">Фамилия.</param>
@@ -58,6 +63,7 @@ public class Customer
         FullName = _fullname;
         Address = _address;
         Cart = new Cart(new List<Item>());
+        Orders = new List<Order>();
     }
 
     public Customer()
@@ -65,5 +71,6 @@ public class Customer
         _count++;
         _id = _count;
         Cart = new Cart(new List<Item>());
+        Orders = new List<Order>();
     }
 }

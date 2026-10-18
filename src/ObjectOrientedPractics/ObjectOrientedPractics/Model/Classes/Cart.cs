@@ -1,4 +1,4 @@
-﻿class Cart
+﻿public class Cart
 {
     /// <summary>
     /// Список товаров покупателя.
