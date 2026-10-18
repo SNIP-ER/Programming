@@ -53,6 +53,11 @@
     }
 
     /// <summary>
+    /// Статус заказа.
+    /// </summary>
+    public OrderStatus Status { get; set; }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Order"/>.
     /// </summary>
     /// <param name="items">Список товаров покупателя.</param>
@@ -64,5 +69,6 @@
         _date = DateTime.Now;
         Items = items;
         Address = address;
+        Status = OrderStatus.New;
     }
 }

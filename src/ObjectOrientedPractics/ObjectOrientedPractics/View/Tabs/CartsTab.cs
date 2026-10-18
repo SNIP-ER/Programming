@@ -173,5 +173,33 @@ namespace ObjectOrientedPractics.View.Tabs
             CurrentCustomer.Cart.Items.RemoveAt(index);
             UpdateCartListBox();
         }
+
+        /// <summary>
+        /// Создание заказа.
+        /// </summary>
+        private void buttonCreateOrder_Click(object sender, EventArgs e)
+        {
+            if (CurrentCustomer == null)
+            {
+                MessageBox.Show("Выбирите покупателя!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (CurrentCustomer.Cart.Items == null || CurrentCustomer.Cart.Items.Count == 0)
+            {
+                MessageBox.Show("Корзина пуста!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            List<Item> orderItems = new List<Item>(CurrentCustomer.Cart.Items);
+
+            Order order = new Order(orderItems, CurrentCustomer.Address);
+            CurrentCustomer.Orders.Add(order);
+
+            CurrentCustomer.Cart.Items.Clear();
+            UpdateCartListBox();
+        }
     }
 }

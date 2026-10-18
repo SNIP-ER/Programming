@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Состояние заказа в процессе его выполнения.
 /// </summary>
-enum OrderStatus
+public enum OrderStatus
 {
     /// <summary>
     /// Новый заказ.

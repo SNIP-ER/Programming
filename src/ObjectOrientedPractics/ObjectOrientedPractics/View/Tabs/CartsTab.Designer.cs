@@ -168,6 +168,7 @@
             buttonCreateOrder.TabIndex = 8;
             buttonCreateOrder.Text = "Create Order";
             buttonCreateOrder.UseVisualStyleBackColor = true;
+            buttonCreateOrder.Click += buttonCreateOrder_Click;
             // 
             // buttonRemoveItem
             // 
