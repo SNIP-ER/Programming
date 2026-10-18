@@ -8,7 +8,7 @@
     /// <summary>
     /// Подсчет стоимости товаров в корзине покупателя.
     /// </summary>
-    public double Amout
+    public double Amount
     {
         get
         {
