@@ -33,20 +33,18 @@
             listBoxCustomers = new ListBox();
             labelCustomers = new Label();
             tableLayoutPanelCustomersButtons = new TableLayoutPanel();
+            buttonSelectedCustomerRandom = new Button();
             buttonCustomersAdd = new Button();
             buttonCustomersRemove = new Button();
             panelSelectedCustomer = new Panel();
             tableLayoutPanelSelectedCustomer = new TableLayoutPanel();
             panelSelectedCustomerInfo = new Panel();
-            buttonSelectedCustomerRandom = new Button();
-            textBoxSelectedCustomerAddress = new TextBox();
+            addressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             textBoxSelectedCustomerFullName = new TextBox();
             textBoxSelectedCustomerId = new TextBox();
-            labelSelectedCustomerAddress = new Label();
             labelSelectedCustomerFullName = new Label();
             labelSelectedCustomerId = new Label();
             labelSelectedCustomer = new Label();
-            panel1 = new Panel();
             tableLayoutPanelCustomersTab.SuspendLayout();
             panelCustomers.SuspendLayout();
             tableLayoutPanelCustomersButtons.SuspendLayout();
@@ -84,6 +82,7 @@
             // listBoxCustomers
             // 
             listBoxCustomers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxCustomers.DisplayMember = "FullName";
             listBoxCustomers.FormattingEnabled = true;
             listBoxCustomers.Location = new Point(4, 24);
             listBoxCustomers.Name = "listBoxCustomers";
@@ -117,6 +116,17 @@
             tableLayoutPanelCustomersButtons.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanelCustomersButtons.Size = new Size(261, 50);
             tableLayoutPanelCustomersButtons.TabIndex = 0;
+            // 
+            // buttonSelectedCustomerRandom
+            // 
+            buttonSelectedCustomerRandom.Dock = DockStyle.Fill;
+            buttonSelectedCustomerRandom.Location = new Point(177, 3);
+            buttonSelectedCustomerRandom.Name = "buttonSelectedCustomerRandom";
+            buttonSelectedCustomerRandom.Size = new Size(81, 44);
+            buttonSelectedCustomerRandom.TabIndex = 10;
+            buttonSelectedCustomerRandom.Text = "Random";
+            buttonSelectedCustomerRandom.UseVisualStyleBackColor = true;
+            buttonSelectedCustomerRandom.Click += buttonSelectedCustomerRandom_Click;
             // 
             // buttonCustomersAdd
             // 
@@ -154,13 +164,12 @@
             tableLayoutPanelSelectedCustomer.ColumnCount = 1;
             tableLayoutPanelSelectedCustomer.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanelSelectedCustomer.Controls.Add(panelSelectedCustomerInfo, 0, 0);
-            tableLayoutPanelSelectedCustomer.Controls.Add(panel1, 0, 1);
             tableLayoutPanelSelectedCustomer.Dock = DockStyle.Fill;
             tableLayoutPanelSelectedCustomer.Location = new Point(0, 0);
             tableLayoutPanelSelectedCustomer.Name = "tableLayoutPanelSelectedCustomer";
             tableLayoutPanelSelectedCustomer.RowCount = 2;
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 70.50359F));
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 29.4964027F));
             tableLayoutPanelSelectedCustomer.Size = new Size(396, 417);
             tableLayoutPanelSelectedCustomer.TabIndex = 0;
             // 
@@ -168,38 +177,23 @@
             // 
             panelSelectedCustomerInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelSelectedCustomerInfo.BackColor = Color.White;
-            panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerAddress);
+            panelSelectedCustomerInfo.Controls.Add(addressControl);
             panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerFullName);
             panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerId);
-            panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomerAddress);
             panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomerFullName);
             panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomerId);
             panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomer);
             panelSelectedCustomerInfo.Location = new Point(3, 3);
             panelSelectedCustomerInfo.Name = "panelSelectedCustomerInfo";
-            panelSelectedCustomerInfo.Size = new Size(390, 160);
+            panelSelectedCustomerInfo.Size = new Size(390, 287);
             panelSelectedCustomerInfo.TabIndex = 0;
             // 
-            // buttonSelectedCustomerRandom
+            // addressControl
             // 
-            buttonSelectedCustomerRandom.Dock = DockStyle.Fill;
-            buttonSelectedCustomerRandom.Location = new Point(177, 3);
-            buttonSelectedCustomerRandom.Name = "buttonSelectedCustomerRandom";
-            buttonSelectedCustomerRandom.Size = new Size(81, 44);
-            buttonSelectedCustomerRandom.TabIndex = 10;
-            buttonSelectedCustomerRandom.Text = "Random";
-            buttonSelectedCustomerRandom.UseVisualStyleBackColor = true;
-            buttonSelectedCustomerRandom.Click += buttonSelectedCustomerRandom_Click;
-            // 
-            // textBoxSelectedCustomerAddress
-            // 
-            textBoxSelectedCustomerAddress.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxSelectedCustomerAddress.Location = new Point(83, 83);
-            textBoxSelectedCustomerAddress.Multiline = true;
-            textBoxSelectedCustomerAddress.Name = "textBoxSelectedCustomerAddress";
-            textBoxSelectedCustomerAddress.Size = new Size(304, 74);
-            textBoxSelectedCustomerAddress.TabIndex = 9;
-            textBoxSelectedCustomerAddress.Leave += textBoxSelectedCustomerAddress_Leave;
+            addressControl.Location = new Point(0, 100);
+            addressControl.Name = "addressControl";
+            addressControl.Size = new Size(390, 171);
+            addressControl.TabIndex = 0;
             // 
             // textBoxSelectedCustomerFullName
             // 
@@ -217,15 +211,6 @@
             textBoxSelectedCustomerId.ReadOnly = true;
             textBoxSelectedCustomerId.Size = new Size(100, 23);
             textBoxSelectedCustomerId.TabIndex = 7;
-            // 
-            // labelSelectedCustomerAddress
-            // 
-            labelSelectedCustomerAddress.AutoSize = true;
-            labelSelectedCustomerAddress.Location = new Point(3, 86);
-            labelSelectedCustomerAddress.Name = "labelSelectedCustomerAddress";
-            labelSelectedCustomerAddress.Size = new Size(52, 15);
-            labelSelectedCustomerAddress.TabIndex = 6;
-            labelSelectedCustomerAddress.Text = "Address:";
             // 
             // labelSelectedCustomerFullName
             // 
@@ -255,15 +240,6 @@
             labelSelectedCustomer.TabIndex = 3;
             labelSelectedCustomer.Text = "Selected Customer";
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
-            panel1.Location = new Point(3, 169);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(390, 245);
-            panel1.TabIndex = 1;
-            // 
             // CustomersTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -292,16 +268,14 @@
         private Panel panelSelectedCustomer;
         private TableLayoutPanel tableLayoutPanelSelectedCustomer;
         private Panel panelSelectedCustomerInfo;
-        private Panel panel1;
         private Label labelSelectedCustomer;
         private TextBox textBoxSelectedCustomerId;
-        private Label labelSelectedCustomerAddress;
         private Label labelSelectedCustomerFullName;
         private Label labelSelectedCustomerId;
-        private TextBox textBoxSelectedCustomerAddress;
         private TextBox textBoxSelectedCustomerFullName;
         private Button buttonCustomersAdd;
         private Button buttonCustomersRemove;
         private Button buttonSelectedCustomerRandom;
+        private Controls.AddressControl addressControl;
     }
 }

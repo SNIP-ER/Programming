@@ -24,6 +24,29 @@
     }
 
     /// <summary>
+    /// Проверка длины числа.
+    /// </summary>
+    /// <param name="minLength">Минимальная допустимая длина.</param>
+    /// <param name="maxLength">Максимальная допустимая длина.</param>
+    /// <param name="propertyName">Название свойства. Если для проверки - ввести bool.</param>
+    /// <returns>true/false.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Допустим диапозон от 1 до maxLength.</exception>
+    public static bool AssertIntOnLength(int value, int minLength, int maxLength, string propertyName)
+    {
+        if (value.ToString().Length > maxLength || value.ToString().Length < minLength)
+        {
+            if (propertyName == "bool")
+            {
+                return false;
+            }
+
+            throw new ArgumentOutOfRangeException($"{propertyName} должен быть не меньше {minLength} и больше {maxLength} символов!");
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// Проверка размера числа.
     /// </summary>
     /// <param name="value">Число</param>

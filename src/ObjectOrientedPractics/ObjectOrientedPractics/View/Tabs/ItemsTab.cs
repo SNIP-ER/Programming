@@ -14,10 +14,23 @@ namespace ObjectOrientedPractics.View.Tabs
         private List<Item> _items = new List<Item>();
         private Item _currentItem;
 
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public List<Item> Items
+        {
+            get { return _items; }
+            set
+            {
+                _items = value ?? new List<Item>();
+                UpdateItemsListBox();
+            }
+        }
+
 
         public ItemsTab()
         {
             InitializeComponent();
+
+            comboBoxSelectedItemCategory.Items.AddRange(Enum.GetNames(typeof(Category)));
         }
 
 
@@ -28,11 +41,11 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsAdd_Click(object sender, EventArgs e)
         {
-            Item item = new Item("Name", "Info", 0);
+            Item item = new Item("Name", "Info", 0, Category.none);
 
             _items.Add(item);
 
-            listBoxItems.Items.Add($"{item.Name}");
+            listBoxItems.Items.Add(item);
         }
 
         /// <summary>
@@ -42,12 +55,12 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsRemove_Click(object sender, EventArgs e)
         {
-            int index = listBoxItems.SelectedIndex;
+            Item item = listBoxItems.SelectedItem as Item;
 
-            if (index != -1)
+            if (item != null)
             {
-                _items.RemoveAt(index);
-                listBoxItems.Items.RemoveAt(index);
+                _items.Remove(item);
+                listBoxItems.Items.Remove(item);
             }
         }
 
@@ -62,7 +75,7 @@ namespace ObjectOrientedPractics.View.Tabs
 
             _items.Add(item);
 
-            listBoxItems.Items.Add($"{item.Name}");
+            listBoxItems.Items.Add(item);
         }
 
         /// <summary>
@@ -72,9 +85,10 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void listBoxItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxItems.SelectedIndex != -1)
+            _currentItem = listBoxItems.SelectedItem as Item;
+
+            if (_currentItem != null)
             {
-                _currentItem = _items[listBoxItems.SelectedIndex];
                 UpdateItemInfo(_currentItem);
             }
             else
@@ -93,6 +107,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedItemCost.Text = item.Cost.ToString();
             textBoxSelectedItemName.Text = item.Name;
             textBoxSelectedItemDescription.Text = item.Info;
+            comboBoxSelectedItemCategory.SelectedIndex = (int)item.Category;
         }
 
         /// <summary>
@@ -104,6 +119,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedItemCost.Text = "";
             textBoxSelectedItemName.Text = "";
             textBoxSelectedItemDescription.Text = "";
+            comboBoxSelectedItemCategory.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -128,7 +144,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Cost = newCost;
                 ReplaceLineInListBox();
-                textBoxSelectedItemCost.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemCost.BackColor = Color.White;
             }
             else
             {
@@ -154,7 +170,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Name = textBoxSelectedItemName.Text;
                 ReplaceLineInListBox();
-                textBoxSelectedItemName.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemName.BackColor = Color.White;
             }
             else
             {
@@ -180,7 +196,7 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentItem.Info = textBoxSelectedItemDescription.Text;
                 ReplaceLineInListBox();
-                textBoxSelectedItemDescription.BackColor = System.Drawing.Color.White;
+                textBoxSelectedItemDescription.BackColor = Color.White;
             }
             else
             {
@@ -191,11 +207,41 @@ namespace ObjectOrientedPractics.View.Tabs
         }
 
         /// <summary>
+        /// Сохранение выбранной категории.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBoxSelectedItemCategory_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (listBoxItems.SelectedIndex == -1)
+            {
+                MessageBox.Show("Сначала выберите товар!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                _currentItem.Category = (Category)comboBoxSelectedItemCategory.SelectedIndex;
+            }
+        }
+
+        /// <summary>
         /// Обновить название товара в списке товаров.
         /// </summary>
         private void ReplaceLineInListBox()
         {
-            listBoxItems.Items[listBoxItems.SelectedIndex] = $"{_currentItem.Name}";
+            listBoxItems.Items[listBoxItems.SelectedIndex] = _currentItem;
+        }
+
+        /// <summary>
+        /// Сихранизация того, что хранится, с тем что показывается.
+        /// </summary>
+        private void UpdateItemsListBox()
+        {
+            listBoxItems.Items.Clear();
+            foreach (Item item in _items)
+            {
+                listBoxItems.Items.Add(item);
+            }
         }
     }
 }

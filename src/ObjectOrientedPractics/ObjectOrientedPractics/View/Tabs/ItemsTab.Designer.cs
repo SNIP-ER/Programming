@@ -33,9 +33,12 @@
             tableLayoutPanelButtons = new TableLayoutPanel();
             buttonItemsRemove = new Button();
             buttonItemsAdd = new Button();
+            buttonItemsRandom = new Button();
             listBoxItems = new ListBox();
             labelItems = new Label();
             panelSelectedItem = new Panel();
+            comboBoxSelectedItemCategory = new ComboBox();
+            labelSelectedItemCategory = new Label();
             textBoxSelectedItemDescription = new TextBox();
             labelSelectedItemDescription = new Label();
             textBoxSelectedItemName = new TextBox();
@@ -45,7 +48,6 @@
             labelSelectedItemCost = new Label();
             labelSelectedItemId = new Label();
             labelSelectedItem = new Label();
-            buttonItemsRandom = new Button();
             tableLayoutPanelIAll.SuspendLayout();
             panelItems.SuspendLayout();
             tableLayoutPanelButtons.SuspendLayout();
@@ -119,9 +121,21 @@
             buttonItemsAdd.UseVisualStyleBackColor = true;
             buttonItemsAdd.Click += buttonItemsAdd_Click;
             // 
+            // buttonItemsRandom
+            // 
+            buttonItemsRandom.Dock = DockStyle.Fill;
+            buttonItemsRandom.Location = new Point(171, 3);
+            buttonItemsRandom.Name = "buttonItemsRandom";
+            buttonItemsRandom.Size = new Size(78, 34);
+            buttonItemsRandom.TabIndex = 6;
+            buttonItemsRandom.Text = "Random";
+            buttonItemsRandom.UseVisualStyleBackColor = true;
+            buttonItemsRandom.Click += buttonItemsRandom_Click;
+            // 
             // listBoxItems
             // 
             listBoxItems.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxItems.DisplayMember = "Name";
             listBoxItems.FormattingEnabled = true;
             listBoxItems.Location = new Point(2, 16);
             listBoxItems.Margin = new Padding(2, 1, 2, 1);
@@ -144,6 +158,8 @@
             // panelSelectedItem
             // 
             panelSelectedItem.BackColor = Color.White;
+            panelSelectedItem.Controls.Add(comboBoxSelectedItemCategory);
+            panelSelectedItem.Controls.Add(labelSelectedItemCategory);
             panelSelectedItem.Controls.Add(textBoxSelectedItemDescription);
             panelSelectedItem.Controls.Add(labelSelectedItemDescription);
             panelSelectedItem.Controls.Add(textBoxSelectedItemName);
@@ -158,6 +174,25 @@
             panelSelectedItem.Name = "panelSelectedItem";
             panelSelectedItem.Size = new Size(396, 417);
             panelSelectedItem.TabIndex = 1;
+            // 
+            // comboBoxSelectedItemCategory
+            // 
+            comboBoxSelectedItemCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxSelectedItemCategory.FormattingEnabled = true;
+            comboBoxSelectedItemCategory.Location = new Point(78, 84);
+            comboBoxSelectedItemCategory.Name = "comboBoxSelectedItemCategory";
+            comboBoxSelectedItemCategory.Size = new Size(132, 23);
+            comboBoxSelectedItemCategory.TabIndex = 13;
+            comboBoxSelectedItemCategory.SelectionChangeCommitted += comboBoxSelectedItemCategory_SelectionChangeCommitted;
+            // 
+            // labelSelectedItemCategory
+            // 
+            labelSelectedItemCategory.AutoSize = true;
+            labelSelectedItemCategory.Location = new Point(11, 87);
+            labelSelectedItemCategory.Name = "labelSelectedItemCategory";
+            labelSelectedItemCategory.Size = new Size(58, 15);
+            labelSelectedItemCategory.TabIndex = 12;
+            labelSelectedItemCategory.Text = "Category:";
             // 
             // textBoxSelectedItemDescription
             // 
@@ -207,7 +242,7 @@
             // textBoxSelectedItemCost
             // 
             textBoxSelectedItemCost.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSelectedItemCost.Location = new Point(66, 59);
+            textBoxSelectedItemCost.Location = new Point(78, 59);
             textBoxSelectedItemCost.Margin = new Padding(2, 1, 2, 1);
             textBoxSelectedItemCost.Name = "textBoxSelectedItemCost";
             textBoxSelectedItemCost.Size = new Size(132, 23);
@@ -217,7 +252,7 @@
             // textBoxSelectedItemId
             // 
             textBoxSelectedItemId.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSelectedItemId.Location = new Point(66, 34);
+            textBoxSelectedItemId.Location = new Point(78, 34);
             textBoxSelectedItemId.Margin = new Padding(2, 1, 2, 1);
             textBoxSelectedItemId.Name = "textBoxSelectedItemId";
             textBoxSelectedItemId.ReadOnly = true;
@@ -254,17 +289,6 @@
             labelSelectedItem.Size = new Size(86, 15);
             labelSelectedItem.TabIndex = 3;
             labelSelectedItem.Text = "Selected Item";
-            // 
-            // buttonItemsRandom
-            // 
-            buttonItemsRandom.Dock = DockStyle.Fill;
-            buttonItemsRandom.Location = new Point(171, 3);
-            buttonItemsRandom.Name = "buttonItemsRandom";
-            buttonItemsRandom.Size = new Size(78, 34);
-            buttonItemsRandom.TabIndex = 6;
-            buttonItemsRandom.Text = "Random";
-            buttonItemsRandom.UseVisualStyleBackColor = true;
-            buttonItemsRandom.Click += buttonItemsRandom_Click;
             // 
             // ItemsTab
             // 
@@ -303,5 +327,7 @@
         private TextBox textBoxSelectedItemDescription;
         private Label labelSelectedItemDescription;
         private Button buttonItemsRandom;
+        private Label labelSelectedItemCategory;
+        private ComboBox comboBoxSelectedItemCategory;
     }
 }

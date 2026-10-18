@@ -1,7 +1,10 @@
 ﻿using System.Collections;
+using System.Drawing.Text;
 
 static class ItemFactory
 {
+    private static readonly Random _random = new Random();
+
     public static Item Randomize()
     {
         Dictionary<int, string> nameDic = new Dictionary<int, string>()
@@ -52,13 +55,14 @@ static class ItemFactory
             { 19, "Сверхлегкий складной зонт в комплекте с жестким футляром, который легко помещается даже в карман куртки." }
         };
 
-        Random random = new Random();
+        int nameNumber = _random.Next(0, 20);
+        int infoNumber = _random.Next(0, 20);
+        float cost = _random.Next(0, 100000) + _random.NextSingle();
 
-        int nameNumber = random.Next(0, 20);
-        int infoNumber = random.Next(0, 20);
-        float cost = random.Next(0, 100000) + random.NextSingle();
+        Category[] values = Enum.GetValues<Category>();
+        Category categoryNumber = values[_random.Next(values.Length)];
 
-        Item item = new Item(nameDic[nameNumber], infoDic[infoNumber], cost);
+        Item item = new Item(nameDic[nameNumber], infoDic[infoNumber], cost, categoryNumber);
         return item;
     }
 }
