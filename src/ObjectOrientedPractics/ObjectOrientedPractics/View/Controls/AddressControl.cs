@@ -10,6 +10,29 @@ namespace ObjectOrientedPractics.View.Controls
 {
     public partial class AddressControl : UserControl
     {
+        /// <summary>
+        /// Запрещает редактирование полей адреса.
+        /// </summary>
+        [Category("Behavior")]
+        [DefaultValue(false)]
+        public bool ReadOnly
+        {
+            get { return _readOnly; }
+            set
+            {
+                _readOnly = value;
+
+                textBoxAddressControlIndex.ReadOnly = value;
+                textBoxAddressControlCountry.ReadOnly = value;
+                textBoxAddressControlCity.ReadOnly = value;
+                textBoxAddressControlStreet.ReadOnly = value;
+                textBoxAddressControlBuilding.ReadOnly = value;
+                textBoxAddressControlApartment.ReadOnly = value;
+            }
+        }
+
+        private bool _readOnly;
+
         private Address _address = new Address();
 
         public AddressControl()

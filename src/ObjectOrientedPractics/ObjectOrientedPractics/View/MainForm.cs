@@ -15,12 +15,22 @@ namespace ObjectOrientedPractics
 
             cartsTab.Items = _store.Items;
             cartsTab.Customers = _store.Customers;
+
+            ordersTab.Customers = _store.Customers;
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cartsTab.UpdateItemsListBox();
-            cartsTab.UpdateCustomersListBox();
+            if (tabControl.SelectedTab == tabPageCarts)
+            {
+                cartsTab.UpdateItemsListBox();
+                cartsTab.UpdateCustomersListBox();
+            }
+
+            if (tabControl.SelectedTab == tabPageOrders)
+            {
+                ordersTab.UpdateOrders();
+            }
         }
     }
 }
