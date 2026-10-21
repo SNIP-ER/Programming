@@ -71,18 +71,18 @@ public class Item
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Item"/>.
     /// </summary>
-    /// <param name="_name">Название товара.</param>
-    /// <param name="_info">Информация о товаре.</param>
-    /// <param name="_cost">Цена товара.</param>
-    /// <param name="_category">Категория товара.</param>
-    public Item(string _name, string _info, float _cost, Category _category)
+    /// <param name="name">Название товара.</param>
+    /// <param name="info">Информация о товаре.</param>
+    /// <param name="cost">Цена товара.</param>
+    /// <param name="category">Категория товара.</param>
+    public Item(string name, string info, float cost, Category category)
     {
         _count++;
         _id = _count;
-        Name = _name;
-        Info = _info;
-        Cost = _cost;
-        Category = _category;
+        Name = name;
+        Info = info;
+        Cost = cost;
+        Category = category;
     }
 
     public Item()

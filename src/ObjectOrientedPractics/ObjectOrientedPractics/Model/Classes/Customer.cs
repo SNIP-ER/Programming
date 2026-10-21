@@ -54,14 +54,14 @@ public class Customer
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
     /// </summary>
-    /// <param name="_fullname">Фамилия.</param>
-    /// <param name="_address">Адресс доставки.</param>
-    public Customer(string _fullname, Address _address)
+    /// <param name="fullname">Фамилия.</param>
+    /// <param name="address">Адресс доставки.</param>
+    public Customer(string fullname, Address address)
     {
         _count++;
         _id = _count;
-        FullName = _fullname;
-        Address = _address;
+        FullName = fullname;
+        Address = address;
         Cart = new Cart(new List<Item>());
         Orders = new List<Order>();
     }
