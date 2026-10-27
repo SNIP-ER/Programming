@@ -1,30 +1,23 @@
-﻿using ObjectOrientedPractics.View.Controls;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class OrdersTab : UserControl
     {
         private bool _isUpdating;
-        private List<Customer> _customers = new List<Customer>();
-        private List<Order> _orders = new List<Order>();
+        private BindingList<Customer> _customers = new BindingList<Customer>();
+        private BindingList<Order> _orders = new BindingList<Order>();
 
         /// <summary>
         /// Список покупателей, заказы которых отображаются на вкладке.
         /// </summary>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Customer> Customers
+        public BindingList<Customer> Customers
         {
             get { return _customers; }
             set
             {
-                _customers = value ?? new List<Customer>();
+                _customers = value ?? new BindingList<Customer>();
                 UpdateOrders();
             }
         }
@@ -33,6 +26,8 @@ namespace ObjectOrientedPractics.View.Tabs
         {
             InitializeComponent();
 
+            dataGridViewOrders.AutoGenerateColumns = false;
+            dataGridViewOrders.DataSource = _orders;
             comboBoxStatus.DataSource = Enum.GetValues(typeof(OrderStatus));
         }
 
@@ -42,53 +37,20 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         public void UpdateOrders()
         {
-            _orders = new List<Order>();
+            _orders.RaiseListChangedEvents = false;
+            _orders.Clear();
+
             foreach (Customer customer in _customers)
             {
                 foreach (Order order in customer.Orders)
                 {
+                    order.CustomerName = customer.FullName;
                     _orders.Add(order);
                 }
             }
 
-            dataGridViewOrders.Rows.Clear();
-            foreach (Order order in _orders)
-            {
-                dataGridViewOrders.Rows.Add(
-                    order.Id,
-                    order.Date,
-                    order.Status,
-                    GetCustomerName(order),
-                    AddressToString(order.Address),
-                    order.Amount);
-            }
-        }
-
-        /// <summary>
-        /// Находит ФИО покупателя, которому принадлежит заказ.
-        /// </summary>
-        private string GetCustomerName(Order order)
-        {
-            foreach (Customer customer in _customers)
-            {
-                if (customer.Orders.Contains(order))
-                {
-                    return customer.FullName;
-                }
-            }
-            return string.Empty;
-        }
-
-        /// <summary>
-        /// Преобразует адрес в одну строку.
-        /// </summary>
-        private string AddressToString(Address a)
-        {
-            if (a == null)
-            {
-                return string.Empty;
-            }
-            return $"{a.Index}, {a.Country}, {a.City}, {a.Street}, {a.Building}, {a.Apartment}";
+            _orders.RaiseListChangedEvents = true;
+            _orders.ResetBindings();
         }
 
         /// <summary>
@@ -96,29 +58,18 @@ namespace ObjectOrientedPractics.View.Tabs
         /// </summary>
         private void dataGridViewOrders_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridViewOrders.CurrentRow == null)
+            Order order = dataGridViewOrders.CurrentRow?.DataBoundItem as Order;
+            if (order == null)
             {
                 return;
             }
 
-            int index = dataGridViewOrders.CurrentRow.Index;
-
-            if (index < 0 || index >= _orders.Count)
-            {
-                return;
-            }
-
-            Order order = _orders[index];
             _isUpdating = true;
             textBoxId.Text = order.Id.ToString();
             textBoxCreated.Text = order.Date.ToString();
             comboBoxStatus.SelectedItem = order.Status;
             addressControl.Address = order.Address;
-            listBoxOrderItems.Items.Clear();
-            foreach (Item item in order.Items)
-            {
-                listBoxOrderItems.Items.Add(item);
-            }
+            listBoxOrderItems.DataSource = order.Items;
             labelOrdersAmount.Text = order.Amount.ToString();
             _isUpdating = false;
         }
@@ -133,18 +84,14 @@ namespace ObjectOrientedPractics.View.Tabs
                 return;
             }
 
-            if (dataGridViewOrders.CurrentRow == null)
+            Order order = dataGridViewOrders.CurrentRow?.DataBoundItem as Order;
+            if (order == null)
             {
                 return;
             }
 
-            int index = dataGridViewOrders.CurrentRow.Index;
-            Order order = _orders[index];
-
-            OrderStatus status = (OrderStatus)comboBoxStatus.SelectedItem;
-
-            order.Status = status;
-            dataGridViewOrders.CurrentRow.Cells[5].Value = status;
+            order.Status = (OrderStatus)comboBoxStatus.SelectedItem;
+            _orders.ResetItem(dataGridViewOrders.CurrentRow.Index);
         }
     }
 }

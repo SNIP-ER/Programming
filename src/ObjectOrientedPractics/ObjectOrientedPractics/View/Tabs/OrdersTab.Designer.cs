@@ -31,12 +31,6 @@
             tableLayoutPanelOrdersTab = new TableLayoutPanel();
             panelOrderTable = new Panel();
             dataGridViewOrders = new DataGridView();
-            ColumnId = new DataGridViewTextBoxColumn();
-            ColumnCreated = new DataGridViewTextBoxColumn();
-            ColumnOrderStatus = new DataGridViewTextBoxColumn();
-            ColumnCustomer = new DataGridViewTextBoxColumn();
-            ColumnAddress = new DataGridViewTextBoxColumn();
-            ColumnCost = new DataGridViewTextBoxColumn();
             labelOrders = new Label();
             panelOrderData = new Panel();
             labelOrdersAmount = new Label();
@@ -51,6 +45,12 @@
             labelCreated = new Label();
             labelId = new Label();
             labelSelectedOrder = new Label();
+            Id = new DataGridViewTextBoxColumn();
+            Created = new DataGridViewTextBoxColumn();
+            OrderStatus = new DataGridViewTextBoxColumn();
+            Customer = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            Cost = new DataGridViewTextBoxColumn();
             tableLayoutPanelOrdersTab.SuspendLayout();
             panelOrderTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).BeginInit();
@@ -89,7 +89,7 @@
             dataGridViewOrders.AllowUserToResizeColumns = false;
             dataGridViewOrders.AllowUserToResizeRows = false;
             dataGridViewOrders.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { ColumnId, ColumnCreated, ColumnOrderStatus, ColumnCustomer, ColumnAddress, ColumnCost });
+            dataGridViewOrders.Columns.AddRange(new DataGridViewColumn[] { Id, Created, OrderStatus, Customer, Address, Cost });
             dataGridViewOrders.Location = new Point(3, 18);
             dataGridViewOrders.MultiSelect = false;
             dataGridViewOrders.Name = "dataGridViewOrders";
@@ -98,49 +98,6 @@
             dataGridViewOrders.Size = new Size(255, 396);
             dataGridViewOrders.TabIndex = 1;
             dataGridViewOrders.SelectionChanged += dataGridViewOrders_SelectionChanged;
-            // 
-            // ColumnId
-            // 
-            ColumnId.HeaderText = "Id";
-            ColumnId.Name = "ColumnId";
-            ColumnId.ReadOnly = true;
-            ColumnId.SortMode = DataGridViewColumnSortMode.NotSortable;
-            ColumnId.Width = 40;
-            // 
-            // ColumnCreated
-            // 
-            ColumnCreated.HeaderText = "Created";
-            ColumnCreated.Name = "ColumnCreated";
-            ColumnCreated.ReadOnly = true;
-            ColumnCreated.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColumnOrderStatus
-            // 
-            ColumnOrderStatus.HeaderText = "Order Status";
-            ColumnOrderStatus.Name = "ColumnOrderStatus";
-            ColumnOrderStatus.ReadOnly = true;
-            ColumnOrderStatus.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColumnCustomer
-            // 
-            ColumnCustomer.HeaderText = "Customer Full Name";
-            ColumnCustomer.Name = "ColumnCustomer";
-            ColumnCustomer.ReadOnly = true;
-            ColumnCustomer.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColumnAddress
-            // 
-            ColumnAddress.HeaderText = "Address";
-            ColumnAddress.Name = "ColumnAddress";
-            ColumnAddress.ReadOnly = true;
-            ColumnAddress.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // ColumnCost
-            // 
-            ColumnCost.HeaderText = "Cost";
-            ColumnCost.Name = "ColumnCost";
-            ColumnCost.ReadOnly = true;
-            ColumnCost.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // labelOrders
             // 
@@ -286,6 +243,55 @@
             labelSelectedOrder.TabIndex = 0;
             labelSelectedOrder.Text = "Selected Order";
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Id.Width = 40;
+            // 
+            // Created
+            // 
+            Created.DataPropertyName = "Date";
+            Created.HeaderText = "Created";
+            Created.Name = "Created";
+            Created.ReadOnly = true;
+            Created.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // OrderStatus
+            // 
+            OrderStatus.DataPropertyName = "Status";
+            OrderStatus.HeaderText = "Order Status";
+            OrderStatus.Name = "OrderStatus";
+            OrderStatus.ReadOnly = true;
+            OrderStatus.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Customer
+            // 
+            Customer.DataPropertyName = "CustomerName";
+            Customer.HeaderText = "Customer Full Name";
+            Customer.Name = "Customer";
+            Customer.ReadOnly = true;
+            Customer.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Address
+            // 
+            Address.DataPropertyName = "Address";
+            Address.HeaderText = "Address";
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            Address.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Cost
+            // 
+            Cost.DataPropertyName = "Amount";
+            Cost.HeaderText = "Cost";
+            Cost.Name = "Cost";
+            Cost.ReadOnly = true;
+            Cost.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // OrdersTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -321,11 +327,11 @@
         private Label labelOrdersAmount;
         private Label labelAmount;
         private ListBox listBoxOrderItems;
-        private DataGridViewTextBoxColumn ColumnId;
-        private DataGridViewTextBoxColumn ColumnCreated;
-        private DataGridViewTextBoxColumn ColumnOrderStatus;
-        private DataGridViewTextBoxColumn ColumnCustomer;
-        private DataGridViewTextBoxColumn ColumnAddress;
-        private DataGridViewTextBoxColumn ColumnCost;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Created;
+        private DataGridViewTextBoxColumn OrderStatus;
+        private DataGridViewTextBoxColumn Customer;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn Cost;
     }
 }

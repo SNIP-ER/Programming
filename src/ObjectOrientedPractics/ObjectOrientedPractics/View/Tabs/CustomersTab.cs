@@ -1,34 +1,28 @@
-﻿using ObjectOrientedPractics.View.Controls;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class CustomersTab : UserControl
     {
-        private List<Customer> _customers = new List<Customer>();
+        private BindingList<Customer> _customers = new BindingList<Customer>();
         private Customer _currentCustomer;
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Customer> Customers
+        public BindingList<Customer> Customers
         {
             get { return _customers; }
             set
             {
-                _customers = value ?? new List<Customer>();
-                UpdateItemsListBox();
+                _customers = value ?? new BindingList<Customer>();
+                listBoxCustomers.DataSource = _customers;
             }
         }
 
         public CustomersTab()
         {
             InitializeComponent();
+
+            listBoxCustomers.DataSource = _customers;
         }
 
         /// <summary>
@@ -38,11 +32,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonCustomersAdd_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer("FullName", new Address(111111, "None", "None", "None", "None", "None"));
-
-            _customers.Add(customer);
-
-            listBoxCustomers.Items.Add(customer);
+            _customers.Add(new Customer("FullName", new Address(111111, "None", "None", "None", "None", "None")));
         }
 
         /// <summary>
@@ -57,7 +47,6 @@ namespace ObjectOrientedPractics.View.Tabs
             if (customer != null)
             {
                 _customers.Remove(customer);
-                listBoxCustomers.Items.Remove(customer);
             }
         }
 
@@ -68,11 +57,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonSelectedCustomerRandom_Click(object sender, EventArgs e)
         {
-            Customer customer = CustomerFactory.Randomize();
-
-            _customers.Add(customer);
-
-            listBoxCustomers.Items.Add(customer);
+            _customers.Add(CustomerFactory.Randomize());
         }
 
         /// <summary>
@@ -118,8 +103,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Сохранение изменений в строке с именем.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void textBoxSelectedCustomerFullName_Leave(object sender, EventArgs e)
         {
             if (listBoxCustomers.SelectedIndex == -1)
@@ -130,7 +113,7 @@ namespace ObjectOrientedPractics.View.Tabs
             else if (ValueValidator.AssertStringOnLength(textBoxSelectedCustomerFullName.Text, 200, "bool"))
             {
                 _currentCustomer.FullName = textBoxSelectedCustomerFullName.Text;
-                ReplaceLineInListBox();
+                _customers.ResetItem(listBoxCustomers.SelectedIndex);
                 textBoxSelectedCustomerFullName.BackColor = Color.White;
             }
             else
@@ -138,26 +121,6 @@ namespace ObjectOrientedPractics.View.Tabs
                 textBoxSelectedCustomerFullName.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Поле не должно быть пустым и больше 200 символов !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Обновить название пользователя в списке.
-        /// </summary>
-        private void ReplaceLineInListBox()
-        {
-            listBoxCustomers.Items[listBoxCustomers.SelectedIndex] = _currentCustomer;
-        }
-
-        /// <summary>
-        /// Сихранизация того, что хранится, с тем что показывается.
-        /// </summary>
-        private void UpdateItemsListBox()
-        {
-            listBoxCustomers.Items.Clear();
-            foreach (Customer customer in _customers)
-            {
-                listBoxCustomers.Items.Add(customer);
             }
         }
     }

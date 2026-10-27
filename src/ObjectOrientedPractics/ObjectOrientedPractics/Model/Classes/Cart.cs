@@ -1,9 +1,11 @@
-﻿public class Cart
+﻿using System.ComponentModel;
+
+public class Cart
 {
     /// <summary>
     /// Список товаров покупателя.
     /// </summary>
-    public List<Item> Items { get; set; }
+    public BindingList<Item> Items { get; set; }
 
     /// <summary>
     /// Подсчет стоимости товаров в корзине покупателя.
@@ -31,7 +33,7 @@
     /// Создаёт экземпляр класса <see cref="Cart"/>.
     /// </summary>
     /// <param name="items">Список товаров в корзине покупателя.</param>
-    public Cart(List<Item> items)
+    public Cart(BindingList<Item> items)
     {
         Items = items;
     }

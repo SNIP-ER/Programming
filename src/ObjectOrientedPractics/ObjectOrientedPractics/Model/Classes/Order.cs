@@ -1,4 +1,6 @@
-﻿public class Order
+﻿using System.ComponentModel;
+
+public class Order
 {
     private static int _count;
     private readonly int _id;
@@ -28,7 +30,7 @@
     /// <summary>
     /// Список товаров заказа.
     /// </summary>
-    public List<Item> Items { get; set; }
+    public BindingList<Item> Items { get; set; }
 
     /// <summary>
     /// Общая стоимость заказа.
@@ -58,11 +60,16 @@
     public OrderStatus Status { get; set; }
 
     /// <summary>
+    /// ФИО покупателя (для отображения в таблице заказов).
+    /// </summary>
+    public string CustomerName { get; set; }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Order"/>.
     /// </summary>
     /// <param name="items">Список товаров покупателя.</param>
     /// <param name="address">Адрес доставки.</param>
-    public Order(List<Item> items, Address address)
+    public Order(BindingList<Item> items, Address address)
     {
         _count++;
         _id = _count;

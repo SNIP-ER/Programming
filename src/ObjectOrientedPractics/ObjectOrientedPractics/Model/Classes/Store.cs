@@ -1,23 +1,25 @@
-﻿public class Store
+﻿using System.ComponentModel;
+
+public class Store
 {
-    private List<Item> _items = new List<Item>();
-    private List<Customer> _customers = new List<Customer>();
+    private BindingList<Item> _items = new BindingList<Item>();
+    private BindingList<Customer> _customers = new BindingList<Customer>();
 
     /// <summary>
     /// Список товаров.
     /// </summary>
-    public List<Item> Items
+    public BindingList<Item> Items
     {
         get { return _items; }
-        set { _items = value ?? new List<Item>(); }
+        set { _items = value ?? new BindingList<Item>(); }
     }
     /// <summary>
     /// Список покупателей.
     /// </summary>
-    public List<Customer> Customers
+    public BindingList<Customer> Customers
     {
         get { return _customers; }
-        set { _customers = value ?? new List<Customer>(); }
+        set { _customers = value ?? new BindingList<Customer>(); }
     }
 
     /// <summary>
@@ -25,7 +27,7 @@
     /// </summary>
     public Store()
     {
-        Items = new List<Item>();
-        Customers = new List<Customer>();
+        Items = new BindingList<Item>();
+        Customers = new BindingList<Customer>();
     }
 }

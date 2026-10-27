@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Serialization;
+﻿using System.ComponentModel;
 
 namespace ObjectOrientedPractics.View.Tabs
 {
     public partial class ItemsTab : UserControl
     {
-        private List<Item> _items = new List<Item>();
+        private BindingList<Item> _items = new BindingList<Item>();
         private Item _currentItem;
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<Item> Items
+        public BindingList<Item> Items
         {
             get { return _items; }
             set
             {
-                _items = value ?? new List<Item>();
-                UpdateItemsListBox();
+                _items = value ?? new BindingList<Item>();
+                listBoxItems.DataSource = _items;
             }
         }
 
@@ -31,6 +24,7 @@ namespace ObjectOrientedPractics.View.Tabs
             InitializeComponent();
 
             comboBoxSelectedItemCategory.Items.AddRange(Enum.GetNames(typeof(Category)));
+            listBoxItems.DataSource = _items;
         }
 
 
@@ -41,11 +35,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsAdd_Click(object sender, EventArgs e)
         {
-            Item item = new Item("Name", "Info", 0, Category.none);
-
-            _items.Add(item);
-
-            listBoxItems.Items.Add(item);
+            _items.Add(new Item("Name", "Info", 0, Category.none));
         }
 
         /// <summary>
@@ -60,7 +50,6 @@ namespace ObjectOrientedPractics.View.Tabs
             if (item != null)
             {
                 _items.Remove(item);
-                listBoxItems.Items.Remove(item);
             }
         }
 
@@ -71,11 +60,7 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <param name="e"></param>
         private void buttonItemsRandom_Click(object sender, EventArgs e)
         {
-            Item item = ItemFactory.Randomize();
-
-            _items.Add(item);
-
-            listBoxItems.Items.Add(item);
+            _items.Add(ItemFactory.Randomize());
         }
 
         /// <summary>
@@ -125,8 +110,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Сохранение изменений в строке с ценой.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void textBoxSelectedItemCost_Leave(object sender, EventArgs e)
         {
             if (listBoxItems.SelectedIndex == -1)
@@ -143,7 +126,7 @@ namespace ObjectOrientedPractics.View.Tabs
             else if (ValueValidator.AssertFloatOnSize(newCost, 100000, "bool"))
             {
                 _currentItem.Cost = newCost;
-                ReplaceLineInListBox();
+                _items.ResetItem(listBoxItems.SelectedIndex);
                 textBoxSelectedItemCost.BackColor = Color.White;
             }
             else
@@ -157,8 +140,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Сохранение названия.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void textBoxSelectedItemName_Leave(object sender, EventArgs e)
         {
             if (listBoxItems.SelectedIndex == -1)
@@ -169,7 +150,7 @@ namespace ObjectOrientedPractics.View.Tabs
             else if (ValueValidator.AssertStringOnLength(textBoxSelectedItemName.Text, 200, "bool"))
             {
                 _currentItem.Name = textBoxSelectedItemName.Text;
-                ReplaceLineInListBox();
+                _items.ResetItem(listBoxItems.SelectedIndex);
                 textBoxSelectedItemName.BackColor = Color.White;
             }
             else
@@ -183,8 +164,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Сохранение описания.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void textBoxSelectedItemDescription_Leave(object sender, EventArgs e)
         {
             if (listBoxItems.SelectedIndex == -1)
@@ -195,7 +174,7 @@ namespace ObjectOrientedPractics.View.Tabs
             else if (ValueValidator.AssertStringOnLength(textBoxSelectedItemDescription.Text, 1000, "bool"))
             {
                 _currentItem.Info = textBoxSelectedItemDescription.Text;
-                ReplaceLineInListBox();
+                _items.ResetItem(listBoxItems.SelectedIndex);
                 textBoxSelectedItemDescription.BackColor = Color.White;
             }
             else
@@ -209,8 +188,6 @@ namespace ObjectOrientedPractics.View.Tabs
         /// <summary>
         /// Сохранение выбранной категории.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void comboBoxSelectedItemCategory_SelectionChangeCommitted(object sender, EventArgs e)
         {
             if (listBoxItems.SelectedIndex == -1)
@@ -221,26 +198,6 @@ namespace ObjectOrientedPractics.View.Tabs
             else
             {
                 _currentItem.Category = (Category)comboBoxSelectedItemCategory.SelectedIndex;
-            }
-        }
-
-        /// <summary>
-        /// Обновить название товара в списке товаров.
-        /// </summary>
-        private void ReplaceLineInListBox()
-        {
-            listBoxItems.Items[listBoxItems.SelectedIndex] = _currentItem;
-        }
-
-        /// <summary>
-        /// Сихранизация того, что хранится, с тем что показывается.
-        /// </summary>
-        private void UpdateItemsListBox()
-        {
-            listBoxItems.Items.Clear();
-            foreach (Item item in _items)
-            {
-                listBoxItems.Items.Add(item);
             }
         }
     }

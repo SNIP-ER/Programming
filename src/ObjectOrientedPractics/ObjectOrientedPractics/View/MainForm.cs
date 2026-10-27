@@ -21,12 +21,6 @@ namespace ObjectOrientedPractics
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl.SelectedTab == tabPageCarts)
-            {
-                cartsTab.UpdateItemsListBox();
-                cartsTab.UpdateCustomersListBox();
-            }
-
             if (tabControl.SelectedTab == tabPageOrders)
             {
                 ordersTab.UpdateOrders();

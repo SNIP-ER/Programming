@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-public class Address
+﻿public class Address
 {
     private int _index;
     private string _country;
@@ -97,6 +95,15 @@ public class Address
                 _apartment = value;
             }
         }
+    }
+
+    /// <summary>
+    /// Показ адреса одной строкой.
+    /// </summary>
+    /// <returns>Строка с полным адресом.</returns>
+    public override string ToString()
+    {
+        return $"{Index}, {Country}, {City}, {Street}, {Building}, {Apartment}";
     }
 
     /// <summary>

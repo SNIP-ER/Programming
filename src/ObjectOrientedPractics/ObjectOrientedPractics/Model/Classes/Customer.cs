@@ -1,6 +1,4 @@
-﻿using System.Collections.Specialized;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
+﻿using System.ComponentModel;
 
 public class Customer
 {
@@ -27,11 +25,7 @@ public class Customer
     /// <summary>
     /// Адрес доставки для покупателя.
     /// </summary>
-    public Address Address
-    {
-        get { return _address; }
-        set { _address = value; }
-    }
+    public Address Address { get; set; }
 
     /// <summary>
     /// ID покупателя.
@@ -49,7 +43,7 @@ public class Customer
     /// <summary>
     /// Список заказов покупателя.
     /// </summary>
-    public List<Order> Orders { get; set; }
+    public BindingList<Order> Orders { get; set; }
 
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
@@ -62,15 +56,15 @@ public class Customer
         _id = _count;
         FullName = fullname;
         Address = address;
-        Cart = new Cart(new List<Item>());
-        Orders = new List<Order>();
+        Cart = new Cart(new BindingList<Item>());
+        Orders = new BindingList<Order>();
     }
 
     public Customer()
     {
         _count++;
         _id = _count;
-        Cart = new Cart(new List<Item>());
-        Orders = new List<Order>();
+        Cart = new Cart(new BindingList<Item>());
+        Orders = new BindingList<Order>();
     }
 }
