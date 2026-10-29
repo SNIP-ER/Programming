@@ -2,25 +2,17 @@
 
 public class Order
 {
-    private static int _count;
-    private readonly int _id;
-    private readonly DateTime _date;
+    private protected static int _count;
 
     /// <summary>
     /// ID заказа.
     /// </summary>
-    public int Id
-    {
-        get { return _id; }
-    }
+    public int Id { get; protected set; }
 
     /// <summary>
     /// Дата создания заказа.
     /// </summary>
-    public DateTime Date
-    {
-        get { return _date; }
-    }
+    public DateTime Date { get; protected set; }
 
     /// <summary>
     /// Адрес доставки.
@@ -72,8 +64,8 @@ public class Order
     public Order(BindingList<Item> items, Address address)
     {
         _count++;
-        _id = _count;
-        _date = DateTime.Now;
+        Id = _count;
+        Date = DateTime.Now;
         Items = items;
         Address = address;
         Status = OrderStatus.New;
