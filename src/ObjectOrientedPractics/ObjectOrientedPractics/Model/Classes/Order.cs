@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Net;
 
 public class Order
 {
@@ -68,6 +69,17 @@ public class Order
         Date = DateTime.Now;
         Items = items;
         Address = address;
+        Status = OrderStatus.New;
+    }
+
+    /// <summary>
+    /// Создаёт пустой экземпляр класса <see cref="Order"/>.
+    /// </summary>
+    public Order()
+    {
+        _count++;
+        Id = _count;
+        Date = DateTime.Now;
         Status = OrderStatus.New;
     }
 }
