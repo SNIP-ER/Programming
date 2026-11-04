@@ -81,5 +81,7 @@ public class Order
         Id = _count;
         Date = DateTime.Now;
         Status = OrderStatus.New;
+        Items = new BindingList<Item>();
+        Address = new Address();
     }
 }
