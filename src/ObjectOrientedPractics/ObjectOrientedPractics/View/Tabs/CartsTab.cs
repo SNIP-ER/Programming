@@ -149,10 +149,18 @@ namespace ObjectOrientedPractics.View.Tabs
             }
 
             BindingList<Item> orderItems = new BindingList<Item>(new List<Item>(CurrentCustomer.Cart.Items));
+            Order order;
 
-            Order order = new Order(orderItems, CurrentCustomer.Address);
+            if (CurrentCustomer.IsPriority == false)
+            {
+                order = new Order(orderItems, CurrentCustomer.Address);
+            }
+            else
+            {
+                order = new PriorityOrder(orderItems, CurrentCustomer.Address);
+            }
+
             CurrentCustomer.Orders.Add(order);
-
             CurrentCustomer.Cart.Items.Clear();
             UpdateCartListBox();
         }

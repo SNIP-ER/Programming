@@ -29,6 +29,17 @@ public class PriorityOrder : Order
     }
 
     /// <summary>
+    /// Создаёт приоритетный заказ без даты и времени доставки.
+    /// </summary>
+    /// <param name="items">Список товаров.</param>
+    /// <param name="address">Адрес доставки.</param>
+    public PriorityOrder(BindingList<Item> items, Address address)
+        : this(items, address, DateTime.Now, default)
+    {
+
+    }
+
+    /// <summary>
     /// Создаёт пустой экземпляр класса <see cref="PriorityOrder"/>.
     /// </summary>
     public PriorityOrder()

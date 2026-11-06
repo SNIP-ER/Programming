@@ -31,8 +31,18 @@
             tableLayoutPanelOrdersTab = new TableLayoutPanel();
             panelOrderTable = new Panel();
             dataGridViewOrders = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Created = new DataGridViewTextBoxColumn();
+            OrderStatus = new DataGridViewTextBoxColumn();
+            Customer = new DataGridViewTextBoxColumn();
+            Address = new DataGridViewTextBoxColumn();
+            Cost = new DataGridViewTextBoxColumn();
             labelOrders = new Label();
             panelOrderData = new Panel();
+            panelPriorityOptions = new Panel();
+            labelPriorityOptions = new Label();
+            comboBoxPriorityOptions = new ComboBox();
+            labelDeliveryTimePriorityOptions = new Label();
             labelOrdersAmount = new Label();
             labelAmount = new Label();
             listBoxOrderItems = new ListBox();
@@ -45,16 +55,11 @@
             labelCreated = new Label();
             labelId = new Label();
             labelSelectedOrder = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            Created = new DataGridViewTextBoxColumn();
-            OrderStatus = new DataGridViewTextBoxColumn();
-            Customer = new DataGridViewTextBoxColumn();
-            Address = new DataGridViewTextBoxColumn();
-            Cost = new DataGridViewTextBoxColumn();
             tableLayoutPanelOrdersTab.SuspendLayout();
             panelOrderTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).BeginInit();
             panelOrderData.SuspendLayout();
+            panelPriorityOptions.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanelOrdersTab
@@ -99,6 +104,55 @@
             dataGridViewOrders.TabIndex = 1;
             dataGridViewOrders.SelectionChanged += dataGridViewOrders_SelectionChanged;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Id.Width = 40;
+            // 
+            // Created
+            // 
+            Created.DataPropertyName = "Date";
+            Created.HeaderText = "Created";
+            Created.Name = "Created";
+            Created.ReadOnly = true;
+            Created.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // OrderStatus
+            // 
+            OrderStatus.DataPropertyName = "Status";
+            OrderStatus.HeaderText = "Order Status";
+            OrderStatus.Name = "OrderStatus";
+            OrderStatus.ReadOnly = true;
+            OrderStatus.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Customer
+            // 
+            Customer.DataPropertyName = "CustomerName";
+            Customer.HeaderText = "Customer Full Name";
+            Customer.Name = "Customer";
+            Customer.ReadOnly = true;
+            Customer.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Address
+            // 
+            Address.DataPropertyName = "Address";
+            Address.HeaderText = "Address";
+            Address.Name = "Address";
+            Address.ReadOnly = true;
+            Address.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Cost
+            // 
+            Cost.DataPropertyName = "Amount";
+            Cost.HeaderText = "Cost";
+            Cost.Name = "Cost";
+            Cost.ReadOnly = true;
+            Cost.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
             // labelOrders
             // 
             labelOrders.AutoSize = true;
@@ -111,6 +165,7 @@
             // 
             // panelOrderData
             // 
+            panelOrderData.Controls.Add(panelPriorityOptions);
             panelOrderData.Controls.Add(labelOrdersAmount);
             panelOrderData.Controls.Add(labelAmount);
             panelOrderData.Controls.Add(listBoxOrderItems);
@@ -128,6 +183,46 @@
             panelOrderData.Name = "panelOrderData";
             panelOrderData.Size = new Size(396, 417);
             panelOrderData.TabIndex = 1;
+            // 
+            // panelPriorityOptions
+            // 
+            panelPriorityOptions.Controls.Add(labelPriorityOptions);
+            panelPriorityOptions.Controls.Add(comboBoxPriorityOptions);
+            panelPriorityOptions.Controls.Add(labelDeliveryTimePriorityOptions);
+            panelPriorityOptions.Location = new Point(196, 3);
+            panelPriorityOptions.Name = "panelPriorityOptions";
+            panelPriorityOptions.Size = new Size(200, 100);
+            panelPriorityOptions.TabIndex = 15;
+            panelPriorityOptions.Visible = false;
+            // 
+            // labelPriorityOptions
+            // 
+            labelPriorityOptions.AutoSize = true;
+            labelPriorityOptions.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelPriorityOptions.Location = new Point(0, 1);
+            labelPriorityOptions.Name = "labelPriorityOptions";
+            labelPriorityOptions.Size = new Size(94, 15);
+            labelPriorityOptions.TabIndex = 12;
+            labelPriorityOptions.Text = "Priority Options";
+            // 
+            // comboBoxPriorityOptions
+            // 
+            comboBoxPriorityOptions.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPriorityOptions.FormattingEnabled = true;
+            comboBoxPriorityOptions.Location = new Point(90, 22);
+            comboBoxPriorityOptions.Name = "comboBoxPriorityOptions";
+            comboBoxPriorityOptions.Size = new Size(94, 23);
+            comboBoxPriorityOptions.TabIndex = 14;
+            comboBoxPriorityOptions.SelectedIndexChanged += comboBoxPriorityOptions_SelectedIndexChanged;
+            // 
+            // labelDeliveryTimePriorityOptions
+            // 
+            labelDeliveryTimePriorityOptions.AutoSize = true;
+            labelDeliveryTimePriorityOptions.Location = new Point(3, 25);
+            labelDeliveryTimePriorityOptions.Name = "labelDeliveryTimePriorityOptions";
+            labelDeliveryTimePriorityOptions.Size = new Size(81, 15);
+            labelDeliveryTimePriorityOptions.TabIndex = 13;
+            labelDeliveryTimePriorityOptions.Text = "Delivery Time:";
             // 
             // labelOrdersAmount
             // 
@@ -186,7 +281,7 @@
             comboBoxStatus.FormattingEnabled = true;
             comboBoxStatus.Location = new Point(70, 71);
             comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(130, 23);
+            comboBoxStatus.Size = new Size(116, 23);
             comboBoxStatus.TabIndex = 6;
             comboBoxStatus.SelectedIndexChanged += comboBoxStatus_SelectedIndexChanged;
             // 
@@ -195,7 +290,7 @@
             textBoxCreated.Location = new Point(70, 42);
             textBoxCreated.Name = "textBoxCreated";
             textBoxCreated.ReadOnly = true;
-            textBoxCreated.Size = new Size(130, 23);
+            textBoxCreated.Size = new Size(116, 23);
             textBoxCreated.TabIndex = 5;
             // 
             // textBoxId
@@ -203,7 +298,7 @@
             textBoxId.Location = new Point(70, 15);
             textBoxId.Name = "textBoxId";
             textBoxId.ReadOnly = true;
-            textBoxId.Size = new Size(130, 23);
+            textBoxId.Size = new Size(116, 23);
             textBoxId.TabIndex = 4;
             // 
             // labelStatus
@@ -243,55 +338,6 @@
             labelSelectedOrder.TabIndex = 0;
             labelSelectedOrder.Text = "Selected Order";
             // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            Id.Width = 40;
-            // 
-            // Created
-            // 
-            Created.DataPropertyName = "Date";
-            Created.HeaderText = "Created";
-            Created.Name = "Created";
-            Created.ReadOnly = true;
-            Created.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // OrderStatus
-            // 
-            OrderStatus.DataPropertyName = "Status";
-            OrderStatus.HeaderText = "Order Status";
-            OrderStatus.Name = "OrderStatus";
-            OrderStatus.ReadOnly = true;
-            OrderStatus.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Customer
-            // 
-            Customer.DataPropertyName = "CustomerName";
-            Customer.HeaderText = "Customer Full Name";
-            Customer.Name = "Customer";
-            Customer.ReadOnly = true;
-            Customer.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Address
-            // 
-            Address.DataPropertyName = "Address";
-            Address.HeaderText = "Address";
-            Address.Name = "Address";
-            Address.ReadOnly = true;
-            Address.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Cost
-            // 
-            Cost.DataPropertyName = "Amount";
-            Cost.HeaderText = "Cost";
-            Cost.Name = "Cost";
-            Cost.ReadOnly = true;
-            Cost.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
             // OrdersTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,6 +351,8 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewOrders).EndInit();
             panelOrderData.ResumeLayout(false);
             panelOrderData.PerformLayout();
+            panelPriorityOptions.ResumeLayout(false);
+            panelPriorityOptions.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -333,5 +381,9 @@
         private DataGridViewTextBoxColumn Customer;
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn Cost;
+        private Label labelPriorityOptions;
+        private Label labelDeliveryTimePriorityOptions;
+        private ComboBox comboBoxPriorityOptions;
+        private Panel panelPriorityOptions;
     }
 }

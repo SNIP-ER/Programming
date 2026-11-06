@@ -39,6 +39,7 @@
             panelSelectedCustomer = new Panel();
             tableLayoutPanelSelectedCustomer = new TableLayoutPanel();
             panelSelectedCustomerInfo = new Panel();
+            checkBoxPriority = new CheckBox();
             addressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             textBoxSelectedCustomerFullName = new TextBox();
             textBoxSelectedCustomerId = new TextBox();
@@ -168,8 +169,8 @@
             tableLayoutPanelSelectedCustomer.Location = new Point(0, 0);
             tableLayoutPanelSelectedCustomer.Name = "tableLayoutPanelSelectedCustomer";
             tableLayoutPanelSelectedCustomer.RowCount = 2;
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 70.50359F));
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 29.4964027F));
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 72.4220657F));
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 27.5779381F));
             tableLayoutPanelSelectedCustomer.Size = new Size(396, 417);
             tableLayoutPanelSelectedCustomer.TabIndex = 0;
             // 
@@ -177,6 +178,7 @@
             // 
             panelSelectedCustomerInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelSelectedCustomerInfo.BackColor = Color.White;
+            panelSelectedCustomerInfo.Controls.Add(checkBoxPriority);
             panelSelectedCustomerInfo.Controls.Add(addressControl);
             panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerFullName);
             panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerId);
@@ -185,12 +187,23 @@
             panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomer);
             panelSelectedCustomerInfo.Location = new Point(3, 3);
             panelSelectedCustomerInfo.Name = "panelSelectedCustomerInfo";
-            panelSelectedCustomerInfo.Size = new Size(390, 287);
+            panelSelectedCustomerInfo.Size = new Size(390, 296);
             panelSelectedCustomerInfo.TabIndex = 0;
+            // 
+            // checkBoxPriority
+            // 
+            checkBoxPriority.AutoSize = true;
+            checkBoxPriority.Location = new Point(83, 83);
+            checkBoxPriority.Name = "checkBoxPriority";
+            checkBoxPriority.Size = new Size(75, 19);
+            checkBoxPriority.TabIndex = 9;
+            checkBoxPriority.Text = "is Priority";
+            checkBoxPriority.UseVisualStyleBackColor = true;
+            checkBoxPriority.CheckedChanged += checkBoxPriority_CheckedChanged;
             // 
             // addressControl
             // 
-            addressControl.Location = new Point(0, 100);
+            addressControl.Location = new Point(0, 122);
             addressControl.Name = "addressControl";
             addressControl.Size = new Size(390, 171);
             addressControl.TabIndex = 0;
@@ -277,5 +290,6 @@
         private Button buttonCustomersRemove;
         private Button buttonSelectedCustomerRandom;
         private Controls.AddressControl addressControl;
+        private CheckBox checkBoxPriority;
     }
 }

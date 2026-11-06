@@ -7,6 +7,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private bool _isUpdating;
         private BindingList<Customer> _customers = new BindingList<Customer>();
         private BindingList<Order> _orders = new BindingList<Order>();
+        private PriorityOrder _selectedPriorityOrder;
 
         /// <summary>
         /// Список покупателей, заказы которых отображаются на вкладке.
@@ -29,6 +30,18 @@ namespace ObjectOrientedPractics.View.Tabs
             dataGridViewOrders.AutoGenerateColumns = false;
             dataGridViewOrders.DataSource = _orders;
             comboBoxStatus.DataSource = Enum.GetValues(typeof(OrderStatus));
+
+            comboBoxPriorityOptions.FormattingEnabled = true;
+            comboBoxPriorityOptions.Format += (s, e) =>
+            {
+                if (e.ListItem is Enum value)
+                {
+                    e.Value = value.GetDescription();
+                }
+            };
+
+            comboBoxPriorityOptions.DataSource =
+                Enum.GetValues(typeof(TimesDelivery));
         }
 
         /// <summary>
@@ -65,6 +78,19 @@ namespace ObjectOrientedPractics.View.Tabs
             }
 
             _isUpdating = true;
+
+            if (order is PriorityOrder priority)
+            {
+                _selectedPriorityOrder = priority;
+                panelPriorityOptions.Visible = true;
+                comboBoxPriorityOptions.SelectedItem = priority.TimeDelivery;
+            }
+            else
+            {
+                _selectedPriorityOrder = null;
+                panelPriorityOptions.Visible = false;
+            }
+
             textBoxId.Text = order.Id.ToString();
             textBoxCreated.Text = order.Date.ToString();
             comboBoxStatus.SelectedItem = order.Status;
@@ -87,11 +113,26 @@ namespace ObjectOrientedPractics.View.Tabs
             Order order = dataGridViewOrders.CurrentRow?.DataBoundItem as Order;
             if (order == null)
             {
+                _selectedPriorityOrder = null;
+                panelPriorityOptions.Visible = false;
                 return;
             }
 
             order.Status = (OrderStatus)comboBoxStatus.SelectedItem;
             _orders.ResetItem(dataGridViewOrders.CurrentRow.Index);
+        }
+
+        /// <summary>
+        /// Сохранение желаемого времени доставки.
+        /// </summary>
+        private void comboBoxPriorityOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_isUpdating || _selectedPriorityOrder == null)
+            {
+                return;
+            }
+
+            _selectedPriorityOrder.TimeDelivery = (TimesDelivery)comboBoxPriorityOptions.SelectedItem;
         }
     }
 }
