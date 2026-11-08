@@ -109,20 +109,20 @@
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Address"/>.
     /// </summary>
-    /// <param name="_index">Почтовый индекс.</param>
-    /// <param name="_country">Страна/регион.</param>
-    /// <param name="_city">Город (населенный пункт).</param>
-    /// <param name="_street">Улица.</param>
-    /// <param name="_building">Номер дома.</param>
-    /// <param name="_apartment">номер квартиры/помещения.</param>
-    public Address(int _index, string _country, string _city, string _street, string _building, string _apartment)
+    /// <param name="index">Почтовый индекс.</param>
+    /// <param name="country">Страна/регион.</param>
+    /// <param name="city">Город (населенный пункт).</param>
+    /// <param name="street">Улица.</param>
+    /// <param name="building">Номер дома.</param>
+    /// <param name="apartment">номер квартиры/помещения.</param>
+    public Address(int index, string country, string city, string street, string building, string apartment)
     {
-        Index = _index;
-        Country = _country;
-        City = _city;
-        Street = _street;
-        Building = _building;
-        Apartment = _apartment;
+        Index = index;
+        Country = country;
+        City = city;
+        Street = street;
+        Building = building;
+        Apartment = apartment;
     }
 
     public Address()
