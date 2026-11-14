@@ -88,6 +88,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedCustomerId.Text = customer.Id.ToString();
             textBoxSelectedCustomerFullName.Text = customer.FullName;
             addressControl.Address = customer.Address;
+            checkBoxPriority.Checked = customer.IsPriority;
         }
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedCustomerId.Text = "";
             textBoxSelectedCustomerFullName.Text = "";
             addressControl.Address = null;
+            checkBoxPriority.Checked = false;
         }
 
         /// <summary>
@@ -121,6 +123,17 @@ namespace ObjectOrientedPractics.View.Tabs
                 textBoxSelectedCustomerFullName.BackColor = ColorTranslator.FromHtml(AppColors._error);
                 MessageBox.Show("Поле не должно быть пустым и больше 200 символов !", "Ошибка!",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Сохранение признака приоритетного покупателя.
+        /// </summary>
+        private void checkBoxPriority_CheckedChanged(object sender, EventArgs e)
+        {
+            if (_currentCustomer != null)
+            {
+                _currentCustomer.IsPriority = checkBoxPriority.Checked;
             }
         }
     }
