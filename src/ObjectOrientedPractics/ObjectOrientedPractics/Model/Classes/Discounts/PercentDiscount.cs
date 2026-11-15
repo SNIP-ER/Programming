@@ -1,9 +1,18 @@
 ﻿using System.ComponentModel;
 
-public class PercentDiscount
+public class PercentDiscount : IDiscount
 {
+    /// <summary>
+    /// Наименьший размер скидки.
+    /// </summary>
     private const int MinPercent = 1;
+    /// <summary>
+    /// Наибольший размер скидки.
+    /// </summary>
     private const int MaxPercent = 10;
+    /// <summary>
+    /// Шаг суммы покупок, за который скидка вырастает на 1%.
+    /// </summary>
     private const double StepAmount = 1000;
 
     /// <summary>

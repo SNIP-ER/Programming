@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-public class PointsDiscount
+public class PointsDiscount : IDiscount
 {
     /// <summary>
     /// Максимальный процент скидки.
