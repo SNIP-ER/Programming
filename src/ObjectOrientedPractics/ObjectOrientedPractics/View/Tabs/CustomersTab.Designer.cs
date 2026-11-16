@@ -39,6 +39,10 @@
             panelSelectedCustomer = new Panel();
             tableLayoutPanelSelectedCustomer = new TableLayoutPanel();
             panelSelectedCustomerInfo = new Panel();
+            listBoxDiscounts = new ListBox();
+            buttonRemoveDiscounts = new Button();
+            buttonAddDiscounts = new Button();
+            labelDiscounts = new Label();
             checkBoxPriority = new CheckBox();
             addressControl = new ObjectOrientedPractics.View.Controls.AddressControl();
             textBoxSelectedCustomerFullName = new TextBox();
@@ -168,9 +172,9 @@
             tableLayoutPanelSelectedCustomer.Dock = DockStyle.Fill;
             tableLayoutPanelSelectedCustomer.Location = new Point(0, 0);
             tableLayoutPanelSelectedCustomer.Name = "tableLayoutPanelSelectedCustomer";
-            tableLayoutPanelSelectedCustomer.RowCount = 2;
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 72.4220657F));
-            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 27.5779381F));
+            tableLayoutPanelSelectedCustomer.RowCount = 1;
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelSelectedCustomer.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelSelectedCustomer.Size = new Size(396, 417);
             tableLayoutPanelSelectedCustomer.TabIndex = 0;
             // 
@@ -178,6 +182,10 @@
             // 
             panelSelectedCustomerInfo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelSelectedCustomerInfo.BackColor = Color.White;
+            panelSelectedCustomerInfo.Controls.Add(listBoxDiscounts);
+            panelSelectedCustomerInfo.Controls.Add(buttonRemoveDiscounts);
+            panelSelectedCustomerInfo.Controls.Add(buttonAddDiscounts);
+            panelSelectedCustomerInfo.Controls.Add(labelDiscounts);
             panelSelectedCustomerInfo.Controls.Add(checkBoxPriority);
             panelSelectedCustomerInfo.Controls.Add(addressControl);
             panelSelectedCustomerInfo.Controls.Add(textBoxSelectedCustomerFullName);
@@ -187,8 +195,50 @@
             panelSelectedCustomerInfo.Controls.Add(labelSelectedCustomer);
             panelSelectedCustomerInfo.Location = new Point(3, 3);
             panelSelectedCustomerInfo.Name = "panelSelectedCustomerInfo";
-            panelSelectedCustomerInfo.Size = new Size(390, 296);
+            panelSelectedCustomerInfo.Size = new Size(390, 411);
             panelSelectedCustomerInfo.TabIndex = 0;
+            // 
+            // listBoxDiscounts
+            // 
+            listBoxDiscounts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxDiscounts.DisplayMember = "Info";
+            listBoxDiscounts.FormattingEnabled = true;
+            listBoxDiscounts.Location = new Point(3, 300);
+            listBoxDiscounts.Name = "listBoxDiscounts";
+            listBoxDiscounts.Size = new Size(263, 109);
+            listBoxDiscounts.TabIndex = 14;
+            // 
+            // buttonRemoveDiscounts
+            // 
+            buttonRemoveDiscounts.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonRemoveDiscounts.Location = new Point(272, 361);
+            buttonRemoveDiscounts.Name = "buttonRemoveDiscounts";
+            buttonRemoveDiscounts.Size = new Size(94, 31);
+            buttonRemoveDiscounts.TabIndex = 13;
+            buttonRemoveDiscounts.Text = "Remove";
+            buttonRemoveDiscounts.UseVisualStyleBackColor = true;
+            buttonRemoveDiscounts.Click += buttonRemoveDiscounts_Click;
+            // 
+            // buttonAddDiscounts
+            // 
+            buttonAddDiscounts.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonAddDiscounts.Location = new Point(272, 300);
+            buttonAddDiscounts.Name = "buttonAddDiscounts";
+            buttonAddDiscounts.Size = new Size(94, 42);
+            buttonAddDiscounts.TabIndex = 12;
+            buttonAddDiscounts.Text = "Add";
+            buttonAddDiscounts.UseVisualStyleBackColor = true;
+            buttonAddDiscounts.Click += buttonAddDiscounts_Click;
+            // 
+            // labelDiscounts
+            // 
+            labelDiscounts.AutoSize = true;
+            labelDiscounts.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelDiscounts.Location = new Point(3, 282);
+            labelDiscounts.Name = "labelDiscounts";
+            labelDiscounts.Size = new Size(61, 15);
+            labelDiscounts.TabIndex = 10;
+            labelDiscounts.Text = "Discounts";
             // 
             // checkBoxPriority
             // 
@@ -203,7 +253,7 @@
             // 
             // addressControl
             // 
-            addressControl.Location = new Point(0, 122);
+            addressControl.Location = new Point(0, 108);
             addressControl.Name = "addressControl";
             addressControl.Size = new Size(390, 171);
             addressControl.TabIndex = 0;
@@ -291,5 +341,9 @@
         private Button buttonSelectedCustomerRandom;
         private Controls.AddressControl addressControl;
         private CheckBox checkBoxPriority;
+        private Label labelDiscounts;
+        private Button buttonRemoveDiscounts;
+        private Button buttonAddDiscounts;
+        private ListBox listBoxDiscounts;
     }
 }

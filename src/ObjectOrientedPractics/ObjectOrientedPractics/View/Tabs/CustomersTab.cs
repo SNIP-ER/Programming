@@ -89,6 +89,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedCustomerFullName.Text = customer.FullName;
             addressControl.Address = customer.Address;
             checkBoxPriority.Checked = customer.IsPriority;
+            listBoxDiscounts.DataSource = customer.Discounts;
         }
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace ObjectOrientedPractics.View.Tabs
             textBoxSelectedCustomerFullName.Text = "";
             addressControl.Address = null;
             checkBoxPriority.Checked = false;
+            listBoxDiscounts.DataSource = null;
         }
 
         /// <summary>
@@ -135,6 +137,83 @@ namespace ObjectOrientedPractics.View.Tabs
             {
                 _currentCustomer.IsPriority = checkBoxPriority.Checked;
             }
+        }
+
+        /// <summary>
+        /// Выбор категории скидок.
+        /// </summary>
+        private void buttonAddDiscounts_Click(object sender, EventArgs e)
+        {
+            if (_currentCustomer == null)
+            {
+                MessageBox.Show("Сначала выберите покупателя !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            using (AddDiscountForm form = new AddDiscountForm())
+            {
+                if (form.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                Category category = form.SelectedCategory;
+
+                if (HasPercentDiscount(_currentCustomer, category))
+                {
+                    MessageBox.Show("Скидка на эту категорию уже есть у покупателя!", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                _currentCustomer.Discounts.Add(new PercentDiscount(category));
+            }
+        }
+
+        /// <summary>
+        /// Проверяет, есть ли у покупателя процентная скидка на указанную категорию.
+        /// </summary>
+        /// <param name="customer">Покупатель.</param>
+        /// <param name="category">Категория товаров.</param>
+        /// <returns>true, если такая скидка уже есть.</returns>
+        private bool HasPercentDiscount(Customer customer, Category category)
+        {
+            foreach (IDiscount discount in customer.Discounts)
+            {
+                PercentDiscount percent = discount as PercentDiscount;
+
+                if (percent != null && percent.Category == category)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Удалить выбранную категорию из списка.
+        /// </summary>
+        private void buttonRemoveDiscounts_Click(object sender, EventArgs e)
+        {
+            if (_currentCustomer == null)
+            {
+                MessageBox.Show("Сначала выберите покупателя !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int currentCategory = listBoxDiscounts.SelectedIndex;
+
+            if (currentCategory <= 0)
+            {
+                MessageBox.Show("Сначала выберите категорию (нельзя выбрать накопительную скидку) !", "Ошибка!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _currentCustomer.Discounts.RemoveAt(currentCategory);
         }
     }
 }
