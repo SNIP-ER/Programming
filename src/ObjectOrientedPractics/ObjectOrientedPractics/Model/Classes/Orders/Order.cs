@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Net;
 
 public class Order
 {
@@ -56,6 +55,22 @@ public class Order
     /// ФИО покупателя (для отображения в таблице заказов).
     /// </summary>
     public string CustomerName { get; set; }
+
+    /// <summary>
+    /// Размер примененной скидки.
+    /// </summary>
+    public double DiscountAmount { get; set; }
+
+    /// <summary>
+    /// Итоговая стоимость заказа.
+    /// </summary>
+    public double Total
+    {
+        get
+        {
+            return Amount - DiscountAmount;
+        }
+    }
 
     /// <summary>
     /// Создаёт экземпляр класса <see cref="Order"/>.

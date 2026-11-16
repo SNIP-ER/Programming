@@ -51,6 +51,11 @@ public class Customer
     public bool IsPriority { get; set; }
 
     /// <summary>
+    /// Список всех скидок покупателя.
+    /// </summary>
+    public BindingList<IDiscount> Discounts { get; set; }
+
+    /// <summary>
     /// Создаёт экземпляр класса <see cref="Customer"/>.
     /// </summary>
     /// <param name="fullname">Фамилия.</param>
@@ -64,6 +69,7 @@ public class Customer
         Cart = new Cart(new BindingList<Item>());
         Orders = new BindingList<Order>();
         IsPriority = false;
+        Discounts = new BindingList<IDiscount> { new PointsDiscount() };
     }
 
     /// <summary>
@@ -76,5 +82,6 @@ public class Customer
         Cart = new Cart(new BindingList<Item>());
         Orders = new BindingList<Order>();
         IsPriority = false;
+        Discounts = new BindingList<IDiscount> { new PointsDiscount() };
     }
 }
