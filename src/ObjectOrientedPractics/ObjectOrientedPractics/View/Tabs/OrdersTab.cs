@@ -97,6 +97,7 @@ namespace ObjectOrientedPractics.View.Tabs
             addressControl.Address = order.Address;
             listBoxOrderItems.DataSource = order.Items;
             labelOrdersAmount.Text = order.Amount.ToString();
+            labelTotalCost.Text = order.Total.ToString();
             _isUpdating = false;
         }
 

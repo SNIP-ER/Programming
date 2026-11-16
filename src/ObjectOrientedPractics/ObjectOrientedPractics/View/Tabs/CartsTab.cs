@@ -56,6 +56,8 @@ namespace ObjectOrientedPractics.View.Tabs
                 || CurrentCustomer.Cart == null
                 || CurrentCustomer.Cart.Items == null)
             {
+                labelCost.Text = "0";
+                UpdateDiscountAmount();
                 return;
             }
 
@@ -64,7 +66,52 @@ namespace ObjectOrientedPractics.View.Tabs
                 listBoxCarts.Items.Add(item);
             }
 
-            labelCost.Text = CurrentCustomer?.Cart?.Amount.ToString() ?? "0";
+            labelCost.Text = CurrentCustomer.Cart.Amount.ToString();
+            UpdateDiscountAmount();
+        }
+
+        /// <summary>
+        /// Заполняет список скидок выбранного покупателя, все галочки включены.
+        /// </summary>
+        private void UpdateDiscountsList()
+        {
+            checkedListBoxDiscounts.Items.Clear();
+
+            if (CurrentCustomer == null)
+            {
+                return;
+            }
+
+            foreach (IDiscount discount in CurrentCustomer.Discounts)
+            {
+                checkedListBoxDiscounts.Items.Add(discount.Info, true);
+            }
+
+            UpdateDiscountAmount();
+        }
+
+        /// <summary>
+        /// Пересчитывает размер скидки и итоговую стоимость по отмеченным скидкам.
+        /// </summary>
+        private void UpdateDiscountAmount()
+        {
+            if (CurrentCustomer == null)
+            {
+                labelDiscountAmountCost.Text = "0";
+                labelTotalCost.Text = "0";
+                return;
+            }
+
+            BindingList<Item> items = new BindingList<Item>(CurrentCustomer.Cart.Items);
+            double discountAmount = 0;
+
+            foreach (int index in checkedListBoxDiscounts.CheckedIndices)
+            {
+                discountAmount += CurrentCustomer.Discounts[index].Calculate(items);
+            }
+
+            labelDiscountAmountCost.Text = discountAmount.ToString();
+            labelTotalCost.Text = (CurrentCustomer.Cart.Amount - discountAmount).ToString();
         }
 
         /// <summary>
@@ -73,6 +120,7 @@ namespace ObjectOrientedPractics.View.Tabs
         private void comboBoxCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentCustomer = comboBoxCustomer.SelectedItem as Customer;
+            UpdateDiscountsList();
             UpdateCartListBox();
         }
 
@@ -151,6 +199,21 @@ namespace ObjectOrientedPractics.View.Tabs
             BindingList<Item> orderItems = new BindingList<Item>(new List<Item>(CurrentCustomer.Cart.Items));
             Order order;
 
+            BindingList<Item> items = new BindingList<Item>(CurrentCustomer.Cart.Items);
+            double discountAmount = 0;
+            foreach (int index in checkedListBoxDiscounts.CheckedIndices)
+            {
+                discountAmount += CurrentCustomer.Discounts[index].Apply(items);
+            }
+
+            foreach (IDiscount discount in CurrentCustomer.Discounts)
+            {
+                discount.Update(items);
+            }
+
+            // Обновление баллов на вкладке Customers
+            CurrentCustomer.Discounts.ResetBindings();
+
             if (CurrentCustomer.IsPriority == false)
             {
                 order = new Order(orderItems, CurrentCustomer.Address);
@@ -160,9 +223,20 @@ namespace ObjectOrientedPractics.View.Tabs
                 order = new PriorityOrder(orderItems, CurrentCustomer.Address);
             }
 
+            order.DiscountAmount = discountAmount;
+
             CurrentCustomer.Orders.Add(order);
             CurrentCustomer.Cart.Items.Clear();
             UpdateCartListBox();
+            UpdateDiscountsList();
+        }
+
+        /// <summary>
+        /// Регистрация галочек.
+        /// </summary>
+        private void checkedListBoxDiscounts_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            BeginInvoke((MethodInvoker)UpdateDiscountAmount);
         }
     }
 }

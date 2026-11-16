@@ -36,6 +36,12 @@
             panelDetails = new Panel();
             tableLayoutPanelDetails = new TableLayoutPanel();
             panelCost = new Panel();
+            labelTotalCost = new Label();
+            labelDiscountAmountCost = new Label();
+            labelTotal = new Label();
+            labelDiscountAmount = new Label();
+            checkedListBoxDiscounts = new CheckedListBox();
+            labelDiscounts = new Label();
             listBoxCarts = new ListBox();
             buttonCreateOrder = new Button();
             buttonRemoveItem = new Button();
@@ -126,14 +132,20 @@
             tableLayoutPanelDetails.Dock = DockStyle.Fill;
             tableLayoutPanelDetails.Location = new Point(0, 0);
             tableLayoutPanelDetails.Name = "tableLayoutPanelDetails";
-            tableLayoutPanelDetails.RowCount = 2;
-            tableLayoutPanelDetails.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanelDetails.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanelDetails.RowCount = 1;
+            tableLayoutPanelDetails.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanelDetails.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanelDetails.Size = new Size(396, 417);
             tableLayoutPanelDetails.TabIndex = 0;
             // 
             // panelCost
             // 
+            panelCost.Controls.Add(labelTotalCost);
+            panelCost.Controls.Add(labelDiscountAmountCost);
+            panelCost.Controls.Add(labelTotal);
+            panelCost.Controls.Add(labelDiscountAmount);
+            panelCost.Controls.Add(checkedListBoxDiscounts);
+            panelCost.Controls.Add(labelDiscounts);
             panelCost.Controls.Add(listBoxCarts);
             panelCost.Controls.Add(buttonCreateOrder);
             panelCost.Controls.Add(buttonRemoveItem);
@@ -146,8 +158,73 @@
             panelCost.Dock = DockStyle.Fill;
             panelCost.Location = new Point(3, 3);
             panelCost.Name = "panelCost";
-            panelCost.Size = new Size(390, 244);
+            panelCost.Size = new Size(390, 411);
             panelCost.TabIndex = 0;
+            // 
+            // labelTotalCost
+            // 
+            labelTotalCost.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labelTotalCost.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            labelTotalCost.Location = new Point(6, 381);
+            labelTotalCost.Name = "labelTotalCost";
+            labelTotalCost.Size = new Size(384, 30);
+            labelTotalCost.TabIndex = 17;
+            labelTotalCost.Text = "0";
+            labelTotalCost.TextAlign = ContentAlignment.TopRight;
+            // 
+            // labelDiscountAmountCost
+            // 
+            labelDiscountAmountCost.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            labelDiscountAmountCost.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            labelDiscountAmountCost.Location = new Point(183, 283);
+            labelDiscountAmountCost.Name = "labelDiscountAmountCost";
+            labelDiscountAmountCost.Size = new Size(204, 30);
+            labelDiscountAmountCost.TabIndex = 16;
+            labelDiscountAmountCost.Text = "0";
+            labelDiscountAmountCost.TextAlign = ContentAlignment.TopRight;
+            // 
+            // labelTotal
+            // 
+            labelTotal.AutoSize = true;
+            labelTotal.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelTotal.Location = new Point(343, 361);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new Size(46, 15);
+            labelTotal.TabIndex = 14;
+            labelTotal.Text = "TOTAL:";
+            // 
+            // labelDiscountAmount
+            // 
+            labelDiscountAmount.AutoSize = true;
+            labelDiscountAmount.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelDiscountAmount.Location = new Point(281, 262);
+            labelDiscountAmount.Name = "labelDiscountAmount";
+            labelDiscountAmount.Size = new Size(107, 15);
+            labelDiscountAmount.TabIndex = 12;
+            labelDiscountAmount.Text = "Discount Amount:";
+            // 
+            // checkedListBoxDiscounts
+            // 
+            checkedListBoxDiscounts.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            checkedListBoxDiscounts.BackColor = SystemColors.Window;
+            checkedListBoxDiscounts.BorderStyle = BorderStyle.None;
+            checkedListBoxDiscounts.FormattingEnabled = true;
+            checkedListBoxDiscounts.Location = new Point(6, 286);
+            checkedListBoxDiscounts.Name = "checkedListBoxDiscounts";
+            checkedListBoxDiscounts.Size = new Size(171, 108);
+            checkedListBoxDiscounts.TabIndex = 11;
+            checkedListBoxDiscounts.ItemCheck += checkedListBoxDiscounts_ItemCheck;
+            // 
+            // labelDiscounts
+            // 
+            labelDiscounts.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelDiscounts.AutoSize = true;
+            labelDiscounts.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            labelDiscounts.Location = new Point(6, 268);
+            labelDiscounts.Name = "labelDiscounts";
+            labelDiscounts.Size = new Size(64, 15);
+            labelDiscounts.TabIndex = 10;
+            labelDiscounts.Text = "Discounts:";
             // 
             // listBoxCarts
             // 
@@ -162,7 +239,7 @@
             // buttonCreateOrder
             // 
             buttonCreateOrder.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            buttonCreateOrder.Location = new Point(3, 203);
+            buttonCreateOrder.Location = new Point(3, 204);
             buttonCreateOrder.Name = "buttonCreateOrder";
             buttonCreateOrder.Size = new Size(88, 38);
             buttonCreateOrder.TabIndex = 8;
@@ -173,7 +250,7 @@
             // buttonRemoveItem
             // 
             buttonRemoveItem.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonRemoveItem.Location = new Point(208, 203);
+            buttonRemoveItem.Location = new Point(208, 204);
             buttonRemoveItem.Name = "buttonRemoveItem";
             buttonRemoveItem.Size = new Size(88, 38);
             buttonRemoveItem.TabIndex = 7;
@@ -184,7 +261,7 @@
             // buttonClearCart
             // 
             buttonClearCart.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonClearCart.Location = new Point(302, 203);
+            buttonClearCart.Location = new Point(302, 204);
             buttonClearCart.Name = "buttonClearCart";
             buttonClearCart.Size = new Size(88, 38);
             buttonClearCart.TabIndex = 6;
@@ -195,7 +272,7 @@
             // 
             labelCost.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelCost.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            labelCost.Location = new Point(3, 170);
+            labelCost.Location = new Point(3, 171);
             labelCost.Name = "labelCost";
             labelCost.Size = new Size(384, 30);
             labelCost.TabIndex = 5;
@@ -207,7 +284,7 @@
             labelAmount.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labelAmount.AutoSize = true;
             labelAmount.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            labelAmount.Location = new Point(329, 155);
+            labelAmount.Location = new Point(329, 156);
             labelAmount.Name = "labelAmount";
             labelAmount.Size = new Size(58, 15);
             labelAmount.TabIndex = 4;
@@ -280,5 +357,12 @@
         private Button buttonCreateOrder;
         private Button buttonRemoveItem;
         private ListBox listBoxCarts;
+        private Label labelDiscounts;
+        private CheckedListBox checkedListBoxDiscounts;
+        private Label label4;
+        private Label labelTotal;
+        private Label labelDiscountAmount;
+        private Label labelDiscountAmountCost;
+        private Label labelTotalCost;
     }
 }

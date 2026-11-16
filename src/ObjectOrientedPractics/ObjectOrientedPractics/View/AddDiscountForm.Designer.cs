@@ -56,6 +56,7 @@
             // 
             // comboBoxCategory
             // 
+            comboBoxCategory.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCategory.FormattingEnabled = true;
             comboBoxCategory.Location = new Point(76, 33);
             comboBoxCategory.Name = "comboBoxCategory";
